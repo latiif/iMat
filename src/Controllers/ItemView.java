@@ -85,7 +85,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	TODO: Make unit dynamic and not static
 	 */
 	private String format(int amount){
-		return (PRICE_PER_1*amount + "kr /"+amount+"st");
+		return "Pris: "+(PRICE_PER_1*amount + " kr /"+amount+" st");
 	}
 
 
