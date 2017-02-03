@@ -4,6 +4,8 @@ import FavoriteManager.FavManager;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,26 +47,26 @@ public class ItemView extends AnchorPane implements Initializable {
 	@FXML
 	private TextField txtAmount;
 
-	public void setLblName(String name){
-		lblName.setText(name);
-	}
 
 
+
+	/*
+	Change the text when adding or deleting elements
+	 */
 	@FXML
-
 	private void updatePriceAmountLabel(){
 		lblPriceInfo.setText(format(Integer.parseInt(txtAmount.getText())));
 
 		lblMessage.setText(txtAmount.getText()+ "st " + item);
 	}
 
+
+	/*
+	Event handler for btnPlus
+	 */
 	@FXML
 	private void handleBtnPlusAction(ActionEvent event) {
 		txtAmount.setText(String.valueOf(Integer.parseInt(txtAmount.getText())+1));
-
-
-		//we've changed the amount
-		updatePriceAmountLabel();
 	}
 
 	@FXML
@@ -75,17 +77,22 @@ public class ItemView extends AnchorPane implements Initializable {
 			return;
 		}
 		txtAmount.setText(String.valueOf(Integer.parseInt(txtAmount.getText())-1));
-
-		//we've changed the amount
-		updatePriceAmountLabel();
 	}
 
 
+	/*
+	Formats text according to the price and amount, and unit
+	TODO: Make unit dynamic and not static
+	 */
 	private String format(int amount){
 		return (PRICE_PER_1*amount + "kr /"+amount+"st");
 	}
 
 
+	/*
+	Handles adding elements to cart
+	TODO Come up with a away to handle adding elements externally, by an abstract class for example
+	 */
 	@FXML
 	private void handleAddAction(ActionEvent event) throws Exception {
 
@@ -105,21 +112,27 @@ public class ItemView extends AnchorPane implements Initializable {
 
 				ItemView.setVisible(true);
 				BoughtPane.setVisible(false);
+
+				//Reset the values of txtAmount
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						txtAmount.setText("1");
+					}
+				});
 			}
 		};
 
 		thread.start();
-		updatePriceAmountLabel();
-		txtAmount.setText("1");
-
-
-
 
 		//come up with a way to handle adding an element
-		//throw new Exception(" some thing went wrong");
 	}
 
 
+	/*
+	Class constructor
+	TODO make it ask for an Item element, and connect it with the component
+	 */
 	public ItemView(){
 		FXMLLoader fxmlLoader =
 				new FXMLLoader(getClass().getResource("FXMLFiles/ItemView.fxml"));
@@ -136,10 +149,14 @@ public class ItemView extends AnchorPane implements Initializable {
 		}
 	}
 
+
+	/*
+	Event handler for mouse click to favorite
+	 */
 	@FXML
 	private void handleFavAction(MouseEvent event){
 
-		System.out.println("SSS");
+		System.out.println("Clicked!");
 
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
 		if (FavManager.getInstance().deal(this.item)){
@@ -152,13 +169,29 @@ public class ItemView extends AnchorPane implements Initializable {
 	}
 
 
+
+	/*
+	Initialize the components of the ItemView
+	Processed after the constructor
+	Bind the inner Item object with the controls on the view
+	 */
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		txtAmount.setText("1");
 
+
+		//Making sure the user does not input non-numeric non-integer values as amount
+		txtAmount.textProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				txtAmount.setText(newValue.replaceAll("[^\\d]", ""));
+				updatePriceAmountLabel();
+			}
+		});
+
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
 
-		System.out.println(getClass());
 
 		if (FavManager.getInstance().isFav(this.item)){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
@@ -171,8 +204,5 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		}
 
-
-		//lblFav.setGraphic(imgFav);
-		updatePriceAmountLabel();
 	}
 }
