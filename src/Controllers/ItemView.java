@@ -35,7 +35,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	Test values, until we get the backend, then we can use the Item class to populate the window
 	*/
 	 final int PRICE_PER_1=25;
-	 final String item= "chockald";
+	String item= "chockald";
 
 
 	 @FXML
@@ -133,7 +133,13 @@ public class ItemView extends AnchorPane implements Initializable {
 	Class constructor
 	TODO make it ask for an Item element, and connect it with the component
 	 */
-	public ItemView(){
+	public ItemView(String item){
+		/*
+		Replace with Item object, when backend arrives
+		 */
+
+		this.item=item;
+
 		FXMLLoader fxmlLoader =
 				new FXMLLoader(getClass().getResource("FXMLFiles/ItemView.fxml"));
 

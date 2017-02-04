@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="545.0" prefWidth="754.0" stylesheets="ItemsGrid.css" type="ScrollPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane fx:id="anchorPane" maxWidth="753.0" minHeight="240.0" minWidth="717.0" prefHeight="544.0" prefWidth="749.0">
+         <children>
+            <GridPane fx:id="container" gridLinesVisible="true" layoutX="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="749.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="never" minWidth="239" prefWidth="239.0" />
+                <ColumnConstraints hgrow="never" minWidth="239.0" prefWidth="239.0" />
+                <ColumnConstraints hgrow="never" minWidth="239.0" prefWidth="239.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="310.0" minHeight="310.0" prefHeight="310.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </content>
+</fx:root>
