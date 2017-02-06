@@ -40,6 +40,7 @@
             <Image url="@../Icons/logo.png" />
           </image>
         </ImageView>
+        <Label id="bakeryLbl" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="36.0" layoutY="95.0" style="-fx-cursor: hand;" text="Bageri">
           <font>
             <Font name="System Bold" size="15.0" fx:id="x1" />
           </font>
@@ -51,6 +52,7 @@
             </ImageView>
           </graphic>
         </Label>
+        <Label fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="509.0" style="-fx-cursor: hand;" text="Skafferi">
           <graphic>
             <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -59,6 +61,7 @@
             </ImageView>
           </graphic>
         </Label>
+        <Label fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="19.0" layoutY="197.0" style="-fx-cursor: hand;" text="Frukt &amp; Grönt">
           <graphic>
             <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -67,6 +70,7 @@
             </ImageView>
           </graphic>
         </Label>
+        <Label fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="29.0" layoutY="300.0" style="-fx-cursor: hand;" text="Kött &amp; Fisk">
           <graphic>
             <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -75,6 +79,7 @@
             </ImageView>
           </graphic>
         </Label>
+        <Label id="lblMeat" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="404.0" style="-fx-cursor: hand;" text="Mejeri">
           <graphic>
             <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -123,6 +128,7 @@
           </graphic>
         </Label>
         <Button fx:id="btnSearch" font="$x3" layoutX="616.0" layoutY="24.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" />
+        <Button id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" font="$x3" layoutX="844.0" layoutY="657.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="172.0" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" />
       </children>
     </AnchorPane>
   </children>
