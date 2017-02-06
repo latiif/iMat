@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <AnchorPane prefHeight="700.0" prefWidth="1050.0" AnchorPane.bottomAnchor="1.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.5">
+      <children>
+        <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Icons/logo.png" />
+          </image>
+        </ImageView>
+        <Label layoutX="22.0" layoutY="77.0" text="Välj avdelning:">
+          <font>
+            <Font name="System Bold" size="14.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label id="bakeryLbl" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="30.0" layoutY="104.0" text="Bageri">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/bakery-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="33.0" layoutY="503.0" text="Skafferi">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/pantry-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="21.0" layoutY="205.0" text="Frukt &amp; Grönt">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/veggies-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="27.0" layoutY="306.0" text="Kött &amp; Fisk">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/meat-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label id="lblMeat" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="31.0" layoutY="403.0" text="Mejeri">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/milk-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="30.0" layoutY="602.0" text="Godis">
+          <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/candy-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="887.0" layoutY="5.0" text="Favoriter">
+          <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/fav-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label id="lblMeat" fx:id="lblNote" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="963.0" layoutY="5.0" text="Inköpslistor">
+          <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/list-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <Label id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="793.0" layoutY="5.0" text="Min historik">
+          <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/history-icon.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+        <TextField fx:id="searchField" layoutX="225.0" layoutY="25.0" prefHeight="40.0" prefWidth="366.0" promptText="Skriv ett sökord..." style="-fx-font-size: 15px;" />
+        <Button fx:id="btnSearch" layoutX="609.0" layoutY="28.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" text="Sök">
+          <font>
+            <Font size="15.0" />
+          </font>
+        </Button>
+        <Button contentDisplay="RIGHT" layoutX="896.0" layoutY="650.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="135.0" text="Gå till Kassan">
+          <font>
+            <Font name="System Bold" size="15.0" />
+          </font>
+        </Button>
+        <Label contentDisplay="RIGHT" layoutX="826.0" layoutY="115.0" text="Min varukorg">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+          <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Icons/shopping-cart.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Label>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>
