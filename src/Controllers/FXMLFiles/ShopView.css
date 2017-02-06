@@ -1,0 +1,13 @@
+#btnCheckout {
+	-fx-base: green;
+}
+#btnSearch {
+	-fx-base: #FFF;
+}
+.button{
+  -fx-background: rgb(0,0,0);
+  -fx-border-color: transparent;
+  -fx-background-radius: 10px;
+  -fx-shadow-highlight-color : transparent;
+  -fx-outer-border : transparent;
+ -fx-inner-border : transparent;}
