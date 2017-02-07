@@ -9,127 +9,129 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet ShopView.css?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1050.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1050.0" stylesheets="@ShopView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="2.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.5">
       <children>
-        <Pane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;" />
-        <Pane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;">
+        <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;">
+               <children>
+              <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
+                <graphic>
+                  <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/pantry-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="sideCategory" fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="21.0" layoutY="113.0" style="-fx-cursor: hand;" text="Frukt &amp; Grönt" AnchorPane.leftAnchor="21.0">
+                <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/veggies-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="sideCategory" fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="30.0" layoutY="215.0" style="-fx-cursor: hand;" text="Kött &amp; Fisk" AnchorPane.leftAnchor="30.0">
+                <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/meat-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="sideCategory" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="38.0" layoutY="314.0" style="-fx-cursor: hand;" text="Mejeri" AnchorPane.leftAnchor="38.0">
+                <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/milk-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="514.0" style="-fx-cursor: hand;" text="Godis" AnchorPane.leftAnchor="36.0">
+                <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/candy-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="39.0" layoutY="14.0" style="-fx-cursor: hand;" text="Bageri" AnchorPane.leftAnchor="39.0">
+                <font>
+                  <Font size="15.0" fx:id="x1" />
+                </font>
+                <graphic>
+                  <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/bakery-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+               </children></AnchorPane>
+        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;">
           <children>
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="LEFT" focusTraversable="false" layoutX="37.0" layoutY="14.0" text="Min varukorg">
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="LEFT" focusTraversable="false" layoutX="37.0" layoutY="14.0" text="Min varukorg" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="15.0">
               <font>
-                <Font name="System Bold" size="20.0" fx:id="x3" />
+                <Font size="20.0" />
               </font>
               <graphic>
-                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                   <image>
                     <Image url="@../Icons/shopping-cart.png" />
                   </image>
                 </ImageView>
               </graphic>
             </Label>
+              <Button id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="31.0" layoutY="573.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="172.0" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
           </children>
-        </Pane>
-        <Pane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;">
+        </AnchorPane>
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;">
           <children>
-            <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" layoutX="234.0" layoutY="22.0" prefHeight="40.0" prefWidth="366.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" />
+            <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" layoutX="234.0" layoutY="22.0" prefHeight="40.0" prefWidth="366.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
+              <Button fx:id="btnSearch" layoutX="607.0" layoutY="22.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
+              <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="879.0" layoutY="9.0" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.topAnchor="10.0">
+                <font>
+                  <Font size="14.0" fx:id="x2" />
+                </font>
+                <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/fav-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="781.0" layoutY="9.0" style="-fx-cursor: hand;" text="Min historik" AnchorPane.topAnchor="10.0">
+                <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/history-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <Label id="lblMeat" fx:id="lblNote" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="955.0" layoutY="9.0" style="-fx-cursor: hand;" text="Inköpslistor" AnchorPane.topAnchor="10.0">
+                <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../Icons/list-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Label>
+              <ImageView fitHeight="65.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="13.0">
+                <image>
+                  <Image url="@../Icons/logo.png" />
+                </image>
+              </ImageView>
           </children>
-        </Pane>
-        <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="30.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../Icons/logo.png" />
-          </image>
-        </ImageView>
-        <Label id="bakeryLbl" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="36.0" layoutY="95.0" style="-fx-cursor: hand;" text="Bageri">
-          <font>
-            <Font name="System Bold" size="15.0" fx:id="x1" />
-          </font>
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/bakery-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="509.0" style="-fx-cursor: hand;" text="Skafferi">
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/pantry-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="19.0" layoutY="197.0" style="-fx-cursor: hand;" text="Frukt &amp; Grönt">
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/veggies-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="29.0" layoutY="300.0" style="-fx-cursor: hand;" text="Kött &amp; Fisk">
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/meat-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label id="lblMeat" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="404.0" style="-fx-cursor: hand;" text="Mejeri">
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/milk-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="617.0" style="-fx-cursor: hand;" text="Godis">
-          <graphic>
-            <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/candy-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="892.0" layoutY="9.0" style="-fx-cursor: hand;" text="Favoriter">
-          <font>
-            <Font name="System Bold" size="14.0" fx:id="x2" />
-          </font>
-          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/fav-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label id="lblMeat" fx:id="lblNote" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="968.0" layoutY="9.0" style="-fx-cursor: hand;" text="Inköpslistor">
-          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/list-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Label id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="798.0" layoutY="9.0" style="-fx-cursor: hand;" text="Min historik">
-          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../Icons/history-icon.png" />
-              </image>
-            </ImageView>
-          </graphic>
-        </Label>
-        <Button fx:id="btnSearch" font="$x3" layoutX="616.0" layoutY="24.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" />
-        <Button id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" font="$x3" layoutX="844.0" layoutY="657.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="172.0" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" />
+        </AnchorPane>
       </children>
     </AnchorPane>
   </children>
-</AnchorPane>
+</fx:root>

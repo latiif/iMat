@@ -1,13 +1,33 @@
 #btnCheckout {
 	-fx-base: green;
+	-fx-font-size: 20px;
 }
 #btnSearch {
 	-fx-base: #FFF;
+	-fx-font-size: 20px;
 }
+
+#sideCategory{
+	-fx-font-weight : bold;
+}
+
 .button{
   -fx-background: rgb(0,0,0);
   -fx-border-color: transparent;
   -fx-background-radius: 10px;
   -fx-shadow-highlight-color : transparent;
   -fx-outer-border : transparent;
- -fx-inner-border : transparent;}
+ -fx-inner-border : transparent;
+}
+
+.root{
+		-fx-font-family: 'Roboto';
+		-fx-font-size:13px;
+}
+
+
+@font-face {
+	font-family: Roboto;
+ src: url('@../Fonts/RobotTTF/Roboto-Medium.ttf');
+
+}
