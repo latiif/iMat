@@ -1,4 +1,4 @@
-package FavoriteManager;
+package Commons;
 
 import java.util.ArrayList;
 import java.util.List;

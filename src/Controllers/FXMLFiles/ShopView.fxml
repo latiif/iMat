@@ -9,11 +9,11 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet ShopView.css?>
 
-<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1050.0" stylesheets="@ShopView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1100.0" stylesheets="@ShopView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="2.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.5">
+    <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;">
+        <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="83.0">
                <children>
               <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
                 <graphic>
@@ -73,8 +73,9 @@
                 </graphic>
               </Label>
                </children></AnchorPane>
-        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;">
+        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
           <children>
+                  <AnchorPane fx:id="paneCartList" layoutX="4.0" layoutY="71.0" prefHeight="484.0" prefWidth="250.0" />
             <Label alignment="BOTTOM_RIGHT" contentDisplay="LEFT" focusTraversable="false" layoutX="37.0" layoutY="14.0" text="Min varukorg" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="15.0">
               <font>
                 <Font size="20.0" />
@@ -90,11 +91,11 @@
               <Button id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="31.0" layoutY="573.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="172.0" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
           </children>
         </AnchorPane>
-        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;">
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
             <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" layoutX="234.0" layoutY="22.0" prefHeight="40.0" prefWidth="366.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
               <Button fx:id="btnSearch" layoutX="607.0" layoutY="22.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
-              <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="879.0" layoutY="9.0" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.topAnchor="10.0">
+              <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="879.0" layoutY="9.0" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="10.0">
                 <font>
                   <Font size="14.0" fx:id="x2" />
                 </font>
@@ -106,7 +107,7 @@
                   </ImageView>
                 </graphic>
               </Label>
-              <Label id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="781.0" layoutY="9.0" style="-fx-cursor: hand;" text="Min historik" AnchorPane.topAnchor="10.0">
+              <Label id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="781.0" layoutY="9.0" style="-fx-cursor: hand;" text="Min historik" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="10.0">
                 <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -115,7 +116,7 @@
                   </ImageView>
                 </graphic>
               </Label>
-              <Label id="lblMeat" fx:id="lblNote" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="955.0" layoutY="9.0" style="-fx-cursor: hand;" text="Inköpslistor" AnchorPane.topAnchor="10.0">
+              <Label id="lblMeat" fx:id="lblNote" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="955.0" layoutY="9.0" style="-fx-cursor: hand;" text="Inköpslistor" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
                 <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -131,6 +132,7 @@
               </ImageView>
           </children>
         </AnchorPane>
+            <AnchorPane fx:id="paneMain" layoutX="139.0" layoutY="91.0" prefHeight="590.0" prefWidth="558.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="90.0" />
       </children>
     </AnchorPane>
   </children>

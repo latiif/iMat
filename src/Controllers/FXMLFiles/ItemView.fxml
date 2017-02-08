@@ -11,7 +11,7 @@
 <?scenebuilder-classpath-element ../../../src?>
 <?scenebuilder-stylesheet ItemView.css?>
 
-<fx:root type="AnchorPane" fx:id="ElementItem" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ItemView.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<fx:root fx:id="ElementItem" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ItemView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane fx:id="ItemView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="239.0" style="-fx-background-color: white;" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -33,14 +33,14 @@
             <Font size="15.0" />
           </font>
         </Label>
-        <Button fx:id="btnPlus" alignment="CENTER" contentDisplay="CENTER" layoutY="226.0" mnemonicParsing="false" onAction="#handleBtnPlusAction" prefHeight="25.0" prefWidth="29.0" text="+" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.rightAnchor="64.0">
+        <Button fx:id="btnPlus" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutY="226.0" mnemonicParsing="false" onAction="#handleBtnPlusAction" prefHeight="25.0" prefWidth="29.0" text="+" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.rightAnchor="64.0">
           <font>
             <Font size="12.0" />
           </font>
         </Button>
-        <TextField fx:id="txtAmount" alignment="CENTER" layoutX="100.0" layoutY="223.0" prefHeight="25.0" prefWidth="42.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 15px;" text="1" />
-        <Button fx:id="btnMinus" layoutY="225.0" mnemonicParsing="false" onAction="#handleBtnMinusAction" prefHeight="25.0" prefWidth="29.0" text="-" AnchorPane.leftAnchor="68.0" />
-        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="41.0" prefWidth="163.0" styleClass="btnAdd" text="Lägg i varukorgen" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="39.0">
+        <TextField fx:id="txtAmount" alignment="CENTER" focusTraversable="false" layoutX="100.0" layoutY="223.0" prefHeight="25.0" prefWidth="42.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 15px;" text="1" />
+        <Button fx:id="btnMinus" focusTraversable="false" layoutY="225.0" mnemonicParsing="false" onAction="#handleBtnMinusAction" prefHeight="25.0" prefWidth="29.0" text="-" AnchorPane.leftAnchor="68.0" />
+        <Button fx:id="btnAdd" focusTraversable="false" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="41.0" prefWidth="163.0" styleClass="btnAdd" text="Lägg i varukorgen" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="39.0">
           <font>
             <Font name="System Bold" size="15.0" />
           </font>

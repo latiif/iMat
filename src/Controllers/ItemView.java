@@ -1,8 +1,7 @@
 package Controllers;
 
-import FavoriteManager.FavManager;
-import javafx.animation.FadeTransition;
-import javafx.application.Application;
+import Commons.CartManager;
+import Commons.FavManager;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -10,14 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
 
 
 import java.io.IOException;
@@ -30,12 +27,18 @@ import java.util.ResourceBundle;
 public class ItemView extends AnchorPane implements Initializable {
 
 
+
+
+
 	/*
 
 	Test values, until we get the backend, then we can use the Item class to populate the window
 	*/
 	 final int PRICE_PER_1=25;
 	String item= "chockald";
+
+
+
 
 
 	 @FXML
@@ -125,7 +128,8 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		thread.start();
 
-		//come up with a way to handle adding an element
+		//come up with a way to handle adding an element, UPDATE: maybe this works?
+		CartManager.getMainCartList().AddItem(this);
 	}
 
 
@@ -185,6 +189,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		txtAmount.setText("1");
+		lblName.setText(item);
 
 
 		//Making sure the user does not input non-numeric non-integer values as amount
@@ -210,5 +215,22 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		}
 
+	}
+
+
+	public String getItemName(){
+		return this.item;
+	}
+
+	public String getUnit(){
+		return "st";
+	}
+
+	public int getUnitPrice(){
+		return PRICE_PER_1;
+	}
+
+	public int getQuantity(){
+		return Integer.parseInt(txtAmount.getText());
 	}
 }

@@ -1,0 +1,38 @@
+
+
+#btnRemoveAll{
+	   -fx-background-color: linear-gradient(#ff5400, #be1d00);
+     -fx-background-radius: 30;
+     -fx-background-insets: 0;
+     -fx-text-fill: white;
+		 -fx-font-weight: lighter;
+}
+
+#chkSave{
+		-fx-font-family: 'Roboto-Regular';
+}
+
+.label{
+	-fx-font-size: 13px;
+			-fx-font-family: 'Roboto-Regular';
+}
+
+#lblCost{
+	-fx-font-family:'Roboto';
+}
+
+
+.root{
+		-fx-font-family: 'Roboto';
+		-fx-font-size:13px;
+}
+
+@font-face {
+	font-family: Roboto;
+ src: url('@../Fonts/RobotTTF/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: Roboto-Regular;
+ src: url('@../Fonts/RobotTTF/Roboto-Regular.ttf');
+}
