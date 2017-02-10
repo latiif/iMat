@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -24,7 +25,8 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 	@FXML
 	AnchorPane anchorPane;
 
-	@FXML GridPane container;
+	@FXML
+	FlowPane container;
 
 	private int rows=0, columns =0;
 
@@ -45,6 +47,7 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 
 		ItemView t= new ItemView(item);
 
+		/*
 		if (columns ==3){
 			columns =0;
 			container.addRow(++rows);
@@ -55,6 +58,7 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 
 		GridPane.setRowIndex(t,rows);
 		GridPane.setColumnIndex(t, columns++);
+		*/
 
 
 		System.out.println(rows + " "+ columns);
@@ -62,6 +66,7 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 		container.getChildren().add(t);
 
 	}
+
 
 
 	public ItemsGrid(){
@@ -82,9 +87,11 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		anchorPane.setMinWidth(ITEMS_PER_ROW*ITEMVIEW_WIDTH);
-		anchorPane.setPrefWidth(ITEMS_PER_ROW*ITEMVIEW_WIDTH);
-		anchorPane.setMaxWidth(ITEMS_PER_ROW*ITEMVIEW_WIDTH);
+
+		container.prefWidthProperty().bind(this.widthProperty());
+		container.prefHeightProperty().bind(this.heightProperty());
+
+
 
 	}
 }

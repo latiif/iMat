@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
@@ -11,7 +12,7 @@
 <?scenebuilder-classpath-element ../../../src?>
 <?scenebuilder-stylesheet ItemView.css?>
 
-<fx:root fx:id="ElementItem" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ItemView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="ElementItem" fx:id="ElementItem" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ItemView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane fx:id="ItemView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="239.0" style="-fx-background-color: white;" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -22,7 +23,7 @@
         </ImageView>
         <Label fx:id="lblName" alignment="CENTER" layoutY="159.0" prefHeight="16.0" prefWidth="163.0" style="-fx-text-transform: uppercase;" text="Item name goes here" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0">
           <font>
-            <Font name="System Bold" size="16.0" />
+            <Font size="16.0" />
           </font>
           <stylesheets>
             <URL value="@ItemView.css" />
@@ -66,7 +67,7 @@
       <children>
         <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="226.0" text="2 st choklad" textAlignment="CENTER" textFill="BLACK" wrapText="true" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
           <font>
-            <Font name="System Bold" size="25.0" fx:id="x1" />
+            <Font size="25.0" fx:id="x1" />
           </font>
         </Label>
         <Label fx:id="lblMessage1" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="6.0" layoutY="211.0" prefHeight="98.0" prefWidth="226.0" text="har lagts i varukorgen" textAlignment="CENTER" textFill="BLACK" textOverrun="WORD_ELLIPSIS" wrapText="true" />

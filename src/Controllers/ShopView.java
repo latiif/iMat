@@ -48,6 +48,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		itemsGrid.addItem("choco");
 		itemsGrid.addItem("latte");
 		itemsGrid.addItem("banana");
+		itemsGrid.addItem("Yoghurt");
 		paneMain.getChildren().add(itemsGrid);
 	}
 }

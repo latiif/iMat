@@ -1,10 +1,30 @@
 .root{
     -fx-base: white;
-    -fx-background-color: white;		
+    -fx-background-color: white;
+    -fx-font-family: 'Roboto-Regular';		
+}
+
+#ElementItemNormal{
+ 
+  -fx-border-color: rgb(224, 176, 255);
+  -fx-border-width: 1;
+  -fx-border-radius: 5px;
+  -fx-border-style: solid;
+ 
+  
+}
+
+#ElementItemFavorited{
+  -fx-border-color: rgb(224, 176, 255);
+  -fx-border-width: 1;
+  -fx-border-radius: 5px;
+  -fx-border-style: solid;
+   -fx-effect: dropshadow( gaussian, rgb( 255, 0, 0, 0.5 ),10, 0, 0, 0 );
 }
 
 #btnAdd {
-	-fx-base: green;
+	-fx-base: rgb(224, 176, 255);
+	-fx-font-family: 'Roboto-Regular';
 }
 
 #lblFav {
@@ -20,3 +40,9 @@
  -fx-inner-border : transparent;
 -fx-cursor: hand;
 }
+
+@font-face {
+	font-family: Roboto-Regular;
+ src: url('@../Fonts/RobotTTF/Roboto-Regular.ttf');
+}
+

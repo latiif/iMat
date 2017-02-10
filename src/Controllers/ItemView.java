@@ -166,16 +166,34 @@ public class ItemView extends AnchorPane implements Initializable {
 	@FXML
 	private void handleFavAction(MouseEvent event){
 
+		event.consume();
 		System.out.println("Clicked!");
 
+
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
-		if (FavManager.getInstance().deal(this.item)){
+		if (stylize(FavManager.getInstance().deal(this.item))){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
 			lblFav.setText("Ta bort från favorit");
+
 		}else {
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_DISABLED))));
 			lblFav.setText("Spara som favorit!");
 		}
+
+
+	}
+
+
+
+	private boolean stylize(boolean isFav){
+		if (isFav){
+			this.setId("ElementItemFavorited");
+		}else
+		{
+			this.setId("ElementItemNormal");
+		}
+
+		return isFav;
 	}
 
 
@@ -204,10 +222,9 @@ public class ItemView extends AnchorPane implements Initializable {
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
 
 
-		if (FavManager.getInstance().isFav(this.item)){
+		if (stylize(FavManager.getInstance().isFav(this.item))){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
 			lblFav.setText("Ta bort från favorit");
-
 		}
 		else {
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_DISABLED))));

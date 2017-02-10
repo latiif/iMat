@@ -1,5 +1,7 @@
+import Commons.FavManager;
 import Controllers.*;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -7,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * Created by latiif on 2/1/17.
@@ -29,6 +32,15 @@ public class Main extends Application{
 
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
+
+
+		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent event) {
+				FavManager.getInstance().saveFavorites();
+			}
+		});
+
 	}
 
 	private static void showError(Thread thread, Throwable throwable){
