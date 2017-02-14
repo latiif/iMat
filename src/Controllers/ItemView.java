@@ -15,8 +15,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,8 +38,7 @@ public class ItemView extends AnchorPane implements Initializable {
 
 	Test values, until we get the backend, then we can use the Item class to populate the window
 	*/
-	 final int PRICE_PER_1=25;
-	String item= "chockald";
+	 final private Product item;
 
 
 
@@ -43,6 +46,8 @@ public class ItemView extends AnchorPane implements Initializable {
 
 	 @FXML
 	 private AnchorPane ItemView,BoughtPane;
+	 @FXML
+	 private ImageView imgItem;
 
 	@FXML
 	private Label lblName,lblPriceInfo,lblFav,lblMessage;
@@ -60,7 +65,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	private void updatePriceAmountLabel(){
 		lblPriceInfo.setText(format(Integer.parseInt(txtAmount.getText())));
 
-		lblMessage.setText(txtAmount.getText()+ "st " + item);
+		lblMessage.setText(txtAmount.getText()+ "st " + item.getName());
 	}
 
 
@@ -88,7 +93,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	TODO: Make unit dynamic and not static
 	 */
 	private String format(int amount){
-		return "Pris: "+(PRICE_PER_1*amount + " kr /"+amount+" st");
+		return "Pris: "+(item.getPrice()*amount + " kr /"+amount+" "+item.getUnitSuffix());
 	}
 
 
@@ -137,7 +142,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	Class constructor
 	TODO make it ask for an Item element, and connect it with the component
 	 */
-	public ItemView(String item){
+	public ItemView(Product item){
 		/*
 		Replace with Item object, when backend arrives
 		 */
@@ -207,7 +212,18 @@ public class ItemView extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		txtAmount.setText("1");
-		lblName.setText(item);
+		lblName.setText(item.getName());
+		//System.out.println(IMatDataHandler.getInstance().imatDirectory()+"/images/"+item.getImageName());
+
+		File file= new File(IMatDataHandler.getInstance().imatDirectory()+"/images/"+item.getImageName());
+
+		imgItem.setImage(new Image(file.toURI().toString(),true));
+
+
+		updatePriceAmountLabel();
+
+
+
 
 
 		//Making sure the user does not input non-numeric non-integer values as amount
@@ -236,15 +252,27 @@ public class ItemView extends AnchorPane implements Initializable {
 
 
 	public String getItemName(){
-		return this.item;
+		return this.item.getName();
+	}
+
+	public ProductCategory getCategory(){
+		return this.item.getCategory();
+	}
+
+	public void show(){
+		this.setVisible(true);
+	}
+
+	public void hide(){
+		this.setVisible(false);
 	}
 
 	public String getUnit(){
 		return "st";
 	}
 
-	public int getUnitPrice(){
-		return PRICE_PER_1;
+	public double getUnitPrice(){
+		return item.getPrice();
 	}
 
 	public int getQuantity(){

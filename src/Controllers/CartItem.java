@@ -30,9 +30,9 @@ public class CartItem extends AnchorPane implements Initializable {
 	 */
 	private
 	String itemName, itemUnit;
-	private int itemPrice, quantity;
+	private double itemPrice, quantity;
 
-	public int cost;
+	public double cost;
 
 
 	public String getItemName() {
@@ -48,7 +48,7 @@ public class CartItem extends AnchorPane implements Initializable {
 	/*
 		TODO:Should take an Item object as argument
 	 */
-	public CartItem(String itemName, String itemUnit, int itemPrice, int quantity) {
+	public CartItem(String itemName, String itemUnit, double itemPrice, double quantity) {
 
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;

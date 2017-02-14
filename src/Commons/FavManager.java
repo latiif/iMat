@@ -1,7 +1,10 @@
 package Commons;
 
 import org.apache.commons.io.FileUtils;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,19 +19,19 @@ public class FavManager {
 
 
 	//CHANGE TO ITEMS WHEN BACKEND COMES
-	private  List<String> list = new ArrayList<>();
 
 
 
-	public boolean deal(String item){
+
+	public boolean deal(Product item){
 
 
-		if (list.contains(item)){
-			list.remove(item);
+		if (IMatDataHandler.getInstance().isFavorite(item)){
+			IMatDataHandler.getInstance().removeFavorite(item);
 			return false;
 		}
 		else {
-			list.add(item);
+			IMatDataHandler.getInstance().addFavorite(item);
 			return true;
 		}
 
@@ -36,8 +39,8 @@ public class FavManager {
 
 
 
-	public  boolean isFav(String item){
-		return list.contains(item);
+	public  boolean isFav(Product item){
+		return IMatDataHandler.getInstance().isFavorite(item);
 	}
 
 
@@ -50,38 +53,11 @@ public class FavManager {
 	}
 
 	private FavManager(){
-		File input=new File("favs.dat");
-		String data;
-		try {
-			data = FileUtils.readFileToString(input,"UTF-8");
-		} catch (IOException e) {
-			data=null;
-			System.out.println("File not found");
-			return;
-		}
-
-		list.clear();
-		list= new ArrayList<String >(Arrays.asList(data.split(",")));
-
 
 	}
 
 
 	public void saveFavorites(){
-
-		StringBuilder stringBuilder= new StringBuilder();
-		for(String item: list){
-			stringBuilder=stringBuilder.append(item).append(",");
-		}
-
-		System.out.println(stringBuilder.toString());
-
-		File output= new File("favs.dat");
-		try {
-			FileUtils.writeStringToFile(output,stringBuilder.toString(),"UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 
 	}
 }

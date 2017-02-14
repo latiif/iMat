@@ -16,11 +16,7 @@
   <children>
     <AnchorPane fx:id="ItemView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="239.0" style="-fx-background-color: white;" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <ImageView fx:id="imgItem" fitHeight="122.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="93.64" AnchorPane.topAnchor="37.0">
-          <image>
-            <Image url="img.jpg" />
-          </image>
-        </ImageView>
+        <ImageView fx:id="imgItem" fitHeight="122.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="93.64" AnchorPane.topAnchor="37.0" />
         <Label fx:id="lblName" alignment="CENTER" layoutY="159.0" prefHeight="16.0" prefWidth="163.0" style="-fx-text-transform: uppercase;" text="Item name goes here" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0">
           <font>
             <Font size="16.0" />

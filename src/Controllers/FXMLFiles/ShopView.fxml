@@ -13,7 +13,21 @@
   <children>
     <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="83.0">
+            <AnchorPane fx:id="stackContainer" layoutX="137.0" layoutY="100.0" prefHeight="583.0" prefWidth="706.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="100.0">
+               <children>
+                  <StackPane fx:id="stack" prefHeight="581.0" prefWidth="706.0" style="-fx-background-color: rgb(255,255,255);;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="welcomePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label id="lblWelcome" layoutX="14.0" layoutY="14.0" text="Välkommen!" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneGrid" prefHeight="570.0" prefWidth="706.0" style="-fx-background-color: white;" />
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+        <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
               <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
                 <graphic>
@@ -60,7 +74,7 @@
                   </ImageView>
                 </graphic>
               </Label>
-              <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="39.0" layoutY="14.0" style="-fx-cursor: hand;" text="Bageri" AnchorPane.leftAnchor="39.0">
+              <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="39.0" layoutY="14.0" onMouseClicked="#lblBakeryOnAction" style="-fx-cursor: hand;" text="Bageri" AnchorPane.leftAnchor="39.0">
                 <font>
                   <Font size="15.0" fx:id="x1" />
                 </font>
@@ -73,7 +87,7 @@
                 </graphic>
               </Label>
                </children></AnchorPane>
-        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
           <children>
                   <AnchorPane fx:id="paneCartList" layoutX="4.0" layoutY="71.0" prefHeight="484.0" prefWidth="250.0" />
             <Label alignment="BOTTOM_RIGHT" contentDisplay="LEFT" focusTraversable="false" layoutX="37.0" layoutY="14.0" text="Min varukorg" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="15.0">
@@ -93,8 +107,12 @@
         </AnchorPane>
         <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
-            <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" layoutX="234.0" layoutY="22.0" prefHeight="40.0" prefWidth="366.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
-              <Button fx:id="btnSearch" layoutX="607.0" layoutY="22.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" AnchorPane.bottomAnchor="22.0" AnchorPane.topAnchor="22.0" />
+                  <HBox alignment="CENTER" layoutX="174.0" prefHeight="100.0" prefWidth="651.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="275.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                  <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" onAction="#searchOnAction" prefHeight="40.0" prefWidth="366.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" />
+                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" />
+                     </children>
+                  </HBox>
               <Label id="lblMeat" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="879.0" layoutY="9.0" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="10.0">
                 <font>
                   <Font size="14.0" fx:id="x2" />
@@ -132,7 +150,6 @@
               </ImageView>
           </children>
         </AnchorPane>
-            <AnchorPane fx:id="paneMain" layoutX="139.0" layoutY="91.0" prefHeight="590.0" prefWidth="558.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="90.0" />
       </children>
     </AnchorPane>
   </children>

@@ -23,6 +23,12 @@
 .root{
 		-fx-font-family: 'Roboto';
 		-fx-font-size:13px;
+		-fx-font-weight: bold;
+}
+
+#lblWelcome{
+	-fx-font-family: 'Roboto';
+	-fx-font-size: 36px;
 }
 
 

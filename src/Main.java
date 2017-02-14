@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
  * Created by latiif on 2/1/17.
@@ -37,7 +38,7 @@ public class Main extends Application{
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent event) {
-				FavManager.getInstance().saveFavorites();
+				IMatDataHandler.getInstance().shutDown();
 			}
 		});
 

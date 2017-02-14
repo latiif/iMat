@@ -1,22 +1,40 @@
 package Controllers;
 
+import Commons.Inventory;
+import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+
+import org.controlsfx.control.textfield.TextFields;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  * Created by latiif on 2/6/17.
  */
 public class ShopView extends AnchorPane implements Initializable {
 
-
 	@FXML
-	AnchorPane paneCartList,paneMain;
+	private Label lblBakery, lblFruit,lblMeat,lblMilk,lblPantry,lblCandy;
+
+	private ItemsGrid itemsGrid;
+	@FXML
+	AnchorPane paneCartList,paneGrid;
+	@FXML
+	private TextField searchField;
 
 	public ShopView(){
 
@@ -37,18 +55,44 @@ public class ShopView extends AnchorPane implements Initializable {
 		}
 	}
 
+
+	@FXML
+	private void searchOnAction(ActionEvent event){
+		itemsGrid.reset();
+		for (Product product: Inventory.getInstance().favFirst(IMatDataHandler.getInstance().findProducts(searchField.getText()))){
+			itemsGrid.addItem(product);
+		}
+	}
+
+	@FXML
+	private void lblBakeryOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))){
+				itemsGrid.addItem(product);
+		}
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		paneCartList.getChildren().add(new CartList());
-		ItemsGrid itemsGrid= new ItemsGrid();
+		itemsGrid= new ItemsGrid();
 		AnchorPane.setLeftAnchor(itemsGrid,0.0);
 		AnchorPane.setBottomAnchor(itemsGrid,0.0);
 		AnchorPane.setRightAnchor(itemsGrid,0.0);
 		AnchorPane.setTopAnchor(itemsGrid,0.0);
-		itemsGrid.addItem("choco");
-		itemsGrid.addItem("latte");
-		itemsGrid.addItem("banana");
-		itemsGrid.addItem("Yoghurt");
-		paneMain.getChildren().add(itemsGrid);
+
+		String t=IMatDataHandler.getInstance().getProduct(1).getName();
+
+		List products= new ArrayList();
+
+		itemsGrid.reset();
+		for(Product product: Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())){
+			itemsGrid.addItem(product);
+		}
+
+
+		//TextFields.bindAutoCompletion(searchField,Inventory.getInstance().getNames());
+
+		paneGrid.getChildren().add(itemsGrid);
 	}
 }

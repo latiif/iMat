@@ -2,13 +2,16 @@ package Controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import se.chalmers.ait.dat215.project.Product;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,11 +22,14 @@ import java.util.ResourceBundle;
 /**
  * Created by latiif on 2/4/17.
  */
-public class ItemsGrid extends ScrollPane implements Initializable {
+public class ItemsGrid extends AnchorPane implements Initializable {
 
 
 	@FXML
-	AnchorPane anchorPane;
+	AnchorPane anchorPane,paneLoadMore;
+
+	@FXML
+	ScrollPane scrollPane;
 
 	@FXML
 	FlowPane container;
@@ -35,38 +41,41 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 	private final static int ITEMVIEW_WIDTH=239;
 
 
-	private List<ItemView> items=new ArrayList<>();
+	public List<Product> items=new ArrayList<>();
 
 
+	final private int ITEMS_PER_SCREEN=20;
+
+	private int currentIndex=-1;
 
 	/*
 	Adds an Item object to the grid, creating an ItemView
-	TODO replaec String Item with Item item, when the backend arrives
 	 */
-	public void addItem(String item){
+	public void addItem(Product item){
 
-		ItemView t= new ItemView(item);
+		items.add(item);
 
-		/*
-		if (columns ==3){
-			columns =0;
-			container.addRow(++rows);
-			anchorPane.setMinHeight((rows+1)*ITEMVIEW_HEIGHT);
-
-
+		if (items.size()<ITEMS_PER_SCREEN) {
+			container.getChildren().add(new ItemView(item));
+			currentIndex++;
 		}
 
-		GridPane.setRowIndex(t,rows);
-		GridPane.setColumnIndex(t, columns++);
-		*/
 
 
-		System.out.println(rows + " "+ columns);
-
-		container.getChildren().add(t);
 
 	}
 
+
+	private void flush(){
+		for (int i=0;(currentIndex<items.size()) && (i<ITEMS_PER_SCREEN);i++,currentIndex++){
+			container.getChildren().add(new ItemView(items.get(currentIndex)));
+		}
+
+		System.out.println("Curr index:"+currentIndex);
+		if (currentIndex!=items.size()) {
+			setLoadMoreVisibilty(true);
+		}
+	}
 
 
 	public ItemsGrid(){
@@ -83,14 +92,48 @@ public class ItemsGrid extends ScrollPane implements Initializable {
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
+
+	}
+
+	public void reset(){
+		currentIndex=0;
+		items.clear();
+		container.getChildren().clear();
+		setLoadMoreVisibilty(false);
+	}
+
+
+	private void setLoadMoreVisibilty(boolean visible){
+		if (visible){
+			AnchorPane.setBottomAnchor(scrollPane,paneLoadMore.getHeight());
+			paneLoadMore.setVisible(true);
+
+		}
+		else {
+			AnchorPane.setBottomAnchor(scrollPane,0.0);
+			paneLoadMore.setVisible(false);
+		}
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		container.prefWidthProperty().bind(this.widthProperty());
-		container.prefHeightProperty().bind(this.heightProperty());
+		container.prefWidthProperty().bind(scrollPane.widthProperty());
+		container.prefHeightProperty().bind(scrollPane.heightProperty());
 
+
+
+
+
+
+		scrollPane.vvalueProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				if (newValue.doubleValue()*100>95){
+					flush();
+				}
+			}
+		});
 
 
 	}
