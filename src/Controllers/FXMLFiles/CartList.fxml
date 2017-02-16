@@ -4,15 +4,15 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="250.0" stylesheets="@CartList.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="250.0" style="-fx-background-color: #f7f4e8;" stylesheets="@CartList.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane prefHeight="398.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="272.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane prefHeight="398.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="272.0" style="-fx-background: #f7f4e8; -fx-border-color: #f7f4e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <VBox fx:id="vList" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <VBox fx:id="vList" style="-fx-background-color: #f7f4e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </content>
       </ScrollPane>
-      <Button id="btnRemoveAll" fx:id="btnRemoveAll" layoutX="162.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleRemoveAllAction" text="Töm varukorgen" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="14.0" />
-      <Label layoutX="14.0" layoutY="404.0" text="Att betala: " AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="404.0" />
-      <Label id="lblCost" fx:id="lblCost" layoutX="97.0" layoutY="404.0" text="0 kr" AnchorPane.topAnchor="404.0" />
+      <Button id="btnRemoveAll" fx:id="btnRemoveAll" layoutX="125.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleRemoveAllAction" style="-fx-cursor: hand;" text="Töm varukorg" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="1.0" />
+      <Label id="lblToPay" layoutX="12.0" layoutY="435.0" text="Att betala: " AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="435.0" />
+      <Label id="lblCost" fx:id="lblCost" layoutX="116.0" layoutY="435.0" text="0 kr" AnchorPane.topAnchor="435.0" />
    </children>
 </fx:root>

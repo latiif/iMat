@@ -1,13 +1,26 @@
 
 
 #btnRemoveAll{
-	   -fx-background-color: linear-gradient(#ff5400, #be1d00);
+	 /*   -fx-background-color: linear-gradient(#ff5400, #be1d00);
      -fx-background-radius: 30;
      -fx-background-insets: 0;
      -fx-text-fill: white;
-		 -fx-font-weight: lighter;
+		 -fx-font-weight: lighter;*/
+		 -fx-base: #ff5400;
+		 -fx-text-fill: white;
 }
-
+#lblToPay, #lblCost{
+	-fx-font-size: 18px;
+}
+.button{
+  -fx-background: rgb(0,0,0);
+  -fx-font-weight: bold;
+  -fx-border-color: transparent;
+  -fx-background-radius: 12px;
+  -fx-shadow-highlight-color : transparent;
+  -fx-outer-border : transparent;
+ -fx-inner-border : transparent;
+}
 #chkSave{
 		-fx-font-family: 'Roboto-Regular';
 }
