@@ -7,7 +7,11 @@
 <?scenebuilder-classpath-element ../../../src?>
 <?scenebuilder-stylesheet ItemCart.css?>
 
+<<<<<<< HEAD
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="245.0" style="-fx-background-color: f7f4e8;" stylesheets="@ItemCart.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+=======
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="245.0" stylesheets="@ItemCart.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> origin/GUI-design
    <children>
       <Label id="lblInfo" fx:id="lblInfo" layoutX="14.0" layoutY="9.0" text="Chocolate" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="9.0" />
       <Button fx:id="btnRemove" focusTraversable="false" layoutX="202.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleRemoveAction" AnchorPane.rightAnchor="7.0">

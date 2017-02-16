@@ -9,10 +9,16 @@
 
 #sideCategory{
 	-fx-font-weight : bold;
+	-fx-font-size: 16px;
 }
 
+#lblFav, #lblUser, #lblHistory {
+	-fx-font-weight: bold;
+	-fx-font-size: 16px;
+}
 .button{
   -fx-background: rgb(0,0,0);
+  -fx-font-weight: bold;
   -fx-border-color: transparent;
   -fx-background-radius: 10px;
   -fx-shadow-highlight-color : transparent;
