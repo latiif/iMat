@@ -19,7 +19,15 @@
   -fx-border-width: 1;
   -fx-border-radius: 5px;
   -fx-border-style: solid;
-   -fx-effect: dropshadow( gaussian, rgb( 255, 0, 0, 0.5 ),10, 0, 0, 0 );
+   -fx-effect: dropshadow( gaussian, rgb( 255, 0, 0, 0.75 ),10, 0, 0, 0 );
+}
+
+#ElementItemFeatured{
+  -fx-border-color: rgb(224, 176, 255);
+  -fx-border-width: 1;
+  -fx-border-radius: 5px;
+  -fx-border-style: solid;
+   -fx-effect: dropshadow( gaussian, rgb( 255, 255, 0, 0.5 ),10, 0, 0, 0 );
 }
 
 #btnAdd {

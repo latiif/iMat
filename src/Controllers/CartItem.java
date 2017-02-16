@@ -30,7 +30,8 @@ public class CartItem extends AnchorPane implements Initializable {
 	 */
 	private
 	String itemName, itemUnit;
-	private double itemPrice, quantity;
+	private double itemPrice;
+	private int quantity;
 
 	public double cost;
 
@@ -48,7 +49,7 @@ public class CartItem extends AnchorPane implements Initializable {
 	/*
 		TODO:Should take an Item object as argument
 	 */
-	public CartItem(String itemName, String itemUnit, double itemPrice, double quantity) {
+	public CartItem(String itemName, String itemUnit, double itemPrice, int quantity) {
 
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
@@ -84,9 +85,21 @@ public class CartItem extends AnchorPane implements Initializable {
 		});
 	}
 
+
+	private String getCost(double price, double quantity){
+		double cost = price*quantity;
+		return String.format("%.2f",cost);
+	}
 	private void reformat() {
-		lblInfo.setText(quantity + " " + itemUnit + " " + itemName);
-		cost = quantity * itemPrice;
+		if (itemUnit.equals("kg")){
+			lblInfo.setText(quantity + " " + "hg" + " " + itemName);
+			cost=Double.parseDouble(getCost(itemPrice/10,quantity));
+		}
+		else {
+			lblInfo.setText(quantity + " " + itemUnit + " " + itemName);
+			cost=Double.parseDouble(getCost(itemPrice,quantity));
+		}
+
 		lblPrice.setText(cost + " kr");
 	}
 

@@ -23,8 +23,9 @@
 
 
 .root{
-		-fx-font-family: 'Roboto';
+		-fx-font-family: 'Roboto-Regular';
 		-fx-font-size:13px;
+ 		-fx-font-weight: lighter;
 }
 
 @font-face {

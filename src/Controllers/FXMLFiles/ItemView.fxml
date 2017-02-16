@@ -14,7 +14,7 @@
 
 <fx:root id="ElementItem" fx:id="ElementItem" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ItemView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane fx:id="ItemView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="239.0" style="-fx-background-color: white;" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <AnchorPane fx:id="ItemView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="239.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <ImageView fx:id="imgItem" fitHeight="122.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="93.64" AnchorPane.topAnchor="37.0" />
         <Label fx:id="lblName" alignment="CENTER" layoutY="159.0" prefHeight="16.0" prefWidth="163.0" style="-fx-text-transform: uppercase;" text="Item name goes here" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0">
@@ -61,13 +61,13 @@
     </AnchorPane>
     <AnchorPane fx:id="BoughtPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="226.0" text="2 st choklad" textAlignment="CENTER" textFill="BLACK" wrapText="true" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
+        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="62.0" prefWidth="226.0" text="2 st chokladssss s     ss s  ss s s " textAlignment="CENTER" textFill="BLACK" wrapText="true" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
           <font>
             <Font size="25.0" fx:id="x1" />
           </font>
         </Label>
         <Label fx:id="lblMessage1" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="6.0" layoutY="211.0" prefHeight="98.0" prefWidth="226.0" text="har lagts i varukorgen" textAlignment="CENTER" textFill="BLACK" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-        <ImageView fx:id="cartImg" fitHeight="128.0" fitWidth="128.0" layoutX="56.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="cartImg" fitHeight="128.0" fitWidth="128.0" layoutX="56.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../Icons/shopping-cart.png" />
           </image>

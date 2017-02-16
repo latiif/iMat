@@ -1,6 +1,7 @@
-.root{
+.label{
 		-fx-font-family: 'Roboto-Regular';
-		-fx-font-size:20px;
+		-fx-font-size:12px;
+		-fx-font-weight: lighter;
 }
 
 .button{

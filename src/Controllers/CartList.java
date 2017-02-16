@@ -68,12 +68,12 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 
 	private void updateCost() {
-		int price = 0;
+		double price = 0;
 		for (CartItem cartItem : cartItems) {
 			price += cartItem.cost;
 		}
 
-		lblCost.setText(price + " kr");
+		lblCost.setText(String.format("%.2f",price) + " kr");
 	}
 
 	@Override

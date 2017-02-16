@@ -65,7 +65,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	private void updatePriceAmountLabel(){
 		lblPriceInfo.setText(format(Integer.parseInt(txtAmount.getText())));
 
-		lblMessage.setText(txtAmount.getText()+ "st " + item.getName());
+		lblMessage.setText(txtAmount.getText()+ " "+(item.getUnitSuffix().equals("kg")?"hg":item.getUnitSuffix()) +" "+ item.getName());
 	}
 
 
@@ -88,18 +88,30 @@ public class ItemView extends AnchorPane implements Initializable {
 	}
 
 
+
+	private String getPrice(double price, double amount){
+		double cost = price*amount;
+		if (cost%1==0){
+			return Integer.toString((int)(cost));
+		}
+		else {
+			return String.format("%.2f", cost);
+		}
+	}
+
 	/*
 	Formats text according to the price and amount, and unit
-	TODO: Make unit dynamic and not static
 	 */
 	private String format(int amount){
-		return "Pris: "+(item.getPrice()*amount + " kr /"+amount+" "+item.getUnitSuffix());
+		if (item.getUnitSuffix().equals("kg")){
+			return ("Pris: "+getPrice(item.getPrice()/10,amount) + " kr /"+amount+" hg");
+		}
+		return ("Pris: "+getPrice(item.getPrice(),amount)+ " kr /"+amount+" "+item.getUnitSuffix());
 	}
 
 
 	/*
 	Handles adding elements to cart
-	TODO Come up with a away to handle adding elements externally, by an abstract class for example
 	 */
 	@FXML
 	private void handleAddAction(ActionEvent event) throws Exception {
@@ -268,7 +280,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	}
 
 	public String getUnit(){
-		return "st";
+		return item.getUnitSuffix();
 	}
 
 	public double getUnitPrice(){

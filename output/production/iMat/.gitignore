@@ -1,4 +1,5 @@
-/Controllers/
-/FavoriteManager/
-/Main.class
-/img.jpg
+.classpath
+.project
+.idea
+output
+favs.dat

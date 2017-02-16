@@ -6,9 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -19,8 +21,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
+import org.controlsfx.control.decoration.Decorator;
+import org.controlsfx.control.decoration.GraphicDecoration;
 import org.controlsfx.control.textfield.TextFields;
 import se.chalmers.ait.dat215.project.*;
+
+
 
 /**
  * Created by latiif on 2/6/17.
@@ -65,6 +71,17 @@ public class ShopView extends AnchorPane implements Initializable {
 	}
 
 	@FXML
+	private void lblFavoriteOnAction(MouseEvent event){
+		itemsGrid.reset();
+		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts())){
+			if (!IMatDataHandler.getInstance().isFavorite(product)){
+				break;
+			}
+			itemsGrid.addItem(product);
+		}
+	}
+
+	@FXML
 	private void lblBakeryOnAction(MouseEvent event) {
 		itemsGrid.reset();
 		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))){
@@ -81,17 +98,15 @@ public class ShopView extends AnchorPane implements Initializable {
 		AnchorPane.setRightAnchor(itemsGrid,0.0);
 		AnchorPane.setTopAnchor(itemsGrid,0.0);
 
-		String t=IMatDataHandler.getInstance().getProduct(1).getName();
-
-		List products= new ArrayList();
 
 		itemsGrid.reset();
 		for(Product product: Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())){
 			itemsGrid.addItem(product);
 		}
 
+		TextFields.bindAutoCompletion(searchField,Inventory.getInstance().getNames());
 
-		//TextFields.bindAutoCompletion(searchField,Inventory.getInstance().getNames());
+
 
 		paneGrid.getChildren().add(itemsGrid);
 	}
