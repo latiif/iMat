@@ -1,4 +1,7 @@
-
+#btnCheckout {
+	-fx-base: green;
+	-fx-font-size: 20px;
+}
 
 #btnRemoveAll{
 	 /*   -fx-background-color: linear-gradient(#ff5400, #be1d00);

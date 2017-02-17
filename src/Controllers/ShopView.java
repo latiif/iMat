@@ -1,13 +1,17 @@
 package Controllers;
 
+import Commons.CartManager;
 import Commons.Inventory;
 import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -35,6 +39,8 @@ public class ShopView extends AnchorPane implements Initializable {
 
 	@FXML
 	private Label lblBakery, lblFruit,lblMeat,lblMilk,lblPantry,lblCandy;
+
+
 
 	private ItemsGrid itemsGrid;
 	@FXML

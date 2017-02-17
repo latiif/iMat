@@ -2,6 +2,9 @@ package Controllers;
 
 import Commons.CartManager;
 import javafx.application.Platform;
+import javafx.beans.InvalidationListener;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
 
 
@@ -25,7 +29,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	@FXML
 	CheckBox chkSave;
 	@FXML
-	Button btnRemoveAll;
+	Button btnRemoveAll,btnCheckout;
 
 	@FXML
 	VBox vList;
@@ -62,7 +66,8 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		//vList.getChildren().add(new CartItem("Chocolate","st",24,2));
+
+		updateCost();
 
 	}
 
@@ -74,6 +79,17 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 		}
 
 		lblCost.setText(String.format("%.2f",price) + " kr");
+
+		if (btnCheckout != null) {
+
+			if (cartItems.isEmpty()) {
+				btnCheckout.setDisable(true);
+			} else {
+				btnCheckout.setDisable(false);
+			}
+		}
+
+
 	}
 
 	@Override
@@ -112,6 +128,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 		updateCost();
 	}
+
 
 	@FXML
 	private void handleRemoveAllAction(ActionEvent event) {
