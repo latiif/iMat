@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
@@ -141,7 +142,7 @@
                   </ImageView>
                 </graphic>
               </Label>
-              <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="30.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="19.0">
+              <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="30.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="19.0">
                 <image>
                   <Image url="@../Icons/logo.png" />
                 </image>

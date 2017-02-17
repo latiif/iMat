@@ -19,7 +19,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="218.0" text="Välkommen till iMat!" textAlignment="CENTER" />
+                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="194.0" text="Välkommen till iMat!" textAlignment="CENTER" />
                   <Button fx:id="btnShop1" layoutX="408.0" layoutY="332.0" mnemonicParsing="false" text="Börja handla" />
                   <Label id="lblHistory" fx:id="lblHistory1" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="281.0" layoutY="306.0" style="-fx-cursor: hand;" text="Erbjudanden">
                      <graphic>

@@ -16,6 +16,7 @@
 	-fx-font-size: 18px;
 }
 .button{
+	-fx-cursor: hand;
   -fx-background: rgb(0,0,0);
   -fx-font-weight: bold;
   -fx-border-color: transparent;
