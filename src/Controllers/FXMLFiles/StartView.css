@@ -1,0 +1,48 @@
+#btnShop, #btnShop1 {
+	-fx-base: green;
+	-fx-font-size: 20px;
+	-fx-cursor: hand;
+}
+#btnSearch {
+	-fx-base: #FFF;
+	-fx-font-size: 20px;
+}
+
+#sideCategory{
+	-fx-font-weight : bold;
+	-fx-font-size: 16px;
+}
+#lblMyCart{
+	-fx-font-size: 18px;
+}
+#lblFav, #lblUser, #lblHistory {
+	-fx-font-weight: bold;
+	-fx-font-size: 16px;
+}
+.button{
+  -fx-background: rgb(0,0,0);
+  -fx-font-weight: bold;
+  -fx-border-color: transparent;
+  -fx-background-radius: 14px;
+  -fx-shadow-highlight-color : transparent;
+  -fx-outer-border : transparent;
+ -fx-inner-border : transparent;
+}
+
+.root{
+		-fx-font-family: 'Roboto';
+		-fx-font-size:13px;
+		-fx-font-weight: bold;
+}
+
+#lblWelcome, #lblWelcomeUser{
+	-fx-font-family: 'Roboto';
+	-fx-font-size: 42px;
+}
+
+
+@font-face {
+	font-family: Roboto;
+ src: url('@../Fonts/RobotTTF/Roboto-Medium.ttf');
+
+}
