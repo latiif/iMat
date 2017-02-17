@@ -1,0 +1,25 @@
+#lblTotal, #lblReceipt {
+	-fx-font-family: 'Typewriter_Condensed';
+	-fx-font-color: red;
+	-fx-font-size: 16px;
+}
+#btnAdd {
+	-fx-base: #9494a5;
+	-fx-font-family: 'Typewriter_Condensed';
+}
+
+.button{
+  -fx-background: rgb(0,0,0);
+  -fx-border-color: transparent;
+  -fx-background-radius: 10px;
+  -fx-shadow-highlight-color : transparent;
+  -fx-outer-border : transparent;
+ -fx-inner-border : transparent;
+-fx-cursor: hand;
+}
+
+@font-face {
+	font-family: Typewriter_Condensed;
+ src: url('@../Fonts/TypewriterCondensed/typewcond_regular.otf');
+}
+

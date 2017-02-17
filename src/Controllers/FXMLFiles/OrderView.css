@@ -5,17 +5,17 @@
 }
 #btnClose {
 	-fx-base: red;
-	-fx-font-size: 20px;
+	-fx-font-size: 18px;
 	-fx-cursor: hand;
 }
 #btnStart {
 	-fx-base: #9494a5;
-	-fx-font-size: 20px;
+	-fx-font-size: 18px;
 	-fx-cursor: hand;
 }
 #btnHistory {
 	-fx-base: green;
-	-fx-font-size: 20px;
+	-fx-font-size: 18px;
 	-fx-cursor: hand;
 }
 #btnSearch {
@@ -42,7 +42,10 @@
   -fx-outer-border : transparent;
  -fx-inner-border : transparent;
 }
-
+#receiptPane {
+	-fx-background-color: #F9f9f9;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0, 3, 3);
+}
 .root{
 		-fx-font-family: 'Roboto';
 		-fx-font-size:13px;
