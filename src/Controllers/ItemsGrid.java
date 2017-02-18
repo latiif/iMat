@@ -59,10 +59,7 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			container.getChildren().add(new ItemView(item));
 			currentIndex++;
 		}
-
-
-
-
+		//scrollPane.setVvalue(0);
 	}
 
 
@@ -100,6 +97,7 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		items.clear();
 		container.getChildren().clear();
 		setLoadMoreVisibilty(false);
+		scrollPane.setVvalue(0);
 	}
 
 
@@ -126,6 +124,7 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 
 
 
+
 		scrollPane.vvalueProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -134,7 +133,6 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 				}
 			}
 		});
-
 
 	}
 }

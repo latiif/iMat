@@ -36,6 +36,21 @@
 	-fx-font-size: 36px;
 }
 
+.pane{
+	-fx-background-color: white;
+}
+
+#paneTop{
+ -fx-background-color:
+    linear-gradient(#43cea2 50%, #185a9d 100%);
+}
+
+.label,#sideCategory{
+	-fx-font-size: 12px;
+     -fx-font-weight: bold;
+     -fx-text-fill: #333333;
+     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
 
 @font-face {
 	font-family: Roboto;
@@ -50,7 +65,7 @@
 .scroll-bar:vertical .track {
     -fx-background-color: white;
     -fx-border-color:transparent;
-    -fx-background-radius: 0em; 
+    -fx-background-radius: 0em;
 }
 .scroll-bar:vertical .track-background,
 .scroll-bar:horizontal .track-background {
@@ -70,23 +85,23 @@
 }
 .scroll-bar:horizontal .thumb:hover,
 .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: rgb(215,215,215); 
+    -fx-background-color: rgb(215,215,215);
 }
 .scroll-bar:horizontal .thumb:pressed,
 .scroll-bar:vertical .thumb:pressed {
-    -fx-background-color: rgb(96,96,96);    
+    -fx-background-color: rgb(96,96,96);
 }
 .scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
-    -fx-background-color:transparent;  
+    -fx-background-color:transparent;
     -fx-background-radius: 0em;
     -fx-padding: 5 5 5 5;
 }
-.scroll-bar:horizontal .increment-button, .scroll-bar:horizontal .decrement-button {    
-     -fx-background-color:transparent; 
+.scroll-bar:horizontal .increment-button, .scroll-bar:horizontal .decrement-button {
+     -fx-background-color:transparent;
      -fx-background-radius: 0em;
-     -fx-padding: 5 5 5 5;    
+     -fx-padding: 5 5 5 5;
 }
-.scroll-bar:horizontal .increment-arrow {   
+.scroll-bar:horizontal .increment-arrow {
     -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
     -fx-padding: 0.25em;
     -fx-rotate: 90;
@@ -96,7 +111,7 @@
     -fx-padding: 0.25em;
     -fx-rotate: 180;
 }
-.scroll-bar:horizontal .decrement-arrow {   
+.scroll-bar:horizontal .decrement-arrow {
     -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
     -fx-padding: 0.25em;
     -fx-rotate: -90;

@@ -14,83 +14,84 @@
   <children>
     <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-            <AnchorPane fx:id="stackContainer" layoutX="137.0" layoutY="100.0" prefHeight="583.0" prefWidth="706.0" style="-fx-background: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="100.0">
+            <AnchorPane fx:id="stackContainer" layoutX="137.0" layoutY="100.0" prefHeight="583.0" prefWidth="706.0" style="-fx-background: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <StackPane fx:id="stack" prefHeight="581.0" prefWidth="706.0" style="-fx-background: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <AnchorPane fx:id="welcomePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-                           <children>
-                              <Label id="lblWelcome" layoutX="14.0" layoutY="14.0" text="Välkommen!" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="paneGrid" prefHeight="570.0" prefWidth="706.0" style="-fx-background: white; " />
-                     </children>
-                  </StackPane>
+                  <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2; -fx-border-color: #f2f2f2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
-              <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
-                <graphic>
-                  <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/pantry-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
-              <Label id="sideCategory" fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="16.0" layoutY="113.0" style="-fx-cursor: hand;" text="Frukt &amp; Grönt" AnchorPane.leftAnchor="16.0">
-                <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/veggies-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
-              <Label id="sideCategory" fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="27.0" layoutY="215.0" style="-fx-cursor: hand;" text="Kött &amp; Fisk" AnchorPane.leftAnchor="27.0">
-                <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/meat-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
-              <Label id="sideCategory" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="314.0" style="-fx-cursor: hand;" text="Mejeri" AnchorPane.leftAnchor="36.0">
-                <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/milk-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
-              <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="36.0" layoutY="514.0" style="-fx-cursor: hand;" text="Godis" AnchorPane.leftAnchor="36.0">
-                <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/candy-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
-              <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" layoutX="35.0" layoutY="14.0" onMouseClicked="#lblBakeryOnAction" style="-fx-cursor: hand;" text="Bageri" AnchorPane.leftAnchor="35.0">
-                <font>
-                  <Font size="15.0" fx:id="x1" />
-                </font>
-                <graphic>
-                  <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                      <Image url="@../Icons/bakery-icon.png" />
-                    </image>
-                  </ImageView>
-                </graphic>
-              </Label>
+                  <VBox alignment="TOP_CENTER" layoutX="41.0" layoutY="414.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                    <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#lblBakeryOnAction" style="-fx-cursor: hand;" text="Bageri">
+                      <font>
+                        <Font size="15.0" fx:id="x1" />
+                      </font>
+                      <graphic>
+                        <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/bakery-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                    <Label id="sideCategory" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Mejeri">
+                      <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/milk-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                    <Label id="sideCategory" fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Frukt &amp; Grönt">
+                      <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/veggies-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                    <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
+                      <graphic>
+                        <ImageView id="sideCategory" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/pantry-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                    <Label id="sideCategory" fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Kött &amp; Fisk">
+                      <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/meat-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                    <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Godis">
+                      <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../Icons/candy-icon.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
                </children></AnchorPane>
-        <AnchorPane layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+        <AnchorPane fx:id="paneCart" layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
           <children>
-                  <AnchorPane fx:id="paneCartList" layoutX="4.0" layoutY="71.0" prefHeight="484.0" prefWidth="250.0" />
+                  <AnchorPane fx:id="paneCartList" layoutX="4.0" layoutY="71.0" prefHeight="484.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="99.0" />
           <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
             <image>
               <Image url="@../Icons/shopping-cart.png" />
@@ -104,7 +105,7 @@
             
           </children>
         </AnchorPane>
-        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" style="-fx-background-color: #9494a5;&#10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="paneTop" layoutX="0.0" layoutY="0.0" prefHeight="83.0" prefWidth="1050.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
                   <HBox alignment="CENTER" layoutX="174.0" prefHeight="100.0" prefWidth="551.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="375.0" AnchorPane.topAnchor="0.0">
                      <children>

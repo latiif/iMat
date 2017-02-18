@@ -30,25 +30,26 @@
 #lblMyCart{
 	-fx-font-size: 18px;
 }
+
 #lblFav, #lblUser, #lblHistory {
 	-fx-font-weight: bold;
 	-fx-font-size: 16px;
 }
-/*.button{
-  -fx-background: rgb(0,0,0);
-  -fx-font-weight: bold;
-  -fx-border-color: transparent;
-  -fx-background-radius: 14px;
-  -fx-shadow-highlight-color : transparent;
-  -fx-outer-border : transparent;
- -fx-inner-border : transparent;
-}*/
 
 .root{
 		-fx-font-family: 'Roboto';
 		-fx-font-size:13px;
 		-fx-font-weight: bold;
 }
+.label{
+ -fx-text-fill: black;
+}
+
+#paneDefault,#paneRegistered{
+    -fx-background: white;
+}
+
+
 
 #lblWelcome, #lblWelcomeUser, #lblThankYou{
 	-fx-font-family: 'Roboto';

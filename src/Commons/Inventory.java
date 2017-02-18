@@ -1,8 +1,12 @@
 package Commons;
 
+import Controllers.ShopView;
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.User;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,6 +17,10 @@ import java.util.List;
 public class Inventory {
 
 	private static Inventory instance;
+
+	public static ShopView shopView;
+
+	public  static Customer customer;
 
 	public  static Inventory getInstance(){
 		if (instance==null){
@@ -30,6 +38,22 @@ public class Inventory {
 
 	public Collection getNames(){
 		return names;
+	}
+
+
+	public static boolean  hasCustomer()
+	{
+		if (IMatDataHandler.getInstance().getCustomer().getFirstName().equals("") &&
+				IMatDataHandler.getInstance().getCustomer().getLastName().equals("") &&
+		IMatDataHandler.getInstance().getCustomer().getPostCode().equals("") &&
+				IMatDataHandler.getInstance().getCustomer().getAddress().equals("") &&
+				IMatDataHandler.getInstance().getCustomer().getPostAddress().equals("")){
+			return false;
+		}
+		else {
+			customer=IMatDataHandler.getInstance().getCustomer();
+			return true;
+		}
 	}
 
 	public List<Product> favFirst(List<Product> products){
@@ -58,7 +82,7 @@ public class Inventory {
 		for(Product product: IMatDataHandler.getInstance().getProducts()){
 			productList.add(product);
 			names.add(product.getName());
-
+			hasCustomer();
 		}
 
 	}

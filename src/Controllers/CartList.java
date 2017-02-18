@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.CartManager;
+import Commons.Inventory;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
@@ -135,6 +136,12 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 		cartItems.clear();
 		vList.getChildren().clear();
 		updateCost();
+	}
+
+	@FXML
+	private void btnCheckoutAction (ActionEvent actionEvent){
+		Inventory.shopView.deliveryInformation.toFront();
+		Inventory.shopView.updateStackPane();
 	}
 
 }

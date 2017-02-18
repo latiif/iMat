@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@PaymentInformation.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Betalninformation:" underline="true" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="491.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label text="Jag betalar med: " />
+                  <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefWidth="75.0" selected="true" text="Faktura" />
+                  <ToggleButton fx:id="btnCard" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="25.0" prefWidth="75.0" text="Kort" />
+               </children>
+            </HBox>
+            <VBox fx:id="boxCredit" prefHeight="405.0" prefWidth="464.0" spacing="3.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Label text="Card Holder" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
+                     <children>
+                        <TextField fx:id="txtHolder" prefHeight="25.0" prefWidth="218.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Kortnummer:" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
+                     <children>
+                        <TextField fx:id="cn1" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <Label text="-" />
+                        <TextField fx:id="cn2" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <Label text="-" />
+                        <TextField fx:id="cn3" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <Label text="-" />
+                        <TextField fx:id="cn4" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Valid Through:" />
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="464.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" text="09" />
+                        <Label text="/" />
+                        <TextField fx:id="txtYear" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" text="20" />
+                     </children>
+                  </HBox>
+                  <Label text="Verification code:" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
+                     <children>
+                        <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="75.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Spara kortuppgifter" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="799.0">
+               <children>
+                  <BorderPane prefHeight="60.0" prefWidth="800.0">
+                     <right>
+                        <Button fx:id="btnFinish" contentDisplay="CENTER" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#btnFinishAction" text="Slutför köpet" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBackAction" text="Tillbacka" BorderPane.alignment="CENTER" />
+                     </left>
+                  </BorderPane>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</fx:root>

@@ -8,10 +8,10 @@
 <fx:root prefHeight="545.0" prefWidth="754.0" stylesheets="@StartView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button id="btnStart" fx:id="btnStart" layoutX="292.0" layoutY="489.0" mnemonicParsing="false" text="Tillbaka till start" AnchorPane.bottomAnchor="10.0" />
-      <Label fx:id="lblThankYou" alignment="CENTER" layoutX="221.0" layoutY="35.0" text="Tack för ditt köp!" textAlignment="CENTER" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="35.0" />
+      <Label fx:id="lblThankYou" alignment="CENTER" layoutX="221.0" layoutY="35.0" text="Tack för ditt köp!" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="35.0" />
       <Button id="btnHistory" fx:id="btnHistory" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" text="Se historik" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Button id="btnClose" fx:id="btnClose" layoutX="43.0" layoutY="486.0" mnemonicParsing="false" text="Avsluta iMat" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <AnchorPane fx:id="receiptPane" layoutX="260.0" layoutY="142.0" prefHeight="309.0" prefWidth="239.0" />
+      <AnchorPane fx:id="receiptPane" layoutX="260.0" layoutY="142.0" prefHeight="309.0" prefWidth="239.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="255.0" AnchorPane.topAnchor="142.0" />
       <Label fx:id="lblThankYou1" alignment="CENTER_RIGHT" layoutX="216.0" layoutY="98.0" text="Dina varor kommer att levereras:" textAlignment="CENTER" />
       <Label fx:id="lblThankYou11" layoutX="428.0" layoutY="98.0" text="imorgon kl. 12-16" textAlignment="CENTER" />
    </children>

@@ -14,13 +14,13 @@
 
 <fx:root id="ElementItem" fx:id="ReceiptView" maxHeight="309.0" maxWidth="239.0" minHeight="309.0" minWidth="239.0" prefHeight="309.0" prefWidth="239.0" stylesheets="ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-  <Label id="lblReceipt" fx:id="lblReceipt" alignment="CENTER" prefHeight="16.0" prefWidth="163.0" stylesheets="@ReceiptView.css" text="KVITTO" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" />
-  <Label id="lblTotal" fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="189.0" text="Summa: kr" textAlignment="CENTER" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="284.0">
+  <Label id="lblReceipt" fx:id="lblReceipt" alignment="CENTER" prefHeight="16.0" prefWidth="163.0" stylesheets="@ReceiptView.css" text="KVITTO" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="0.0" />
+  <Label id="lblTotal" fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="189.0" text="Summa: kr" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0">
     <font>
       <Font size="15.0" />
     </font>
   </Label>
-      <Label fx:id="lblName1" alignment="CENTER" layoutX="6.0" layoutY="4.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="lblName1" alignment="CENTER" ellipsisString="" layoutX="14.0" layoutY="4.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font size="16.0" />
          </font>
@@ -28,7 +28,8 @@
             <URL value="@ItemView.css" />
          </stylesheets>
       </Label>
-      <Label fx:id="lblName11" alignment="CENTER" layoutX="6.0" layoutY="263.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+      <ListView fx:id="lstItems" layoutX="20.0" layoutY="27.0" prefHeight="253.0" prefWidth="239.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0" />
+      <Label fx:id="lblName11" alignment="CENTER" ellipsisString="" layoutX="6.0" layoutY="263.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font size="16.0" />
          </font>

@@ -5,14 +5,15 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@DeliveryInformation.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@DeliveryInformation.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    <children>
       <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="Leveransinformation:" underline="true" />
          </children>
       </HBox>
-      <VBox alignment="TOP_CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
             <Label text="Varorna levereras till" />
             <TextField fx:id="txtName" prefHeight="25.0" prefWidth="223.0" promptText="Ditt fullständiga namn" />
@@ -33,7 +34,7 @@
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="276.0" spacing="10.0">
                <children>
                   <Label text="den " />
-                  <DatePicker fx:id="date" />
+                  <DatePicker fx:id="date" promptText="Ange leveransdatum" showWeekNumbers="true" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="297.0" spacing="10.0">
@@ -41,16 +42,16 @@
                   <Label text="klockan " />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" text="08-12" />
-                        <ToggleButton mnemonicParsing="false" text="12-16" />
-                        <ToggleButton mnemonicParsing="false" text="16-20" />
+                        <ToggleButton fx:id="btnAM" mnemonicParsing="false" text="08-12" />
+                        <ToggleButton fx:id="btnPM" mnemonicParsing="false" selected="true" text="12-16" />
+                        <ToggleButton fx:id="btnEvening" mnemonicParsing="false" text="16-20" />
                      </children>
                   </HBox>
                </children>
             </HBox>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="46.0" prefWidth="577.0">
                <children>
-                  <Button mnemonicParsing="false" text="Vidare" />
+                  <Button fx:id="btnNext" mnemonicParsing="false" onAction="#btnNextAction" text="Vidare" />
                </children>
             </HBox>
          </children>
@@ -59,4 +60,4 @@
          </padding>
       </VBox>
    </children>
-</AnchorPane>
+</fx:root>

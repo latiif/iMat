@@ -25,11 +25,11 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
+import javafx.scene.layout.StackPane;
 import org.controlsfx.control.decoration.Decorator;
 import org.controlsfx.control.decoration.GraphicDecoration;
 import org.controlsfx.control.textfield.TextFields;
 import se.chalmers.ait.dat215.project.*;
-
 
 
 /**
@@ -38,17 +38,23 @@ import se.chalmers.ait.dat215.project.*;
 public class ShopView extends AnchorPane implements Initializable {
 
 	@FXML
-	private Label lblBakery, lblFruit,lblMeat,lblMilk,lblPantry,lblCandy;
+	private Label lblBakery, lblFruit, lblMeat, lblMilk, lblPantry, lblCandy;
 
-
-
-	private ItemsGrid itemsGrid;
 	@FXML
-	AnchorPane paneCartList,paneGrid;
+	AnchorPane stackContainer;
+
+	@FXML
+	StackPane stackPane;
+	 ItemsGrid itemsGrid;
+	 StartView startView;
+	 DeliveryInformation deliveryInformation;
+	 PaymentInformation paymentInformation;
+	@FXML
+	AnchorPane paneCartList, paneGrid, paneCart;
 	@FXML
 	private TextField searchField;
 
-	public ShopView(){
+	public ShopView() {
 
 
 		FXMLLoader fxmlLoader =
@@ -57,7 +63,6 @@ public class ShopView extends AnchorPane implements Initializable {
 
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
-
 
 
 		try {
@@ -69,18 +74,21 @@ public class ShopView extends AnchorPane implements Initializable {
 
 
 	@FXML
-	private void searchOnAction(ActionEvent event){
+	private void searchOnAction(ActionEvent event) {
 		itemsGrid.reset();
-		for (Product product: Inventory.getInstance().favFirst(IMatDataHandler.getInstance().findProducts(searchField.getText()))){
+		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().findProducts(searchField.getText()))) {
 			itemsGrid.addItem(product);
+			itemsGrid.toFront();
+			updateStackPane();
+			showCartList();
 		}
 	}
 
 	@FXML
-	private void lblFavoriteOnAction(MouseEvent event){
+	private void lblFavoriteOnAction(MouseEvent event) {
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts())){
-			if (!IMatDataHandler.getInstance().isFavorite(product)){
+		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts())) {
+			if (!IMatDataHandler.getInstance().isFavorite(product)) {
 				break;
 			}
 			itemsGrid.addItem(product);
@@ -90,30 +98,64 @@ public class ShopView extends AnchorPane implements Initializable {
 	@FXML
 	private void lblBakeryOnAction(MouseEvent event) {
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))){
-				itemsGrid.addItem(product);
+		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))) {
+			itemsGrid.addItem(product);
+			itemsGrid.toFront();
+			updateStackPane();
+			showCartList();
 		}
+	}
+
+	private void bringGrid() {
+
+	}
+
+
+	 void hideCartList() {
+		stackContainer.toFront();
+		AnchorPane.setRightAnchor(stackContainer, 0.0);
+		paneCart.setVisible(false);
+	}
+
+	 void showCartList() {
+		stackContainer.toBack();
+		AnchorPane.setRightAnchor(stackContainer, 260.0);
+		paneCart.setVisible(true);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		paneCartList.getChildren().add(new CartList());
-		itemsGrid= new ItemsGrid();
-		AnchorPane.setLeftAnchor(itemsGrid,0.0);
-		AnchorPane.setBottomAnchor(itemsGrid,0.0);
-		AnchorPane.setRightAnchor(itemsGrid,0.0);
-		AnchorPane.setTopAnchor(itemsGrid,0.0);
+		Inventory.shopView=this;
 
+		paneCartList.getChildren().add(new CartList());
+		itemsGrid = new ItemsGrid();
+		startView= new StartView();
+		deliveryInformation= new DeliveryInformation();
+		paymentInformation= new PaymentInformation();
 
 		itemsGrid.reset();
-		for(Product product: Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())){
+		for (Product product : Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())) {
 			itemsGrid.addItem(product);
 		}
 
-		TextFields.bindAutoCompletion(searchField,Inventory.getInstance().getNames());
+		TextFields.bindAutoCompletion(searchField, Inventory.getInstance().getNames());
 
 
+		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation);
 
-		paneGrid.getChildren().add(itemsGrid);
+		startView.toFront();
+		updateStackPane();
+
+		hideCartList();
 	}
+
+
+	public void updateStackPane(){
+		int i;
+		for (i=0;i<stackPane.getChildren().size()-1;i++){
+			stackPane.getChildren().get(i).setVisible(false);
+		}
+		stackPane.getChildren().get(i).setVisible(true);
+	}
+
 }

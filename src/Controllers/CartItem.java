@@ -59,7 +59,6 @@ public class CartItem extends AnchorPane implements Initializable {
 		FXMLLoader fxmlLoader =
 				new FXMLLoader(getClass().getResource("FXMLFiles/CartItem.fxml"));
 
-		System.out.println(getClass().getResource("FXMLFiles/CartItem.fxml"));
 
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);

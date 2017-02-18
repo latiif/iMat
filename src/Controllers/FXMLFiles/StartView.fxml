@@ -7,20 +7,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root prefHeight="584.0" prefWidth="964.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="964.0" style="-fx-background-color: white;" stylesheets="@StartView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    <children>
-      <StackPane prefHeight="97.0" prefWidth="754.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox fx:id="hbox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+           <StackPane fx:id="stackPane" prefHeight="97.0" prefWidth="754.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS">
+         <children>
+            <AnchorPane fx:id="paneDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <Label fx:id="lblWelcome" alignment="CENTER" layoutX="278.0" layoutY="194.0" text="Välkommen till iMat!" textAlignment="CENTER" />
-                  <Button fx:id="btnShop" layoutX="408.0" layoutY="332.0" mnemonicParsing="false" text="Börja handla" />
+                  <Button fx:id="btnShop" layoutX="408.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnShopAction" text="Börja handla" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="paneRegistered" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
-                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="194.0" text="Välkommen till iMat!" textAlignment="CENTER" />
-                  <Button fx:id="btnShop1" layoutX="408.0" layoutY="332.0" mnemonicParsing="false" text="Börja handla" />
+                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="218.0" text="Välkommen till iMat!" textAlignment="CENTER" />
+                  <Button fx:id="btnShop1" layoutX="408.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnShopAction" text="Börja handla" />
                   <Label id="lblHistory" fx:id="lblHistory1" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="281.0" layoutY="306.0" style="-fx-cursor: hand;" text="Erbjudanden">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
@@ -46,5 +49,7 @@
             </AnchorPane>
          </children>
       </StackPane>
+         </children>
+      </HBox>
    </children>
 </fx:root>
