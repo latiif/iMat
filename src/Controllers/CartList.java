@@ -12,9 +12,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
+
 
 
 import java.io.IOException;
@@ -38,13 +40,20 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	@FXML
 	Label lblCost;
 
+	@FXML
+	ImageView imgCheckout;
+
 
 	/*
 
 	* */
 
 
-	private List<CartItem> cartItems = new ArrayList<>();
+	public List<CartItem> getCartItems(){
+		return new ArrayList<>(this.cartItems);
+	}
+
+	 List<CartItem> cartItems = new ArrayList<>();
 
 	public CartList() {
 
@@ -68,6 +77,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		imgCheckout.visibleProperty().bind(btnCheckout.visibleProperty());
 		updateCost();
 
 	}

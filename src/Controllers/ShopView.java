@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 
 
 import javafx.scene.layout.StackPane;
+import org.controlsfx.control.NotificationPane;
 import org.controlsfx.control.decoration.Decorator;
 import org.controlsfx.control.decoration.GraphicDecoration;
 import org.controlsfx.control.textfield.TextFields;
@@ -49,10 +50,14 @@ public class ShopView extends AnchorPane implements Initializable {
 	 StartView startView;
 	 DeliveryInformation deliveryInformation;
 	 PaymentInformation paymentInformation;
+	 FinalView finalView;
+	 CartList cartList;
 	@FXML
 	AnchorPane paneCartList, paneGrid, paneCart;
 	@FXML
 	private TextField searchField;
+
+	public NotificationPane notificationPane;
 
 	public ShopView() {
 
@@ -111,6 +116,15 @@ public class ShopView extends AnchorPane implements Initializable {
 	}
 
 
+	void hideCashout(){
+		cartList.btnCheckout.setVisible(false);
+	}
+
+
+	void showCashout(){
+		cartList.btnCheckout.setVisible(true);
+	}
+
 	 void hideCartList() {
 		stackContainer.toFront();
 		AnchorPane.setRightAnchor(stackContainer, 0.0);
@@ -127,11 +141,13 @@ public class ShopView extends AnchorPane implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		Inventory.shopView=this;
 
-		paneCartList.getChildren().add(new CartList());
+		cartList=new CartList();
+		paneCartList.getChildren().add(cartList);
 		itemsGrid = new ItemsGrid();
 		startView= new StartView();
 		deliveryInformation= new DeliveryInformation();
 		paymentInformation= new PaymentInformation();
+		finalView= new FinalView();
 
 		itemsGrid.reset();
 		for (Product product : Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())) {
@@ -141,12 +157,25 @@ public class ShopView extends AnchorPane implements Initializable {
 		TextFields.bindAutoCompletion(searchField, Inventory.getInstance().getNames());
 
 
-		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation);
+		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView);
 
 		startView.toFront();
 		updateStackPane();
 
+
 		hideCartList();
+		showCashout();
+
+		notificationPane= new NotificationPane();
+		notificationPane.setShowFromTop(true);
+		notificationPane.getStyleClass().add(NotificationPane.STYLE_CLASS_DARK);
+		notificationPane.setContent(stackPane);
+		AnchorPane.setRightAnchor(notificationPane,0.0);
+		AnchorPane.setTopAnchor(notificationPane,0.0);
+		AnchorPane.setLeftAnchor(notificationPane,0.0);
+		AnchorPane.setBottomAnchor(notificationPane,0.0);
+		stackContainer.getChildren().add(notificationPane);
+
 	}
 
 

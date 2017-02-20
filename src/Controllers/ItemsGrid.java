@@ -1,5 +1,6 @@
 package Controllers;
 
+import Commons.Inventory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
@@ -115,6 +116,8 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
+		Inventory.shopView.showCashout();
 
 		container.prefWidthProperty().bind(scrollPane.widthProperty());
 		container.prefHeightProperty().bind(scrollPane.heightProperty());

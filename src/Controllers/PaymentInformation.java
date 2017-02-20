@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.Inventory;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -14,9 +15,12 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import org.controlsfx.control.NotificationPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -52,7 +56,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	private ToggleButton btnCard;
 
 	@FXML
-	private VBox boxCredit;
+	private VBox mainBox,boxCredit;
 
 	@FXML
 	private TextField txtHolder;
@@ -62,6 +66,8 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 
 	@FXML
 	private ToggleButton btnInvoice;
+
+
 
 	private void validate(Node node, boolean valid){
 		if (node.getStyleClass().size()==2){
@@ -81,23 +87,37 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	private void checkAll(){
 		if (btnInvoice.isSelected()){
 			btnFinish.setDisable(false);
+			Inventory.shopView.notificationPane.hide();
 			return;
 		}
 
-		if (txtHolder.getStyleClass().contains("valid") &&
-				(txtMonth.getStyleClass().contains("valid")) &&
-				(txtCvc.getStyleClass().contains("valid")) &&
-				(cn2.getStyleClass().contains("valid")) &&
-				(cn3.getStyleClass().contains("valid")) &&
-				(cn4.getStyleClass().contains("valid")) &&
-				(txtYear.getStyleClass().contains("valid")) &&
-				(cn1.getStyleClass().contains("valid")))
-		{
-			btnFinish.setDisable(false);
+		if (btnCard.isSelected()) {
+			if (txtHolder.getStyleClass().contains("valid") &&
+					(txtMonth.getStyleClass().contains("valid")) &&
+					(txtCvc.getStyleClass().contains("valid")) &&
+					(cn2.getStyleClass().contains("valid")) &&
+					(cn3.getStyleClass().contains("valid")) &&
+					(cn4.getStyleClass().contains("valid")) &&
+					(txtYear.getStyleClass().contains("valid")) &&
+					(cn1.getStyleClass().contains("valid"))) {
+
+				btnFinish.setDisable(false);
+
+			} else {
+				btnFinish.setDisable(true);
+			}
+
+			return;
+		}
+
+		btnFinish.setDisable(true);
+		if (!btnCard.isSelected() && !btnInvoice.isSelected()){
+			Inventory.notificate("Var god välj ett sätt att betala");
 		}
 		else {
-			btnFinish.setDisable(true);
+			Inventory.shopView.notificationPane.hide();
 		}
+
 	}
 
 	public PaymentInformation() {
@@ -173,15 +193,24 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		});
 
 
-		txtYear.textProperty().addListener(new ChangeListener<String>() {
+		txtYear.focusedProperty().addListener(new ChangeListener<Boolean>() {
 			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				validate(txtYear,newValue.matches("\\d{2}"));
-				if (newValue.length()==2){
-					txtCvc.requestFocus();
+			public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+
+				boolean valid=true;
+				//check if credit card is valid
+				if (LocalDate.of(2000+Integer.parseInt(txtYear.getText()),Integer.parseInt(txtMonth.getText()),1).isBefore(LocalDate.now())){
+					valid=false;
+					Inventory.notificate("Ditt kort är inte giltigt");
 				}
+				else {
+					Inventory.shopView.notificationPane.hide();
+				}
+				validate(txtYear,txtYear.getText().matches("\\d{2}") && valid);
+
 			}
 		});
+
 
 		txtCvc.textProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -195,9 +224,12 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		btnCard.setToggleGroup(toggleGroup);
 		btnInvoice.setToggleGroup(toggleGroup);
 
+
+
 		boxCredit.visibleProperty().bind(btnCard.selectedProperty());
 
-		//btnInvoice.selectedProperty().bind(btnInvoice.selectedProperty().not());
+
+
 
 	}
 
@@ -206,15 +238,19 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		if (btnInvoice.isSelected()){
 			btnFinish.setDisable(false);
 		}
-		else {
-			checkAll();
-		}
+
+		checkAll();
 	}
 
 
 	@FXML
 	void btnFinishAction(ActionEvent event) {
 
+		Inventory.shopView.hideCashout();
+		Inventory.shopView.finalView.initialize(null,null);
+		Inventory.shopView.finalView.toFront();
+		Inventory.shopView.updateStackPane();
+		//Inventory.shopView.hideCartList();
 	}
 
 	@FXML

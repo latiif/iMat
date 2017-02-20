@@ -56,6 +56,11 @@ public class Inventory {
 		}
 	}
 
+	public  static void notificate(String msg){
+		shopView.notificationPane.show(msg);
+	}
+
+
 	public List<Product> favFirst(List<Product> products){
 		ArrayList<Product> favs=new ArrayList<>(),normals= new ArrayList();
 

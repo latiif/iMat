@@ -1,13 +1,11 @@
-import Commons.FavManager;
+import Commons.Inventory;
+import Commons.Receipt;
+import Commons.ReceiptManager;
 import Controllers.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -20,16 +18,27 @@ public class Main extends Application{
 		launch(args);
 	}
 
+
+	private void prepare(){
+		Inventory.getInstance();
+		ReceiptManager.readAll();
+	}
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+
+		prepare();
+
 		primaryStage.setTitle("iMat");
 
+
 		Parent root = new ShopView();
+
 
 		Scene mainScene= new Scene(root);
 
 		primaryStage.setMinHeight(720);
-		//primaryStage.setMinWidth(1200);
+
 
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
@@ -38,6 +47,7 @@ public class Main extends Application{
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent event) {
+				ReceiptManager.saveAll();
 				IMatDataHandler.getInstance().shutDown();
 			}
 		});

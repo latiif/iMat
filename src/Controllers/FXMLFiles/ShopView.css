@@ -42,7 +42,7 @@
 
 #paneTop{
  -fx-background-color:
-    linear-gradient(#43cea2 50%, #185a9d 100%);
+     #9494a5;
 }
 
 .label,#sideCategory{

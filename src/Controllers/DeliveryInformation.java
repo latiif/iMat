@@ -20,6 +20,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -101,6 +102,10 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+
+		Inventory.shopView.hideCashout();
+
+
 		SegmentedButton segmentedButton= new SegmentedButton();
 		btnAM.setToggleGroup(segmentedButton.getToggleGroup());
 		btnPM.setToggleGroup(segmentedButton.getToggleGroup());
@@ -181,6 +186,9 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 			IMatDataHandler.getInstance().getCustomer().setPostAddress(txtCity.getText());
 		}
 
+
+		Inventory.shopView.finalView.lblThankYou11.setText(
+date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 		);
 
 		Inventory.shopView.paymentInformation.toFront();
 		Inventory.shopView.updateStackPane();

@@ -106,4 +106,9 @@ public class CartItem extends AnchorPane implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		reformat();
 	}
+
+	@Override
+	public String toString() {
+		return itemName +'\t'+quantity+itemUnit+'\t'+cost;
+	}
 }

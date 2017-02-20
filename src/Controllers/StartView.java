@@ -46,7 +46,7 @@ public class StartView extends AnchorPane implements Initializable {
 	}
 
 	private void check(){
-		if (!IMatDataHandler.getInstance().isCustomerComplete()){
+		if (!Inventory.hasCustomer()){
 			paneDefault.toFront();
 		}
 		else {
@@ -57,6 +57,7 @@ public class StartView extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		Inventory.shopView.hideCashout();
 		stackPane.prefWidthProperty().bind(hbox.widthProperty());
 		stackPane.prefHeightProperty().bind(hbox.heightProperty());
 
@@ -67,6 +68,7 @@ public class StartView extends AnchorPane implements Initializable {
 	@FXML
 	private void btnShopAction(ActionEvent actionEvent){
 		Inventory.shopView.itemsGrid.toFront();
+		Inventory.shopView.itemsGrid.initialize(null,null);
 		Inventory.shopView.showCartList();
 		Inventory.shopView.updateStackPane();
 	}

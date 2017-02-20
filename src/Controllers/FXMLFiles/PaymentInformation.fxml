@@ -13,12 +13,12 @@
             <Label text="Betalninformation:" underline="true" />
          </children>
       </HBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+      <VBox fx:id="mainBox" alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="491.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label text="Jag betalar med: " />
-                  <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefWidth="75.0" selected="true" text="Faktura" />
+                  <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefWidth="75.0" text="Faktura" />
                   <ToggleButton fx:id="btnCard" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="25.0" prefWidth="75.0" text="Kort" />
                </children>
             </HBox>
