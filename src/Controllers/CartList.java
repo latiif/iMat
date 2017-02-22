@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -89,7 +90,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 			price += cartItem.cost;
 		}
 
-		lblCost.setText(String.format("%.2f",price) + " kr");
+		lblCost.setText(String.format(Locale.ENGLISH,"%.2f",price) + " kr");
 
 		if (btnCheckout != null) {
 
@@ -152,6 +153,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	private void btnCheckoutAction (ActionEvent actionEvent){
 		Inventory.shopView.deliveryInformation.toFront();
 		Inventory.shopView.updateStackPane();
+		Inventory.shopView.hideCashout();
 	}
 
 }

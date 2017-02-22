@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -87,7 +88,7 @@ public class CartItem extends AnchorPane implements Initializable {
 
 	private String getCost(double price, double quantity){
 		double cost = price*quantity;
-		return String.format("%.2f",cost);
+		return String.format(Locale.ENGLISH,"%.2f",cost);
 	}
 	private void reformat() {
 		if (itemUnit.equals("kg")){

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -66,7 +67,7 @@ public class ReceiptView extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		lblReceipt.setText(receipt.date);
-		lblTotal.setText(String.format("Summa: %.2f kr", receipt.price));
+		lblTotal.setText(String.format(Locale.ENGLISH,"Summa: %.2f kr", receipt.price));
 		lstItems.getItems().addAll(receipt.items);
 	}
 }

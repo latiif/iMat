@@ -1,17 +1,17 @@
 .root{
     -fx-base: white;
     -fx-background-color: white;
-    -fx-font-family: 'Roboto-Regular';		
+    -fx-font-family: 'Roboto-Regular';
 }
 
 #ElementItemNormal{
- 
+
   -fx-border-color: rgb(224, 176, 255);
   -fx-border-width: 1;
   -fx-border-radius: 5px;
   -fx-border-style: solid;
- 
-  
+
+
 }
 
 #ElementItemFavorited{
@@ -51,6 +51,5 @@
 
 @font-face {
 	font-family: Roboto-Regular;
- src: url('@../Fonts/RobotTTF/Roboto-Regular.ttf');
+ src: url('@../Fonts/RobotoTTF/Roboto-Regular.ttf');
 }
-

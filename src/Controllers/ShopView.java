@@ -2,10 +2,12 @@ package Controllers;
 
 import Commons.CartManager;
 import Commons.Inventory;
+import Commons.ItemComparator;
 import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,9 +22,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 import javafx.scene.layout.StackPane;
@@ -40,6 +40,9 @@ public class ShopView extends AnchorPane implements Initializable {
 
 	@FXML
 	private Label lblBakery, lblFruit, lblMeat, lblMilk, lblPantry, lblCandy;
+
+	@FXML
+	Label lblFav,lblOffers;
 
 	@FXML
 	AnchorPane stackContainer;
@@ -81,7 +84,12 @@ public class ShopView extends AnchorPane implements Initializable {
 	@FXML
 	private void searchOnAction(ActionEvent event) {
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().findProducts(searchField.getText()))) {
+
+		List<Product> result=IMatDataHandler.getInstance().findProducts(searchField.getText());
+		Collections.sort(result,new ItemComparator());
+		Collections.reverse(result);
+
+		for (Product product : result) {
 			itemsGrid.addItem(product);
 			itemsGrid.toFront();
 			updateStackPane();
@@ -90,14 +98,21 @@ public class ShopView extends AnchorPane implements Initializable {
 	}
 
 	@FXML
-	private void lblFavoriteOnAction(MouseEvent event) {
+	 void lblFavoriteOnAction(Event event) {
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts())) {
+		List<Product> result=IMatDataHandler.getInstance().getProducts();
+		Collections.sort(result,new ItemComparator());
+		Collections.reverse(result);
+		for (Product product : result) {
 			if (!IMatDataHandler.getInstance().isFavorite(product)) {
 				break;
 			}
 			itemsGrid.addItem(product);
 		}
+
+		itemsGrid.toFront();
+		updateStackPane();
+		showCartList();
 	}
 
 	@FXML
@@ -105,10 +120,10 @@ public class ShopView extends AnchorPane implements Initializable {
 		itemsGrid.reset();
 		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))) {
 			itemsGrid.addItem(product);
-			itemsGrid.toFront();
-			updateStackPane();
-			showCartList();
 		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCartList();
 	}
 
 	private void bringGrid() {
@@ -150,7 +165,10 @@ public class ShopView extends AnchorPane implements Initializable {
 		finalView= new FinalView();
 
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(Inventory.getInstance().getProductList())) {
+		Collections.sort(Inventory.productList,new ItemComparator());
+		Collections.reverse(Inventory.productList);
+
+		for (Product product : Inventory.productList) {
 			itemsGrid.addItem(product);
 		}
 

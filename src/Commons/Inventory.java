@@ -32,7 +32,7 @@ public class Inventory {
 
 
 
-	List<Product> productList = new ArrayList<>();
+	public static List<Product> productList = new ArrayList<>();
 
 	List<String> names= new ArrayList<>();
 

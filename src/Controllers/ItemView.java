@@ -23,6 +23,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -95,7 +96,7 @@ public class ItemView extends AnchorPane implements Initializable {
 			return Integer.toString((int)(cost));
 		}
 		else {
-			return String.format("%.2f", cost);
+			return String.format(Locale.ENGLISH,"%.2f", cost);
 		}
 	}
 

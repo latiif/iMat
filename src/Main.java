@@ -1,4 +1,5 @@
 import Commons.Inventory;
+import Commons.MostBoughtManager;
 import Commons.Receipt;
 import Commons.ReceiptManager;
 import Controllers.*;
@@ -22,6 +23,7 @@ public class Main extends Application{
 	private void prepare(){
 		Inventory.getInstance();
 		ReceiptManager.readAll();
+		MostBoughtManager.readAll();
 	}
 
 	@Override
@@ -48,6 +50,7 @@ public class Main extends Application{
 			@Override
 			public void handle(WindowEvent event) {
 				ReceiptManager.saveAll();
+				MostBoughtManager.saveAll();
 				IMatDataHandler.getInstance().shutDown();
 			}
 		});

@@ -111,6 +111,10 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		btnPM.setToggleGroup(segmentedButton.getToggleGroup());
 		btnEvening.setToggleGroup(segmentedButton.getToggleGroup());
 
+		btnAM.selectedProperty().addListener(changeListener);
+		btnEvening.selectedProperty().addListener(changeListener);
+		btnPM.selectedProperty().addListener(changeListener);
+
 
 
 		txtName.textProperty().addListener(new ChangeListener<String>() {
@@ -188,10 +192,34 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 
 
 		Inventory.shopView.finalView.lblThankYou11.setText(
-date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 		);
+date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 	+getTime()	);
 
 		Inventory.shopView.paymentInformation.toFront();
 		Inventory.shopView.updateStackPane();
 	}
+
+
+	private String getTime(){
+		if (btnAM.isSelected()){
+			return "08-12";
+		}
+		if (btnPM.isSelected()){
+			return "12-16";
+		}
+
+		return "16-20";
+	}
+
+	private ChangeListener<Boolean> changeListener = new ChangeListener<Boolean>() {
+		@Override
+		public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+			if (!btnAM.isSelected() && !btnPM.isSelected() && !btnEvening.isSelected()){
+				btnNext.setDisable(true);
+			}
+			else {
+				btnNext.setDisable(false);
+			}
+		}
+	};
 
 }

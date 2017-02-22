@@ -113,7 +113,7 @@
                     <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" />
                      </children>
                   </HBox>
-              <Label id="lblFav" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="828.0" layoutY="15.0" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.rightAnchor="204.0" AnchorPane.topAnchor="15.0">
+              <Label id="lblFav" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="828.0" layoutY="15.0" onMouseClicked="#lblFavoriteOnAction" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.rightAnchor="204.0" AnchorPane.topAnchor="15.0">
                 <font>
                   <Font size="14.0" fx:id="x2" />
                 </font>
@@ -148,7 +148,7 @@
                   <Image url="@../Icons/logo.png" />
                 </image>
               </ImageView>
-                  <Label id="lblHistory" fx:id="lblHistory1" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="723.0" layoutY="15.0" style="-fx-cursor: hand;" text="Erbjudanden" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="15.0">
+                  <Label id="lblHistory" fx:id="lblOffers" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="723.0" layoutY="15.0" style="-fx-cursor: hand;" text="Erbjudanden" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="15.0">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>

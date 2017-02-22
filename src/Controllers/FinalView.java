@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.Inventory;
+import Commons.MostBoughtManager;
 import Commons.Receipt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +62,7 @@ public class FinalView extends AnchorPane implements Initializable{
 		for(CartItem cartItem:Inventory.shopView.cartList.getCartItems()){
 			receipt.items.add(cartItem.toString());
 			receipt.price+=cartItem.cost;
+			MostBoughtManager.addItem(cartItem.getItemName());
 		}
 
 

@@ -2,6 +2,7 @@ package Controllers;
 
 import Commons.Inventory;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,8 +49,12 @@ public class StartView extends AnchorPane implements Initializable {
 	private void check(){
 		if (!Inventory.hasCustomer()){
 			paneDefault.toFront();
+			Inventory.shopView.lblFav.setDisable(true);
+			Inventory.shopView.lblOffers.setDisable(true);
 		}
 		else {
+			Inventory.shopView.lblFav.setDisable(false);
+			Inventory.shopView.lblOffers.setDisable(false);
 			paneRegistered.toFront();
 			lblWelcomeUser.setText("Välkommen till iMat, "+IMatDataHandler.getInstance().getCustomer().getFirstName());
 		}
@@ -71,5 +76,10 @@ public class StartView extends AnchorPane implements Initializable {
 		Inventory.shopView.itemsGrid.initialize(null,null);
 		Inventory.shopView.showCartList();
 		Inventory.shopView.updateStackPane();
+	}
+
+	@FXML
+	private void lblFavoriteOnAction(Event event){
+		Inventory.shopView.lblFavoriteOnAction(event);
 	}
 }

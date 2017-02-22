@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -65,6 +66,11 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 
 
 	private void flush(){
+
+		if (items.size()==0){
+			return;
+		}
+
 		for (int i=0;(currentIndex<items.size()) && (i<ITEMS_PER_SCREEN);i++,currentIndex++){
 			container.getChildren().add(new ItemView(items.get(currentIndex)));
 		}
@@ -73,7 +79,11 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		if (currentIndex!=items.size()) {
 			setLoadMoreVisibilty(true);
 		}
+		else{
+			setLoadMoreVisibilty(false);
+		}
 	}
+
 
 
 	public ItemsGrid(){
@@ -123,11 +133,6 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		container.prefHeightProperty().bind(scrollPane.heightProperty());
 
 
-
-
-
-
-
 		scrollPane.vvalueProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -137,5 +142,14 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			}
 		});
 
+		flush();
+
+	}
+
+
+	@FXML
+	private void loadMoreAction(MouseEvent mouseEvent){
+		flush();
+		scrollPane.setVvalue(0.94);
 	}
 }
