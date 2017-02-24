@@ -1,0 +1,24 @@
+.label{
+		-fx-font-family: 'Roboto-Regular';
+		-fx-font-size:12px;
+		-fx-font-weight: lighter;
+}
+
+.button{
+  -fx-background: rgb(0,0,0);
+  -fx-border-color: transparent;
+  -fx-background-radius: 10px;
+  -fx-shadow-highlight-color : transparent;
+  -fx-outer-border : transparent;
+ -fx-inner-border : transparent;
+}
+
+@font-face {
+	font-family: Roboto;
+ src: url('@../Fonts/RobotoTTF/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: Roboto-Regular;
+ src: url('@../Fonts/RobotoTTF/Roboto-Regular.ttf');
+}

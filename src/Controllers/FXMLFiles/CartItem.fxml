@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-classpath-element ../../../src?>
+<?scenebuilder-stylesheet ItemCart.css?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="245.0" stylesheets="@ItemCart.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="lblInfo" fx:id="lblInfo" layoutX="14.0" layoutY="9.0" text="Chocolate" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="9.0" />
+      <Button fx:id="btnRemove" focusTraversable="false" layoutX="202.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleRemoveAction" AnchorPane.rightAnchor="7.0">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/item-remove.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label id="lblPrice" fx:id="lblPrice" contentDisplay="RIGHT" layoutX="159.0" layoutY="9.0" text="50 kr" textAlignment="RIGHT" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="9.0" />
+   </children>
+</fx:root>

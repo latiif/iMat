@@ -1,8 +1,7 @@
 package Controllers;
 
-import FavoriteManager.FavManager;
-import javafx.animation.FadeTransition;
-import javafx.application.Application;
+import Commons.CartManager;
+import Commons.FavManager;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -10,18 +9,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -30,16 +32,23 @@ import java.util.ResourceBundle;
 public class ItemView extends AnchorPane implements Initializable {
 
 
+
+
+
 	/*
 
 	Test values, until we get the backend, then we can use the Item class to populate the window
 	*/
-	 final int PRICE_PER_1=25;
-	 final String item= "chockald";
+	 final private Product item;
+
+
+
 
 
 	 @FXML
 	 private AnchorPane ItemView,BoughtPane;
+	 @FXML
+	 private ImageView imgItem;
 
 	@FXML
 	private Label lblName,lblPriceInfo,lblFav,lblMessage;
@@ -57,7 +66,7 @@ public class ItemView extends AnchorPane implements Initializable {
 	private void updatePriceAmountLabel(){
 		lblPriceInfo.setText(format(Integer.parseInt(txtAmount.getText())));
 
-		lblMessage.setText(txtAmount.getText()+ "st " + item);
+		lblMessage.setText(txtAmount.getText()+ " "+(item.getUnitSuffix().equals("kg")?"hg":item.getUnitSuffix()) +" "+ item.getName());
 	}
 
 
@@ -80,18 +89,30 @@ public class ItemView extends AnchorPane implements Initializable {
 	}
 
 
+
+	private String getPrice(double price, double amount){
+		double cost = price*amount;
+		if (cost%1==0){
+			return Integer.toString((int)(cost));
+		}
+		else {
+			return String.format(Locale.ENGLISH,"%.2f", cost);
+		}
+	}
+
 	/*
 	Formats text according to the price and amount, and unit
-	TODO: Make unit dynamic and not static
 	 */
 	private String format(int amount){
-		return (PRICE_PER_1*amount + "kr /"+amount+"st");
+		if (item.getUnitSuffix().equals("kg")){
+			return ("Pris: "+getPrice(item.getPrice()/10,amount) + " kr /"+amount+" hg");
+		}
+		return ("Pris: "+getPrice(item.getPrice(),amount)+ " kr /"+amount+" "+item.getUnitSuffix());
 	}
 
 
 	/*
 	Handles adding elements to cart
-	TODO Come up with a away to handle adding elements externally, by an abstract class for example
 	 */
 	@FXML
 	private void handleAddAction(ActionEvent event) throws Exception {
@@ -125,7 +146,8 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		thread.start();
 
-		//come up with a way to handle adding an element
+		//come up with a way to handle adding an element, UPDATE: maybe this works?
+		CartManager.getMainCartList().AddItem(this);
 	}
 
 
@@ -133,7 +155,13 @@ public class ItemView extends AnchorPane implements Initializable {
 	Class constructor
 	TODO make it ask for an Item element, and connect it with the component
 	 */
-	public ItemView(){
+	public ItemView(Product item){
+		/*
+		Replace with Item object, when backend arrives
+		 */
+
+		this.item=item;
+
 		FXMLLoader fxmlLoader =
 				new FXMLLoader(getClass().getResource("FXMLFiles/ItemView.fxml"));
 
@@ -156,16 +184,34 @@ public class ItemView extends AnchorPane implements Initializable {
 	@FXML
 	private void handleFavAction(MouseEvent event){
 
+		event.consume();
 		System.out.println("Clicked!");
 
+
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
-		if (FavManager.getInstance().deal(this.item)){
+		if (stylize(FavManager.getInstance().deal(this.item))){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
 			lblFav.setText("Ta bort från favorit");
+
 		}else {
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_DISABLED))));
 			lblFav.setText("Spara som favorit!");
 		}
+
+
+	}
+
+
+
+	private boolean stylize(boolean isFav){
+		if (isFav){
+			this.setId("ElementItemFavorited");
+		}else
+		{
+			this.setId("ElementItemNormal");
+		}
+
+		return isFav;
 	}
 
 
@@ -179,6 +225,18 @@ public class ItemView extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		txtAmount.setText("1");
+		lblName.setText(item.getName());
+		//System.out.println(IMatDataHandler.getInstance().imatDirectory()+"/images/"+item.getImageName());
+
+		File file= new File(IMatDataHandler.getInstance().imatDirectory()+"/images/"+item.getImageName());
+
+		imgItem.setImage(new Image(file.toURI().toString(),true));
+
+
+		updatePriceAmountLabel();
+
+
+
 
 
 		//Making sure the user does not input non-numeric non-integer values as amount
@@ -193,10 +251,9 @@ public class ItemView extends AnchorPane implements Initializable {
 		ImageView imgFav = (ImageView)(lblFav.getGraphic());
 
 
-		if (FavManager.getInstance().isFav(this.item)){
+		if (stylize(FavManager.getInstance().isFav(this.item))){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
 			lblFav.setText("Ta bort från favorit");
-
 		}
 		else {
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_DISABLED))));
@@ -204,5 +261,34 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		}
 
+	}
+
+
+	public String getItemName(){
+		return this.item.getName();
+	}
+
+	public ProductCategory getCategory(){
+		return this.item.getCategory();
+	}
+
+	public void show(){
+		this.setVisible(true);
+	}
+
+	public void hide(){
+		this.setVisible(false);
+	}
+
+	public String getUnit(){
+		return item.getUnitSuffix();
+	}
+
+	public double getUnitPrice(){
+		return item.getPrice();
+	}
+
+	public int getQuantity(){
+		return Integer.parseInt(txtAmount.getText());
 	}
 }

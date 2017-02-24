@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@DeliveryInformation.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Leveransinformation:" underline="true" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <Label prefHeight="20.0" prefWidth="221.0" text="Varorna levereras till" />
+            <TextField fx:id="txtName" prefHeight="25.0" prefWidth="223.0" promptText="Ditt fullständiga namn" />
+            <Label prefHeight="35.0" prefWidth="226.0" text="som bor på">
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtStreet" prefHeight="25.0" prefWidth="225.0" promptText="Din gatudadress" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="402.0" spacing="10.0">
+               <children>
+                  <Label text="i " />
+                  <TextField fx:id="txtZipcode" prefHeight="25.0" prefWidth="110.0" promptText="postnummer" />
+                  <Label text=", " />
+                  <TextField fx:id="txtCity" promptText="postort" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="323.0" spacing="10.0">
+               <children>
+                  <Label text="den " />
+                  <DatePicker fx:id="date" promptText="Ange leveransdatum" showWeekNumbers="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="423.0" spacing="10.0">
+               <children>
+                  <Label text="klockan " />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ToggleButton fx:id="btnAM" mnemonicParsing="false" text="08-12" />
+                        <ToggleButton fx:id="btnPM" mnemonicParsing="false" selected="true" text="12-16" />
+                        <ToggleButton fx:id="btnEvening" mnemonicParsing="false" text="16-20" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="46.0" prefWidth="577.0">
+               <children>
+                  <Button fx:id="btnNext" mnemonicParsing="false" onAction="#btnNextAction" text="Vidare" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</fx:root>
