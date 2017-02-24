@@ -2,6 +2,7 @@
     -fx-base: white;
     -fx-background-color: white;
     -fx-font-family: 'Roboto-Regular';
+    -fx-font-size: 13px;
 }
 
 #ElementItemNormal{
@@ -37,6 +38,8 @@
 
 #lblFav {
 -fx-cursor: hand;
+-fx-font-size:13px;
+-fx-font-family:"Roboto-Regular";
 }
 
 .button{

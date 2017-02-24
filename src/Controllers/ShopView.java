@@ -55,6 +55,7 @@ public class ShopView extends AnchorPane implements Initializable {
 	 PaymentInformation paymentInformation;
 	 FinalView finalView;
 	 CartList cartList;
+	 AccountInformation accountInformation;
 	@FXML
 	AnchorPane paneCartList, paneGrid, paneCart;
 	@FXML
@@ -112,6 +113,7 @@ public class ShopView extends AnchorPane implements Initializable {
 
 		itemsGrid.toFront();
 		updateStackPane();
+		showCashout();
 		showCartList();
 	}
 
@@ -123,6 +125,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		}
 		itemsGrid.toFront();
 		updateStackPane();
+		showCashout();
 		showCartList();
 	}
 
@@ -157,6 +160,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		Inventory.shopView=this;
 
 		cartList=new CartList();
+		accountInformation= new AccountInformation();
 		paneCartList.getChildren().add(cartList);
 		itemsGrid = new ItemsGrid();
 		startView= new StartView();
@@ -175,7 +179,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		TextFields.bindAutoCompletion(searchField, Inventory.getInstance().getNames());
 
 
-		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView);
+		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView,accountInformation);
 
 		startView.toFront();
 		updateStackPane();
@@ -194,6 +198,15 @@ public class ShopView extends AnchorPane implements Initializable {
 		AnchorPane.setBottomAnchor(notificationPane,0.0);
 		stackContainer.getChildren().add(notificationPane);
 
+	}
+
+
+	@FXML
+	void accountInfoAction(MouseEvent mouseEvent){
+		accountInformation.initialize(null,null);
+		accountInformation.loadCreditCardInformation();
+		accountInformation.toFront();
+		updateStackPane();
 	}
 
 

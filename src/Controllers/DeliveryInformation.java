@@ -158,6 +158,15 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		});
 
 
+	loadUserInfo();
+
+		date.setValue(DATE);
+
+
+
+	}
+
+	void loadUserInfo(){
 		if (Inventory.hasCustomer()){
 			txtName.setText(Inventory.customer.getFirstName()+" "+Inventory.customer.getLastName());
 			txtCity.setText(Inventory.customer.getPostAddress());
@@ -168,11 +177,6 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		{
 			getCity();
 		}
-
-		date.setValue(DATE);
-
-
-
 	}
 
 

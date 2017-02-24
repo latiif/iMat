@@ -1,0 +1,33 @@
+@font-face {
+	font-family: Cousine;
+ src: url('@../Fonts/Cousine/Cousine-Regular.ttf');
+
+}
+
+
+#btnSave {
+	-fx-base: green;
+	-fx-font-size: 13px;
+	-fx-cursor: hand;
+}
+
+#btnClear {
+	-fx-base: red;
+	-fx-font-size: 13px;
+	-fx-cursor: hand;
+}
+
+#paneCardInformation{
+  -fx-font-family: 'Cousine';
+}
+
+
+.error{
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
+}
+
+.valid{
+  -fx-text-box-border: green ;
+  -fx-focus-color: green ;
+}

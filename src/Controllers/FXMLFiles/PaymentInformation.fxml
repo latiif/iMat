@@ -27,7 +27,7 @@
                   <Label text="Card Holder" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                      <children>
-                        <TextField fx:id="txtHolder" prefHeight="25.0" prefWidth="218.0" />
+                        <TextField fx:id="txtHolder" prefHeight="25.0" prefWidth="471.0" />
                      </children>
                   </HBox>
                   <Label text="Kortnummer:" />
@@ -43,7 +43,7 @@
                      </children>
                   </HBox>
                   <Label text="Valid Through:" />
-                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="464.0" spacing="5.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0" spacing="5.0">
                      <children>
                         <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" text="09" />
                         <Label text="/" />
@@ -53,12 +53,12 @@
                   <Label text="Verification code:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                      <children>
-                        <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="75.0" />
+                        <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="53.0" />
                      </children>
                   </HBox>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Spara kortuppgifter" />
+                        <CheckBox fx:id="chkSaveCard" mnemonicParsing="false" text="Spara kortuppgifter" />
                      </children>
                   </HBox>
                </children>

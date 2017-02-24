@@ -125,7 +125,7 @@
                   </ImageView>
                 </graphic>
               </Label>
-              <Label id="lblHistory" fx:id="lblHistory" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="906.0" layoutY="15.0" style="-fx-cursor: hand;" text="Mina uppgifter" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="15.0">
+              <Label id="lblHistory" fx:id="lblHistory" alignment="CENTER" contentDisplay="TOP" font="$x2" layoutX="906.0" layoutY="15.0" onMouseClicked="#accountInfoAction" style="-fx-cursor: hand;" text="Mina uppgifter" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="15.0">
                 <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                     <image>
