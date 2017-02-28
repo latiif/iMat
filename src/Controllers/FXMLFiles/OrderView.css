@@ -34,6 +34,7 @@
 	-fx-font-weight: bold;
 	-fx-font-size: 16px;
 }
+
 .button{
   -fx-font-weight: bold;
   -fx-border-color: transparent;
@@ -58,6 +59,11 @@
 }
 #lblThankYou{
 	-fx-font-weight: normal;
+}
+
+#lblThankYou1,#lblThankYou11{
+	-fx-font-family: 'Roboto';
+	-fx-font-size: 35px;
 }
 
 

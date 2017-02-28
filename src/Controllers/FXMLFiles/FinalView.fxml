@@ -21,9 +21,9 @@
       </HBox>
       <Button id="btnHistory" fx:id="btnHistory" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" text="Se historik" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Button id="btnClose" fx:id="btnClose" layoutX="43.0" layoutY="486.0" mnemonicParsing="false" text="Avsluta iMat" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <HBox alignment="CENTER" layoutX="258.0" layoutY="124.0" prefHeight="355.0" prefWidth="754.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0">
+      <HBox alignment="CENTER" layoutX="258.0" layoutY="124.0" prefHeight="355.0" prefWidth="754.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <AnchorPane fx:id="receiptPane" prefHeight="309.0" prefWidth="239.0" />
+            <AnchorPane fx:id="receiptPane" prefHeight="355.0" prefWidth="368.0" />
          </children>
       </HBox>
    </children>

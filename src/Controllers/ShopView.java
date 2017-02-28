@@ -1,22 +1,14 @@
 package Controllers;
 
-import Commons.CartManager;
 import Commons.Inventory;
-import Commons.ItemComparator;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import Commons.ItemComparatorDefault;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -27,8 +19,6 @@ import java.util.*;
 
 import javafx.scene.layout.StackPane;
 import org.controlsfx.control.NotificationPane;
-import org.controlsfx.control.decoration.Decorator;
-import org.controlsfx.control.decoration.GraphicDecoration;
 import org.controlsfx.control.textfield.TextFields;
 import se.chalmers.ait.dat215.project.*;
 
@@ -87,23 +77,24 @@ public class ShopView extends AnchorPane implements Initializable {
 		itemsGrid.reset();
 
 		List<Product> result=IMatDataHandler.getInstance().findProducts(searchField.getText());
-		Collections.sort(result,new ItemComparator());
-		Collections.reverse(result);
+		Collections.sort(result,new ItemComparatorDefault());
+		//Collections.reverse(result);
 
 		for (Product product : result) {
 			itemsGrid.addItem(product);
-			itemsGrid.toFront();
-			updateStackPane();
-			showCartList();
 		}
+
+		itemsGrid.toFront();
+		updateStackPane();
+		showCartList();
 	}
 
 	@FXML
 	 void lblFavoriteOnAction(Event event) {
 		itemsGrid.reset();
 		List<Product> result=IMatDataHandler.getInstance().getProducts();
-		Collections.sort(result,new ItemComparator());
-		Collections.reverse(result);
+		Collections.sort(result,new ItemComparatorDefault());
+		//Collections.reverse(result);
 		for (Product product : result) {
 			if (!IMatDataHandler.getInstance().isFavorite(product)) {
 				break;
@@ -169,8 +160,8 @@ public class ShopView extends AnchorPane implements Initializable {
 		finalView= new FinalView();
 
 		itemsGrid.reset();
-		Collections.sort(Inventory.productList,new ItemComparator());
-		Collections.reverse(Inventory.productList);
+		Collections.sort(Inventory.productList,new ItemComparatorDefault());
+		//Collections.reverse(Inventory.productList);
 
 		for (Product product : Inventory.productList) {
 			itemsGrid.addItem(product);

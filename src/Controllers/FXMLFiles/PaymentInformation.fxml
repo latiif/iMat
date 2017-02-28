@@ -8,6 +8,12 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@PaymentInformation.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <VBox fx:id="boxInvoice" alignment="CENTER" layoutY="179.0" prefHeight="305.0" prefWidth="792.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+         <children>
+            <Label text="Fakturan kommer vara bifogad till din address på:" />
+            <Label fx:id="lblAddress" text="address" />
+         </children>
+      </VBox>
       <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="Betalninformation:" underline="true" />
@@ -22,7 +28,7 @@
                   <ToggleButton fx:id="btnCard" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="25.0" prefWidth="75.0" text="Kort" />
                </children>
             </HBox>
-            <VBox fx:id="boxCredit" prefHeight="405.0" prefWidth="464.0" spacing="3.0" VBox.vgrow="SOMETIMES">
+            <VBox fx:id="boxCredit" prefHeight="405.0" prefWidth="464.0" spacing="3.0" visible="false" VBox.vgrow="SOMETIMES">
                <children>
                   <Label text="Card Holder" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
@@ -45,9 +51,9 @@
                   <Label text="Valid Through:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0" spacing="5.0">
                      <children>
-                        <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" text="09" />
+                        <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" />
                         <Label text="/" />
-                        <TextField fx:id="txtYear" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" text="20" />
+                        <TextField fx:id="txtYear" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" />
                      </children>
                   </HBox>
                   <Label text="Verification code:" />

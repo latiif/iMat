@@ -9,7 +9,9 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 public class CreditCardManager {
 
 	public static CreditCard getCreditCard(){
-		if (IMatDataHandler.getInstance().getCreditCard().getCardNumber().equals("") &&
+		if (
+				IMatDataHandler.getInstance().getCreditCard().getCardNumber().split("-").length!=4 ||
+				IMatDataHandler.getInstance().getCreditCard().getCardNumber().equals("") &&
 				IMatDataHandler.getInstance().getCreditCard().getHoldersName().equals("") &&
 				IMatDataHandler.getInstance().getCreditCard().getValidYear()== 0 &&
 				IMatDataHandler.getInstance().getCreditCard().getValidMonth()==0 &&

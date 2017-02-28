@@ -103,6 +103,12 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 
+		AnchorPane.setBottomAnchor(this,0.0);
+		AnchorPane.setLeftAnchor(this,0.0);
+		AnchorPane.setTopAnchor(this,0.0);
+		AnchorPane.setRightAnchor(this,0.0);
+
+
 		Inventory.shopView.hideCashout();
 
 
@@ -200,6 +206,7 @@ date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue()
 
 		Inventory.shopView.paymentInformation.toFront();
 		Inventory.shopView.updateStackPane();
+		Inventory.shopView.paymentInformation.lblAddress.setText(txtName.getText()+"\n"+txtStreet.getText() + "\n"+txtZipcode.getText()+" "+txtCity.getText());
 	}
 
 

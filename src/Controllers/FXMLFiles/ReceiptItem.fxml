@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="28.0" prefWidth="227.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="15.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <Label fx:id="lblCost" text="Label" textAlignment="RIGHT" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <Label fx:id="lblName" text="Product name" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Label fx:id="lblQty" text="Product name" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</fx:root>

@@ -3,6 +3,9 @@
 	-fx-base: #FFF;
 	-fx-font-size: 20px;
 }
+#searchField{
+	-fx-background-radius: 10;
+}
 
 #sideCategory{
 	-fx-font-weight : bold;

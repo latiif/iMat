@@ -121,6 +121,7 @@ public class AccountInformation extends AnchorPane implements Initializable {
 		CreditCardManager.clearCreditCard();
 		loadCreditCardInformation();
 		Inventory.shopView.paymentInformation.CheckCreditCard();
+		Inventory.shopView.paymentInformation.initialize(null,null);
 	}
 
 

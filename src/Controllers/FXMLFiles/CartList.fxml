@@ -7,15 +7,19 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="250.0" style="-fx-background-color: #f7f4e8;" stylesheets="@CartList.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane prefHeight="398.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="272.0" style="-fx-background: #f7f4e8; -fx-border-color: #f7f4e8;" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane prefHeight="398.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="272.0" style="-fx-background: #f7f4e8; -fx-border-color: #f7f4e8;" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <content>
             <VBox fx:id="vList" style="-fx-background-color: #f7f4e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </content>
       </ScrollPane>
-      <Button id="btnRemoveAll" fx:id="btnRemoveAll" layoutX="151.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleRemoveAllAction" style="-fx-cursor: hand;" text="Töm varukorg" AnchorPane.bottomAnchor="82.0" AnchorPane.rightAnchor="1.0" />
-      <Label id="lblToPay" layoutX="12.0" layoutY="431.0" text="Att betala: " AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="431.0" />
-      <Label id="lblCost" fx:id="lblCost" layoutX="121.0" layoutY="431.0" text="0 kr" AnchorPane.bottomAnchor="59.0" AnchorPane.topAnchor="431.0" />
+      <Button id="btnRemoveAll" fx:id="btnRemoveAll" layoutX="151.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleRemoveAllAction" style="-fx-cursor: hand;" text="Töm varukorg" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="1.0" />
         <Button id="btnCheckout" fx:id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="9.0" layoutY="460.0" mnemonicParsing="false" onAction="#btnCheckoutAction" prefHeight="46.0" prefWidth="99.0" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="65.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="429.0" prefHeight="28.0" prefWidth="200.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label id="lblToPay" text="Att betala: " />
+            <Label id="lblCost" fx:id="lblCost" text="0 kr" />
+         </children>
+      </HBox>
       <ImageView fx:id="imgCheckout" fitHeight="50.0" fitWidth="50.0" layoutX="194.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="6.0">
          <image>
             <Image url="@../Icons/checkout-icon.png" />

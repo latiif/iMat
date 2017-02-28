@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,7 +21,7 @@ import java.util.ResourceBundle;
  */
 public class ReceiptView extends AnchorPane implements Initializable {
 
-	private  List<String> items= new ArrayList<>();
+
 
 	@FXML
 	private Label lblName1;
@@ -32,7 +33,7 @@ public class ReceiptView extends AnchorPane implements Initializable {
 	private Label lblReceipt;
 
 	@FXML
-	private ListView<String> lstItems;
+	private VBox lstItems;
 
 	@FXML
 	private AnchorPane ReceiptView;
@@ -68,6 +69,12 @@ public class ReceiptView extends AnchorPane implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		lblReceipt.setText(receipt.date);
 		lblTotal.setText(String.format(Locale.ENGLISH,"Summa: %.2f kr", receipt.price));
-		lstItems.getItems().addAll(receipt.items);
+
+		for(String item: receipt.items){
+			String[] strings=item.split("\t");
+			lstItems.getChildren().add(new ReceiptItem(strings[0],strings[1],strings[2]));
+		}
+
+		//lstItems.getItems().addAll(receipt.items);
 	}
 }

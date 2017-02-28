@@ -92,16 +92,20 @@
         <AnchorPane fx:id="paneCart" layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
           <children>
                   <AnchorPane fx:id="paneCartList" layoutX="4.0" layoutY="71.0" prefHeight="484.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="99.0" />
-          <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-            <image>
-              <Image url="@../Icons/shopping-cart.png" />
-            </image>
-          </ImageView>
-            <Label fx:id="lblMyCart" alignment="BOTTOM_RIGHT" contentDisplay="LEFT" focusTraversable="false" layoutX="85.0" layoutY="24.0" prefHeight="30.0" prefWidth="127.0" text="Min varukorg" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="24.0">
-              <font>
-                <Font size="20.0" />
-              </font>
-            </Label>
+                  <HBox alignment="CENTER" prefHeight="61.0" prefWidth="257.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                <ImageView fitHeight="48.0" fitWidth="48.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../Icons/shopping-cart.png" />
+                  </image>
+                </ImageView>
+                  <Label fx:id="lblMyCart" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" text="Min varukorg" textAlignment="CENTER" textOverrun="CLIP">
+                    <font>
+                      <Font size="20.0" />
+                    </font>
+                  </Label>
+                     </children>
+                  </HBox>
             
           </children>
         </AnchorPane>

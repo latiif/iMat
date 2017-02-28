@@ -8,7 +8,47 @@
 
 <fx:root style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fx:id="scrollPane" focusTraversable="false" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="545.0" prefWidth="754.0" style="-fx-border-color: white; -fx-background: white;" stylesheets="ItemsGrid.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="topPane" prefHeight="51.0" prefWidth="771.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fx:id="catHBox" alignment="CENTER" prefHeight="51.0" prefWidth="764.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <HBox alignment="CENTER" layoutX="544.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Sortera:" />
+                  <ToggleButton fx:id="btnDefault" mnemonicParsing="false" selected="true">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/favorite-heart-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="SearchFilters" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnPrice" mnemonicParsing="false" toggleGroup="$SearchFilters">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/dollars-symbol.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnAlpha" mnemonicParsing="false" toggleGroup="$SearchFilters">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/sort-by-alphabet.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="scrollPane" focusTraversable="false" hbarPolicy="NEVER" layoutY="48.0" pickOnBounds="false" prefHeight="495.0" prefWidth="771.0" style="-fx-border-color: white; -fx-background: white;" stylesheets="ItemsGrid.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
          <content>
             <AnchorPane fx:id="anchorPane" maxHeight="Infinity" maxWidth="Infinity" minHeight="310.0" minWidth="240">
                <children>

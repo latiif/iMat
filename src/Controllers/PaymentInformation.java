@@ -52,7 +52,10 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	private ToggleButton btnCard;
 
 	@FXML
-	private VBox mainBox,boxCredit;
+	private VBox boxInvoice,mainBox,boxCredit;
+
+	@FXML
+	Label lblAddress;
 
 	@FXML
 	private TextField txtHolder;
@@ -312,7 +315,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 
 
 		boxCredit.visibleProperty().bind(btnCard.selectedProperty());
-
+		boxInvoice.visibleProperty().bind(btnInvoice.selectedProperty());
 
 
 
@@ -332,32 +335,35 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	void btnFinishAction(ActionEvent event) {
 
 
-		if (chkSaveCard.isSelected()){
-			CreditCardManager.setCreditCard(txtHolder.getText(),cn1.getText()+'-'+cn2.getText()+'-'+cn3.getText()+'-'+cn4.getText()
-			,Integer.parseInt(txtMonth.getText()),Integer.parseInt(txtYear.getText()),Integer.parseInt(txtCvc.getText()));
-		}else{
-			txtHolder.setText("");
-			txtYear.setText("");
-			txtCvc.setText("");
-			txtMonth.setText("");
-			cn1.setText("");
-			cn2.setText("");
-			cn3.setText("");
-			cn4.setText("");
+		if (!isCreditAvailable) {
 
-			reset_styling(txtHolder);
-			reset_styling(txtYear);
-			reset_styling(txtCvc);
-			reset_styling(txtMonth);
-			reset_styling(cn1);
-			reset_styling(cn2);
-			reset_styling(cn3);
-			reset_styling(cn4);
+			if (chkSaveCard.isSelected()) {
+				CreditCardManager.setCreditCard(txtHolder.getText(), cn1.getText() + '-' + cn2.getText() + '-' + cn3.getText() + '-' + cn4.getText()
+						, Integer.parseInt(txtMonth.getText()), Integer.parseInt(txtYear.getText()), Integer.parseInt(txtCvc.getText()));
+			} else {
+				txtHolder.setText("");
+				txtYear.setText("");
+				txtCvc.setText("");
+				txtMonth.setText("");
+				cn1.setText("");
+				cn2.setText("");
+				cn3.setText("");
+				cn4.setText("");
+
+				reset_styling(txtHolder);
+				reset_styling(txtYear);
+				reset_styling(txtCvc);
+				reset_styling(txtMonth);
+				reset_styling(cn1);
+				reset_styling(cn2);
+				reset_styling(cn3);
+				reset_styling(cn4);
 
 
-			btnInvoice.setSelected(false);
-			btnCard.setSelected(false);
+				btnInvoice.setSelected(false);
+				btnCard.setSelected(false);
 
+			}
 		}
 
 		Inventory.shopView.hideCashout();
