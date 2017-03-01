@@ -75,7 +75,7 @@
                         </ImageView>
                       </graphic>
                     </Label>
-                        <Label id="sideCategory" fx:id="lblFruit1" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Extrapriser">
+                        <Label id="sideCategory" fx:id="lblOffers" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Extrapriser">
                            <graphic>
                               <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
