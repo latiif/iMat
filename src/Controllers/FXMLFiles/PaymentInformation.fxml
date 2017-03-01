@@ -1,70 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import org.controlsfx.control.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@PaymentInformation.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@OrderView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox fx:id="boxInvoice" alignment="CENTER" layoutY="179.0" prefHeight="305.0" prefWidth="792.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
          <children>
-            <Label text="Fakturan kommer vara bifogad till din address på:" />
-            <Label fx:id="lblAddress" text="address" />
+            <Label id="lblPayment" prefHeight="69.0" prefWidth="376.0" text="Fakturan kommer vara bifogad till din address på:">
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding></Label>
+            <Label id="lblPayment" fx:id="lblAddress" prefHeight="67.0" prefWidth="58.0" text="address" />
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label text="Betalninformation:" underline="true" />
-         </children>
-      </HBox>
       <VBox fx:id="mainBox" alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
+               <children>
+                  <Label id="lblPaymentInfo" fx:id="lblPaymentInfo" alignment="CENTER" prefHeight="66.0" prefWidth="374.0" text="Välj betalsätt:" />
+               </children>
+               <padding>
+                  <Insets top="13.0" />
+               </padding>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="491.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label text="Jag betalar med: " />
-                  <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefWidth="75.0" text="Faktura" />
+                  <Label id="lblPayment" text="Jag vill betala med: " />
+                  <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="37.0" prefWidth="97.0" text="Faktura">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
                   <ToggleButton fx:id="btnCard" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="25.0" prefWidth="75.0" text="Kort" />
                </children>
             </HBox>
             <VBox fx:id="boxCredit" prefHeight="405.0" prefWidth="464.0" spacing="3.0" visible="false" VBox.vgrow="SOMETIMES">
                <children>
-                  <Label text="Card Holder" />
+                  <Label id="lblPayment" alignment="CENTER" text="Namn på kortinnehavaren:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                      <children>
-                        <TextField fx:id="txtHolder" prefHeight="25.0" prefWidth="471.0" />
+                        <TextField fx:id="txtHolder" prefHeight="25.0" prefWidth="471.0" promptText="Ange namnet på personen som äger kortet" />
                      </children>
                   </HBox>
-                  <Label text="Kortnummer:" />
+                  <Label id="lblPayment" text="Kortnummer:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                      <children>
-                        <TextField fx:id="cn1" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <TextField fx:id="cn1" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" promptText="0000" />
                         <Label text="-" />
-                        <TextField fx:id="cn2" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <TextField fx:id="cn2" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" promptText="0000" />
                         <Label text="-" />
-                        <TextField fx:id="cn3" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <TextField fx:id="cn3" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" promptText="0000" />
                         <Label text="-" />
-                        <TextField fx:id="cn4" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" />
+                        <TextField fx:id="cn4" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="218.0" promptText="0000" />
                      </children>
                   </HBox>
-                  <Label text="Valid Through:" />
+                  <Label id="lblPayment" text="Giltigt till:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0" spacing="5.0">
                      <children>
-                        <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" />
-                        <Label text="/" />
-                        <TextField fx:id="txtYear" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" />
+                        <TextField fx:id="txtMonth" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" promptText="ÅÅ" />
+                        <Label id="lblPayment" text="/" />
+                        <TextField fx:id="txtYear" alignment="CENTER" focusTraversable="false" prefHeight="25.0" prefWidth="55.0" promptText="MM" />
                      </children>
                   </HBox>
-                  <Label text="Verification code:" />
+                  <Label id="lblPayment" text="Verifikationskod/CVC-kod:" />
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                      <children>
-                        <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="53.0" />
+                        <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="53.0" promptText="00" />
                      </children>
                   </HBox>
-                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="60.0" prefWidth="456.0">
                      <children>
-                        <CheckBox fx:id="chkSaveCard" mnemonicParsing="false" text="Spara kortuppgifter" />
+                        <CheckBox fx:id="chkSaveCard" mnemonicParsing="false" prefHeight="60.0" prefWidth="462.0" text="Jag vill spara mina kortuppgifter" />
                      </children>
                   </HBox>
                </children>
@@ -74,12 +88,32 @@
             <Insets top="15.0" />
          </padding>
       </VBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="799.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBackAction" text="Tillbacka" HBox.hgrow="ALWAYS" />
-            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Button fx:id="btnFinish" contentDisplay="CENTER" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#btnFinishAction" text="Slutför köpet" HBox.hgrow="ALWAYS" />
-         </children>
-      </HBox>
+      <Button id="btnNext" fx:id="btnFinish" alignment="CENTER_RIGHT" disable="true" layoutX="15.0" layoutY="590.0" mnemonicParsing="false" onAction="#btnFinishAction" text="Slutför ditt köp" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button id="btnBack" fx:id="btnBack" layoutX="-26.0" layoutY="566.0" mnemonicParsing="false" onAction="#btnBackAction" text="Gå tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="232.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/one.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="375.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/two.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="518.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/three-gray.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="305.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/line-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="451.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/line-icon.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>

@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@DeliveryInformation.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@OrderView.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="531.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
-            <Label text="Leveransinformation:" underline="true" />
-         </children>
-      </HBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
-         <children>
+            <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" prefHeight="60.0" prefWidth="613.0" stylesheets="@OrderView.css" text="Ange din leveransinformation:" textAlignment="CENTER" />
             <HBox prefHeight="100.0" prefWidth="200.0" />
-            <Label prefHeight="20.0" prefWidth="221.0" text="Varorna levereras till" />
-            <TextField fx:id="txtName" prefHeight="25.0" prefWidth="223.0" promptText="Ditt fullständiga namn" />
-            <Label prefHeight="35.0" prefWidth="226.0" text="som bor på">
+            <Label id="lblDelivery" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="221.0" text="Varorna levereras till" />
+            <TextField fx:id="txtName" prefHeight="39.0" prefWidth="297.0" promptText="ditt fullständiga namn" />
+            <Label id="lblDelivery" alignment="CENTER" prefHeight="15.0" prefWidth="226.0" text="som bor på">
                <padding>
-                  <Insets top="15.0" />
+                  <Insets top="10.0" />
                </padding>
             </Label>
-            <TextField fx:id="txtStreet" prefHeight="25.0" prefWidth="225.0" promptText="Din gatudadress" />
-            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="402.0" spacing="10.0">
+            <TextField fx:id="txtStreet" prefHeight="39.0" prefWidth="373.0" promptText="din gatuadress" />
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="612.0" spacing="10.0">
                <children>
-                  <Label text="i " />
-                  <TextField fx:id="txtZipcode" prefHeight="25.0" prefWidth="110.0" promptText="postnummer" />
-                  <Label text=", " />
-                  <TextField fx:id="txtCity" promptText="postort" />
+                  <Label id="lblDelivery" text="i " />
+                  <TextField fx:id="txtCity" prefHeight="39.0" prefWidth="210.0" promptText="din postort" />
+                  <Label id="lblDelivery" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="158.0" text="med postnummer" />
+                  <TextField fx:id="txtZipcode" prefHeight="39.0" prefWidth="168.0" promptText="ditt postnummer" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="469.0" spacing="10.0">
+               <children>
+                  <Label id="lblDelivery" text="Leveransen sker" />
+                  <DatePicker fx:id="date" prefHeight="35.0" promptText="ange leveransdatum" showWeekNumbers="true" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="323.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="423.0" spacing="10.0">
                <children>
-                  <Label text="den " />
-                  <DatePicker fx:id="date" promptText="Ange leveransdatum" showWeekNumbers="true" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="423.0" spacing="10.0">
-               <children>
-                  <Label text="klockan " />
+                  <Label id="lblDelivery" text="klockan " />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ToggleButton fx:id="btnAM" mnemonicParsing="false" text="08-12" />
-                        <ToggleButton fx:id="btnPM" mnemonicParsing="false" selected="true" text="12-16" />
-                        <ToggleButton fx:id="btnEvening" mnemonicParsing="false" text="16-20" />
+                        <ToggleButton fx:id="btnAM" mnemonicParsing="false" prefHeight="35.0" text="08-12" />
+                        <ToggleButton fx:id="btnPM" mnemonicParsing="false" prefHeight="35.0" selected="true" text="12-16" />
+                        <ToggleButton fx:id="btnEvening" mnemonicParsing="false" prefHeight="35.0" text="16-20" />
                      </children>
                   </HBox>
-               </children>
-            </HBox>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="46.0" prefWidth="577.0">
-               <children>
-                  <Button fx:id="btnNext" mnemonicParsing="false" onAction="#btnNextAction" text="Vidare" />
                </children>
             </HBox>
          </children>
@@ -59,5 +55,32 @@
             <Insets top="15.0" />
          </padding>
       </VBox>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="461.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/line-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="315.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/line-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="528.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/three-gray.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="385.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/two-gray.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="242.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/one.png" />
+         </image>
+      </ImageView>
+      <Button id="btnBack" fx:id="btnBack" layoutX="-36.0" layoutY="556.0" mnemonicParsing="false" text="Tillbaka till butiken" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Button id="btnNext" fx:id="btnNext" alignment="CENTER_RIGHT" disable="true" layoutX="5.0" layoutY="580.0" mnemonicParsing="false" onAction="#btnNextAction" text="Gå vidare" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
    </children>
 </fx:root>
