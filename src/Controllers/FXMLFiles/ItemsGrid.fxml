@@ -13,7 +13,10 @@
             <HBox fx:id="catHBox" alignment="CENTER" prefHeight="51.0" prefWidth="764.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <HBox alignment="CENTER" layoutX="544.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label text="Sortera:" />
+                  <Label fx:id="lblSort" text="Sortera:">
+                     <padding>
+                        <Insets right="3.0" />
+                     </padding></Label>
                   <ToggleButton fx:id="btnDefault" mnemonicParsing="false" selected="true">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">

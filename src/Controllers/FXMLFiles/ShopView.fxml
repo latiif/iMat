@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet ShopView.css?>
 
-<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1098.0" stylesheets="@ShopView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1150.0" stylesheets="@ShopView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane prefHeight="710.0" prefWidth="1050.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -96,7 +96,7 @@
             <AnchorPane fx:id="paneSideFade" opacity="0.55" prefHeight="629.0" prefWidth="137.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <AnchorPane fx:id="paneCart" layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" prefWidth="257.0" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
           <children>
-                  <AnchorPane fx:id="paneCartList" layoutX="-6.0" layoutY="71.0" prefHeight="530.0" prefWidth="263.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="99.0" />
+                  <AnchorPane fx:id="paneCartList" layoutX="2.0" layoutY="63.0" prefHeight="566.0" prefWidth="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="63.0" />
                   <HBox alignment="CENTER" prefHeight="61.0" prefWidth="257.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                 <ImageView fitHeight="48.0" fitWidth="48.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
@@ -162,7 +162,7 @@
         </AnchorPane>
             <AnchorPane fx:id="stackContainer" layoutX="137.0" layoutY="100.0" prefHeight="583.0" prefWidth="706.0" style="-fx-background: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <StackPane fx:id="stackPane" prefHeight="629.0" prefWidth="707.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0" />
+                  <StackPane fx:id="stackPane" prefHeight="629.0" prefWidth="707.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
       </children>
