@@ -1,4 +1,4 @@
-
+/** GENERAL **/
 #btnSearch {
 	-fx-base: #FFF;
 	-fx-font-size: 20px;
@@ -6,7 +6,6 @@
 #searchField{
 	-fx-background-radius: 10;
 }
-
 #sideCategory{
 	-fx-font-weight : bold;
 	-fx-font-size: 16px;
@@ -50,6 +49,10 @@
 		 -fx-font-size:13px;
 		 -fx-font-weight: bold;
 }
+#paneTopFade, #paneSideFade{
+	-fx-background-color: #000;
+	-fx-border-color: #000;
+}
 
 .#sideCategory{
 	-fx-font-size: 12px;
@@ -67,7 +70,7 @@
  src: url('@../Fonts/RobotoTTF/Roboto-Medium.ttf');
 
 }
-
+/** SCROLLBAR **/
 .scroll-bar{
     -fx-background-color: white;
 }
