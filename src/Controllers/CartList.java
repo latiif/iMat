@@ -78,6 +78,14 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+
+		if (this.isVisible()){
+			btnCheckout.setVisible(true);
+		}
+		else {
+			btnCheckout.setVisible(false);
+		}
+
 		imgCheckout.visibleProperty().bind(btnCheckout.visibleProperty());
 		updateCost();
 

@@ -10,8 +10,8 @@ public class Translator {
 		switch (category){
 			case BERRY: return "Bär";
 			case BREAD:return "Bröd";
-			case CABBAGE: return "Kål";
-			case CITRUS_FRUIT: return "Citrusfrukt";
+			case CABBAGE: return "Sallad & Kål";
+			case CITRUS_FRUIT: return "Citrus";
 			case COLD_DRINKS:return "Kalla drycker";
 			case DAIRIES: return "Mejeri";
 			case EXOTIC_FRUIT:return "Exotiska frukter";
@@ -28,7 +28,7 @@ public class Translator {
 			case POTATO_RICE:return "Potatis & Ris";
 			case ROOT_VEGETABLE: return "Rotsaker";
 			case SWEET:return "Godis";
-			case VEGETABLE_FRUIT:return "Grönsaksfrukter";
+			case VEGETABLE_FRUIT:return "Grönsaker";
 
 		}
 

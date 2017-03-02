@@ -62,17 +62,18 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 	 */
 	public void addItem(Product item){
 
-		items.add(item);
+
 
 		if (!categories.containsValue(item.getCategory())){//add a new category-button pair
 			ToggleButton toggleButton= new ToggleButton();
 			toggleButton.setText(Translator.getSwedishName(item.getCategory()));
-			toggleButton.setSelected(true);
+			toggleButton.setSelected(false);
 
 			if (categories.size()>10){
-				//toggleButton.setVisible(false);
+				catHBox.setVisible(false);
 			}else {
 
+				catHBox.setVisible(true);
 				catHBox.getChildren().add(toggleButton);
 			}
 
@@ -86,11 +87,20 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			categories.put(toggleButton,item.getCategory());
 		}
 
-		if (items.size()<ITEMS_PER_SCREEN) {
-			container.getChildren().add(new ItemView(item));
-			currentIndex++;
+
+		if (!items.contains(item)){
+			items.add(item);
+			if (items.size()<ITEMS_PER_SCREEN) {
+				container.getChildren().add(new ItemView(item));
+				currentIndex++;
+			}
 		}
-		//scrollPane.setVvalue(0);
+		else{
+			container.getChildren().add(new ItemView(item));
+		}
+
+
+
 	}
 
 
@@ -128,18 +138,25 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				if (newValue){
-					List<Product> newItems=new ArrayList<>(items);
-					reset();
+
+					List<Product> newItems;
+					if (!visibleItems.isEmpty()){
+						newItems=visibleItems;
+					}
+					else {
+						newItems=items;
+					}
+
+					reset_local();
 
 					Collections.sort(newItems,new ItemComparatorDefault());
-					Collections.reverse(newItems);
 
 					for(Product product:newItems){
 						addItem(product);
 					}
 				}
 				else {
-					if (!btnAlpha.isSelected() && !btnPrice.isSelected()){
+					if (!btnAlpha.isSelected() && !btnPrice.isSelected() && !btnDefault.isSelected()){
 						btnDefault.setSelected(true);
 					}
 				}
@@ -151,8 +168,15 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				if (newValue){
-					List<Product> newItems= new ArrayList<>(items);
-					reset();
+					List<Product> newItems;
+					if (!visibleItems.isEmpty()){
+						newItems=visibleItems;
+					}
+					else {
+						newItems=items;
+					}
+
+					reset_local();
 
 					Collections.sort(newItems,new ItemComparatorPrice());
 
@@ -163,8 +187,8 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 
 				}
 				else {
-					if (!btnAlpha.isSelected() && !btnPrice.isSelected()){
-						btnDefault.setSelected(true);
+					if (!btnAlpha.isSelected() && !btnDefault.isSelected() && !btnPrice.isSelected()){
+						btnPrice.setSelected(true);
 					}
 				}
 			}
@@ -174,8 +198,15 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				if (newValue){
-					List<Product> newItems= new ArrayList<>(items);
-					reset();
+					List<Product> newItems;
+					if (!visibleItems.isEmpty()){
+						newItems=visibleItems;
+					}
+					else {
+						newItems=items;
+					}
+
+					reset_local();
 
 					Collections.sort(newItems,new ItemComparatorAlphabetically());
 
@@ -183,8 +214,8 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 						addItem(product);
 					}
 				}else {
-					if (!btnAlpha.isSelected() && !btnPrice.isSelected()){
-						btnDefault.setSelected(true);
+					if (!btnAlpha.isSelected() && !btnPrice.isSelected() && !btnDefault.isSelected()){
+						btnAlpha.setSelected(true);
 					}
 				}
 			}
@@ -214,6 +245,8 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 	List<ProductCategory> getCurrCats(){
 		List<ProductCategory> result= new ArrayList<>();
 
+
+
 		for(Node node:catHBox.getChildren()){
 			ToggleButton toggleButton= (ToggleButton)node;
 
@@ -226,19 +259,34 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 
 	}
 
+
+	List<Product> visibleItems=new ArrayList<>();
 	void updateFromCategories(){
 
+		visibleItems.clear();
 		container.getChildren().clear();
 		List<ProductCategory> currCats= getCurrCats();
 
+		boolean addAll=getCurrCats().isEmpty();
+
 		for (Product product:items){
-			if (currCats.contains(product.getCategory())){
+			if (addAll ||currCats.contains(product.getCategory())){
+				visibleItems.add(product);
 				container.getChildren().add(new ItemView(product));
 			}
 
 		}
 
 
+		System.out.println("Wokring with:"+visibleItems.size()+" items");
+	}
+
+
+	void reset_local(){
+		currentIndex=0;
+		container.getChildren().clear();
+		setLoadMoreVisibilty(false);
+		scrollPane.setVvalue(0);
 	}
 
 	public void reset(){
@@ -249,6 +297,7 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		container.getChildren().clear();
 		setLoadMoreVisibilty(false);
 		scrollPane.setVvalue(0);
+		visibleItems.clear();
 	}
 
 

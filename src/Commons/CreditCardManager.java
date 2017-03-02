@@ -29,6 +29,8 @@ public class CreditCardManager {
 		IMatDataHandler.getInstance().getCreditCard().setValidMonth(0);
 		IMatDataHandler.getInstance().getCreditCard().setValidYear(0);
 		IMatDataHandler.getInstance().getCreditCard().setVerificationCode(0);
+
+
 	}
 
 

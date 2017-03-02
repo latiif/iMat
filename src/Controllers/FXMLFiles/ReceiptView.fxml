@@ -12,7 +12,8 @@
 <?scenebuilder-classpath-element ../../../src?>
 <?scenebuilder-stylesheet ItemView.css?>
 
-<fx:root id="ElementItem" fx:id="ReceiptView" maxHeight="333.0" maxWidth="324.0" minHeight="309.0" minWidth="239.0" prefHeight="333.0" prefWidth="324.0" stylesheets="ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="ElementItem" fx:id="ReceiptView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+  AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
   <children>
   <Label id="lblReceipt" fx:id="lblReceipt" alignment="CENTER" prefHeight="16.0" prefWidth="163.0" stylesheets="@ReceiptView.css" text="KVITTO" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
   <Label id="lblTotal" fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="189.0" text="Summa: kr" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0">

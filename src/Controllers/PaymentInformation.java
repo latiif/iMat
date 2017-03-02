@@ -158,6 +158,9 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	private boolean isCreditAvailable;
 	void CheckCreditCard(){
 		CreditCard creditCard= CreditCardManager.getCreditCard();
+
+
+
 		if (creditCard==null){//No credit card is saved
 
 
@@ -170,12 +173,23 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 			cn3.setEditable(true);
 			cn4.setEditable(true);
 
+			txtHolder.setText("");
+			txtMonth.setText("");
+			txtCvc.setText("");
+			txtYear.setText("");
+			cn1.setText("");
+			cn2.setText("");
+			cn3.setText("");
+			cn4.setText("");
+
+
+
 			chkSaveCard.setSelected(false);
 			chkSaveCard.setDisable(false);
 
 			isCreditAvailable =false;
 
-		}else{
+		}else{//Credit Card available
 
 			txtHolder.setEditable(false);
 			txtMonth.setEditable(false);
@@ -205,6 +219,16 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 			isCreditAvailable =true;
 
 		}
+
+		reset_styling(txtHolder);
+		reset_styling(txtYear);
+		reset_styling(txtMonth);
+		reset_styling(txtCvc);
+		reset_styling(cn1);
+		reset_styling(cn2);
+		reset_styling(cn3);
+		reset_styling(cn4);
+
 	}
 
 
@@ -260,7 +284,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 			txtMonth.textProperty().addListener(new ChangeListener<String>() {
 				@Override
 				public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-					validate(txtMonth,newValue.matches("[0-1][1-9]"));
+					validate(txtMonth,newValue.matches("^(0?[1-9]|1[012])$"));
 					if (newValue.length()==2){
 						txtYear.requestFocus();
 					}
@@ -272,11 +296,16 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 				public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 					boolean valid=true;
 					//check if credit card is valid
-					if (LocalDate.of(2000+Integer.parseInt(txtYear.getText()),Integer.parseInt(txtMonth.getText()),1).isBefore(LocalDate.now())){
-						valid=false;
+					try {
+
+						if (LocalDate.of(2000 + Integer.parseInt(txtYear.getText()), Integer.parseInt(txtMonth.getText()), 1).isBefore(LocalDate.now())) {
+							valid = false;
+						} else {
+							valid = true;
+						}
 					}
-					else{
-						valid=true;
+					catch (Exception e){
+						valid=false;
 					}
 					validate(txtYear,txtYear.getText().matches("\\d{2}") && valid);
 				}
@@ -318,7 +347,6 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		boxInvoice.visibleProperty().bind(btnInvoice.selectedProperty());
 
 
-
 	}
 
 	@FXML
@@ -335,9 +363,13 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 	void btnFinishAction(ActionEvent event) {
 
 
+
+
+
 		if (!isCreditAvailable) {
 
-			if (chkSaveCard.isSelected()) {
+			if (chkSaveCard.isSelected() && btnCard.isSelected()) {
+				System.out.println("Saving creditcard");
 				CreditCardManager.setCreditCard(txtHolder.getText(), cn1.getText() + '-' + cn2.getText() + '-' + cn3.getText() + '-' + cn4.getText()
 						, Integer.parseInt(txtMonth.getText()), Integer.parseInt(txtYear.getText()), Integer.parseInt(txtCvc.getText()));
 			} else {
@@ -360,6 +392,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 				reset_styling(cn4);
 
 
+
 				btnInvoice.setSelected(false);
 				btnCard.setSelected(false);
 
@@ -370,6 +403,9 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		Inventory.shopView.finalView.initialize(null,null);
 		Inventory.shopView.finalView.toFront();
 		Inventory.shopView.updateStackPane();
+
+		btnInvoice.setSelected(false);
+		btnCard.setSelected(false);
 	}
 
 	@FXML

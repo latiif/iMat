@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="600.0" stylesheets="@OrderView.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+    <TitledPane animated="false" collapsible="false" text="Historik" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="21.4" layoutY="20.4" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label text="Mina kvitton: " />
+                        <ToggleButton fx:id="tgWeek" mnemonicParsing="false" selected="true" text="Vecka">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tg" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tgMonth" mnemonicParsing="false" text="Månad" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tgYear" mnemonicParsing="false" text="År" toggleGroup="$tg" />
+                     </children>
+                  </HBox>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="21.4" prefHeight="473.0" prefWidth="577.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                     <content>
+                        <FlowPane fx:id="container" alignment="CENTER" columnHalignment="CENTER" hgap="5.0" vgap="5.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+      </content>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/history-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+    </TitledPane>
+      <Button id="btnClose" fx:id="bntClose" mnemonicParsing="false" text="Stänga" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" onAction="#closeOnAction" />
+   </children>
+</fx:root>

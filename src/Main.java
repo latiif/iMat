@@ -11,11 +11,17 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * Created by latiif on 2/1/17.
  */
 public class Main extends Application{
 	public static void main(String[] args) throws ItemAddedException {
+
+
+
 		launch(args);
 	}
 
@@ -54,6 +60,8 @@ public class Main extends Application{
 				IMatDataHandler.getInstance().shutDown();
 			}
 		});
+
+
 
 	}
 

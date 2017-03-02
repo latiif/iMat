@@ -77,7 +77,7 @@
             <Button id="btnStart" fx:id="btnStart" mnemonicParsing="false" onAction="#goHome" text="Tillbaka till start" />
          </children>
       </HBox>
-      <Button id="btnHistory" fx:id="btnHistory" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" text="Se historik" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button id="btnHistory" fx:id="btnHistory" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" onMouseClicked="#historyOnAction" text="Se historik" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Button id="btnClose" fx:id="btnClose" layoutX="43.0" layoutY="486.0" mnemonicParsing="false" text="Avsluta iMat" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
       <HBox alignment="CENTER" layoutX="258.0" layoutY="190.0" prefHeight="363.0" prefWidth="707.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
          <children>

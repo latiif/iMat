@@ -1,9 +1,11 @@
 package Controllers;
 
+import Commons.CategoryManager;
 import Commons.Inventory;
 import Commons.ItemComparatorDefault;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,7 +31,7 @@ import se.chalmers.ait.dat215.project.*;
 public class ShopView extends AnchorPane implements Initializable {
 
 	@FXML
-	private Label lblBakery, lblFruit, lblMeat, lblMilk, lblPantry, lblCandy;
+	private Label lblBakery, lblFruit, lblMeat, lblMilk, lblPantry, lblCandy,lblHistory;
 
 	@FXML
 	Label lblFav,lblOffers;
@@ -46,6 +48,10 @@ public class ShopView extends AnchorPane implements Initializable {
 	 FinalView finalView;
 	 CartList cartList;
 	 AccountInformation accountInformation;
+	 History history;
+
+	 @FXML
+	 AnchorPane paneSideFade,paneTopFade;
 	@FXML
 	AnchorPane paneCartList, paneGrid, paneCart;
 	@FXML
@@ -108,10 +114,22 @@ public class ShopView extends AnchorPane implements Initializable {
 		showCartList();
 	}
 
+
+	List<Product> getProductsMainCategory(ProductCategory[] MainCategory){
+		List<Product> res=new ArrayList<>();
+
+		for (int i=0;i<MainCategory.length;i++){
+			res.addAll(IMatDataHandler.getInstance().getProducts(MainCategory[i]));
+		}
+
+		return res;
+
+	}
+
 	@FXML
 	private void lblBakeryOnAction(MouseEvent event) {
 		itemsGrid.reset();
-		for (Product product : Inventory.getInstance().favFirst(IMatDataHandler.getInstance().getProducts(ProductCategory.BREAD))) {
+		for (Product product : getProductsMainCategory(CategoryManager.BAGERI)) {
 			itemsGrid.addItem(product);
 		}
 		itemsGrid.toFront();
@@ -120,17 +138,86 @@ public class ShopView extends AnchorPane implements Initializable {
 		showCartList();
 	}
 
-	private void bringGrid() {
+	@FXML
+	private void lblDairyOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : getProductsMainCategory(CategoryManager.MEJERI)) {
+			itemsGrid.addItem(product);
+		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCashout();
+		showCartList();
+	}
 
+	@FXML
+	private void lblFruitVegOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : getProductsMainCategory(CategoryManager.FRUKT_OCH_GROENT)) {
+			itemsGrid.addItem(product);
+		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCashout();
+		showCartList();
 	}
 
 
+	@FXML
+	private void lblPantryOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : getProductsMainCategory(CategoryManager.SKAFFERI)) {
+			itemsGrid.addItem(product);
+		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCashout();
+		showCartList();
+	}
+
+	@FXML
+	private void lblMeatOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : getProductsMainCategory(CategoryManager.KOETT_OCH_FISK)) {
+			itemsGrid.addItem(product);
+		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCashout();
+		showCartList();
+	}
+
+@FXML
+	private void lblCandyOnAction(MouseEvent event) {
+		itemsGrid.reset();
+		for (Product product : getProductsMainCategory(CategoryManager.GODIS)) {
+			itemsGrid.addItem(product);
+		}
+		itemsGrid.toFront();
+		updateStackPane();
+		showCashout();
+		showCartList();
+	}
+
+
+	void removeShadow(){
+		paneSideFade.setVisible(false);
+		paneTopFade.setVisible(false);
+	}
+
+	void dropShadow(){
+		paneSideFade.setVisible(true);
+		paneTopFade.setVisible(true);
+	}
+
 	void hideCashout(){
 		cartList.btnCheckout.setVisible(false);
+		dropShadow();
 	}
 
 
 	void showCashout(){
+		removeShadow();
 		cartList.btnCheckout.setVisible(true);
 	}
 
@@ -158,6 +245,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		deliveryInformation= new DeliveryInformation();
 		paymentInformation= new PaymentInformation();
 		finalView= new FinalView();
+		history= new History();
 
 		itemsGrid.reset();
 		Collections.sort(Inventory.productList,new ItemComparatorDefault());
@@ -170,7 +258,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		TextFields.bindAutoCompletion(searchField, Inventory.getInstance().getNames());
 
 
-		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView,accountInformation);
+		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView,accountInformation,history);
 
 		startView.toFront();
 		updateStackPane();
@@ -189,6 +277,17 @@ public class ShopView extends AnchorPane implements Initializable {
 		AnchorPane.setBottomAnchor(notificationPane,0.0);
 		stackContainer.getChildren().add(notificationPane);
 
+
+
+
+
+
+		/*
+		Fading Panes Controller
+		 */
+
+
+
 	}
 
 
@@ -200,6 +299,13 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 	}
 
+	@FXML
+	void historyOnAction (MouseEvent event){
+		history.initialize(null,null);
+
+		history.toFront();
+		updateStackPane();
+	}
 
 	public void updateStackPane(){
 		int i;
@@ -207,6 +313,13 @@ public class ShopView extends AnchorPane implements Initializable {
 			stackPane.getChildren().get(i).setVisible(false);
 		}
 		stackPane.getChildren().get(i).setVisible(true);
+	}
+
+	@FXML
+	private void homeOnClicked(MouseEvent event){
+		startView.initialize(null,null);
+		startView.toFront();
+		updateStackPane();
 	}
 
 }

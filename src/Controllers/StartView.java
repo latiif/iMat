@@ -62,7 +62,9 @@ public class StartView extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Inventory.shopView.hideCashout();
+		Inventory.shopView.removeShadow();
+
+
 		stackPane.prefWidthProperty().bind(hbox.widthProperty());
 		stackPane.prefHeightProperty().bind(hbox.heightProperty());
 

@@ -126,7 +126,7 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		txtName.textProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				validate(txtName,newValue.matches("^[\\p{L}\\s'.-]+$"));
+				validate(txtName,txtName.getText().split("\\s+").length==2 && newValue.matches("^[\\p{L}\\s'.-]+$"));
 			}
 		});
 
@@ -201,7 +201,7 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		}
 
 
-		Inventory.shopView.finalView.lblThankYou11.setText(
+		Inventory.shopView.finalView.lblSubTitle2.setText(
 date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 	+getTime()	);
 
 		Inventory.shopView.paymentInformation.toFront();
@@ -219,6 +219,13 @@ date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue()
 		}
 
 		return "16-20";
+	}
+
+
+	@FXML
+	private void btnCancel(ActionEvent event){
+		this.toBack();
+		Inventory.shopView.updateStackPane();
 	}
 
 	private ChangeListener<Boolean> changeListener = new ChangeListener<Boolean>() {

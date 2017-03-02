@@ -3,12 +3,14 @@ package Controllers;
 import Commons.Inventory;
 import Commons.MostBoughtManager;
 import Commons.Receipt;
+import Commons.ReceiptManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class FinalView extends AnchorPane implements Initializable{
 	private Button btnHistory;
 
 	@FXML
-	 Label lblThankYou11;
+	 Label lblSubTitle2;
 
 	@FXML
 	private Button btnClose;
@@ -55,16 +57,18 @@ public class FinalView extends AnchorPane implements Initializable{
 
 		Inventory.shopView.hideCashout();
 
-		receipt= new Receipt();
-		receipt.date= LocalDate.now().toString()+" "+ LocalTime.now().getHour()+":"+LocalTime.now().getMinute();
+		receipt = new Receipt();
+		receipt.date = LocalDate.now().toString() + " " + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();
 
-		double price=0;
-		for(CartItem cartItem:Inventory.shopView.cartList.getCartItems()){
+		double price = 0;
+		for (CartItem cartItem : Inventory.shopView.cartList.getCartItems()) {
 			receipt.items.add(cartItem.toString());
-			receipt.price+=cartItem.cost;
+			receipt.price += cartItem.cost;
 			MostBoughtManager.addItem(cartItem.getItemName());
 		}
-
+		if (!Inventory.shopView.cartList.getCartItems().isEmpty()) {
+		ReceiptManager.receipts.add(this.receipt);
+		}
 
 		if (Inventory.shopView.cartList.vList!=null){
 			Inventory.shopView.cartList.vList.getChildren().clear();
@@ -79,6 +83,9 @@ public class FinalView extends AnchorPane implements Initializable{
 
 		receiptPane.getChildren().clear();
 		receiptPane.getChildren().add(new ReceiptView(receipt));
+
+		Inventory.shopView.removeShadow();
+
 	}
 
 	public  FinalView(){
@@ -100,6 +107,13 @@ public class FinalView extends AnchorPane implements Initializable{
 	private void goHome(ActionEvent actionEvent){
 		Inventory.shopView.startView.initialize(null,null);
 		Inventory.shopView.startView.toFront();
+		Inventory.shopView.updateStackPane();
+	}
+
+	@FXML
+	private void historyOnAction(MouseEvent mouseEvent){
+		Inventory.shopView.history.initialize(null, null);
+		Inventory.shopView.history.toFront();
 		Inventory.shopView.updateStackPane();
 	}
 }

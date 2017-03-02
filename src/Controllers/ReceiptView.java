@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.Receipt;
+import Commons.ReceiptManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -76,5 +77,7 @@ public class ReceiptView extends AnchorPane implements Initializable {
 		}
 
 		//lstItems.getItems().addAll(receipt.items);
+
+
 	}
 }

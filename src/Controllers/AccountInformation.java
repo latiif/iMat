@@ -119,9 +119,12 @@ public class AccountInformation extends AnchorPane implements Initializable {
 	@FXML
 	void btnClearAction(ActionEvent actionEvent){
 		CreditCardManager.clearCreditCard();
+
 		loadCreditCardInformation();
 		Inventory.shopView.paymentInformation.CheckCreditCard();
 		Inventory.shopView.paymentInformation.initialize(null,null);
+
+
 	}
 
 
@@ -181,7 +184,7 @@ public class AccountInformation extends AnchorPane implements Initializable {
 			txtName.textProperty().addListener(new ChangeListener<String>() {
 				@Override
 				public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-					validate(txtName,newValue.matches("^[\\p{L}\\s'.-]+$"));
+					validate(txtName,txtName.getText().split("\\s+").length==2 && newValue.matches("^[\\p{L}\\s'.-]+$"));
 				}
 			});
 
