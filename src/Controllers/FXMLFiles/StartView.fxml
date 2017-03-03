@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="964.0" style="-fx-background-color: white;" stylesheets="@StartView.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="964.0" style="-fx-background-color: white;" stylesheets="@StartView.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox fx:id="hbox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -25,24 +25,41 @@
             </AnchorPane>
             <AnchorPane fx:id="paneRegistered" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" StackPane.alignment="CENTER">
                <children>
-                        <HBox alignment="CENTER" layoutX="382.0" layoutY="317.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="325.0">
+                        <HBox alignment="CENTER" layoutX="382.0" layoutY="237.0" prefHeight="230.0" prefWidth="964.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="237.0">
                            <children>
-                        <Label id="lblFav" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#lblFavoriteOnAction" style="-fx-cursor: hand;" text="Favoriter">
+                        <Label id="lblFav" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#lblFavoriteOnAction" style="-fx-cursor: hand;" text="Gå till dina favoriter">
                            <font>
                               <Font size="14.0" fx:id="x2" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Icons/fav-icon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Label>
-                        <Button fx:id="btnShop1" mnemonicParsing="false" onAction="#btnShopAction" prefHeight="40.0" prefWidth="220.0" text="Börja handla" />
-                        <Label id="lblHistory" fx:id="lblHistory1" alignment="CENTER" contentDisplay="TOP" font="$x2" style="-fx-cursor: hand;" text="Erbjudanden">
+                              <Label id="lblFav" fx:id="lblStartShop" alignment="CENTER" contentDisplay="TOP" graphicTextGap="10.0" onMouseClicked="#btnShopAction" prefHeight="146.0" prefWidth="113.0" style="-fx-cursor: hand;" text="Börja handla">
+                                 <font>
+                                    <Font size="14.0" fx:id="x21" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icons/shopping-cart-large.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="70.0" right="70.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                        <Label id="lblHistory" fx:id="lblHistory1" alignment="CENTER" contentDisplay="TOP" font="$x2" style="-fx-cursor: hand;" text="Se veckans extrapriser">
                            <graphic>
-                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Icons/sale-icon.png" />
                                  </image>
@@ -51,7 +68,7 @@
                         </Label>
                            </children>
                         </HBox>
-                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="218.0" text="Välkommen till iMat!" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0" />
+                  <Label fx:id="lblWelcomeUser" alignment="CENTER" layoutX="278.0" layoutY="121.0" prefHeight="113.0" prefWidth="964.0" text="Välkommen till iMat!" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="121.0" />
                </children>
             </AnchorPane>
          </children>

@@ -16,7 +16,6 @@
       <children>
         <AnchorPane layoutX="0.0" layoutY="83.0" prefHeight="627.0" prefWidth="136.00009999999747" style="-fx-background-color: #F2F2F2; -fx-border-color: #f2f2f2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <AnchorPane fx:id="paneSideFade" opacity="0.55" prefHeight="629.0" prefWidth="137.0" visible="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
                   <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" prefHeight="627.0" prefWidth="135.0" spacing="5.0" AnchorPane.bottomAnchor="-45.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
                      <children>
                     <Label id="sideCategory" fx:id="lblBakery" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#lblBakeryOnAction" prefHeight="72.0" style="-fx-cursor: hand;" text="Bageri">
@@ -67,7 +66,7 @@
                         </ImageView>
                       </graphic>
                     </Label>
-                    <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblCandyOnAction" style="-fx-cursor: hand;" text="Godis">
+                    <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblCandyOnAction" style="-fx-cursor: hand;" text="Godis &amp; Snacks">
                       <graphic>
                         <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                           <image>
@@ -93,6 +92,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </VBox>
+                  <AnchorPane fx:id="paneSideFade" opacity="0.55" prefHeight="629.0" prefWidth="137.0" visible="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
                </children></AnchorPane>
         <AnchorPane fx:id="paneCart" layoutX="793.0" layoutY="83.0" prefHeight="626.9999000000025" style="-fx-background-color: #f7f4e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
           <children>
@@ -118,8 +118,14 @@
           <children>
                   <HBox alignment="CENTER" layoutX="174.0" prefHeight="100.0" prefWidth="703.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                  <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" onAction="#searchOnAction" prefHeight="40.0" prefWidth="386.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="" />
-                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök" />
+                  <TextField fx:id="searchField" alignment="CENTER_LEFT" editable="true" onAction="#searchOnAction" prefHeight="40.0" prefWidth="333.0" promptText="Skriv in namnet på varan du letar efter..." style="-fx-font-size: 15px;" text="">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
+                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="33.0" prefWidth="78.0" style="-fx-cursor: hand;" text="Sök">
+                           <HBox.margin>
+                              <Insets right="90.0" />
+                           </HBox.margin></Button>
                      </children>
                   </HBox>
               <Label id="lblFav" fx:id="lblFav" alignment="CENTER" contentDisplay="TOP" layoutX="828.0" layoutY="15.0" onMouseClicked="#lblFavoriteOnAction" style="-fx-cursor: hand;" text="Favoriter" AnchorPane.rightAnchor="204.0" AnchorPane.topAnchor="15.0">

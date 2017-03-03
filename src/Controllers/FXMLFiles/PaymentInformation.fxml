@@ -9,64 +9,96 @@
 
 <fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="707.0" stylesheets="@OrderView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="68.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/one.png" />
-               </image>
+            <Label contentDisplay="BOTTOM" text="Ange leveransinformation">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/one.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="-10.0" right="-25.0" />
                </HBox.margin>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/line-icon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/two.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </ImageView>
+            </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/line-icon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="10.0" right="10.0" top="20.0" />
                </HBox.margin>
             </ImageView>
+            <Label contentDisplay="BOTTOM" text="Välj betalsätt">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/two-gray.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </HBox.margin>
+            </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/three-gray.png" />
+                  <Image url="@../Icons/line-icon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="10.0" right="10.0" top="20.0" />
                </HBox.margin>
             </ImageView>
+            <Label contentDisplay="BOTTOM" text="Bekräfta beställning">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/three-gray.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/line-icon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label contentDisplay="BOTTOM" text="Ditt köp är klart">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/four-gray.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </HBox.margin>
+            </Label>
          </children>
          <padding>
             <Insets top="15.0" />
          </padding>
       </HBox>
-      <VBox fx:id="mainBox" alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+      <VBox fx:id="mainBox" alignment="CENTER" fillWidth="false" layoutY="57.0" prefHeight="572.0" prefWidth="707.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="75.0">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="93.0" prefWidth="374.0">
                <children>
-                  <Label id="lblPaymentInfo" fx:id="lblPaymentInfo" alignment="CENTER" prefHeight="66.0" prefWidth="374.0" text="Välj betalsätt:" />
+                  <Label id="lblPaymentInfo" fx:id="lblPaymentInfo" alignment="CENTER" prefHeight="52.0" prefWidth="374.0" text="Välj betalsätt:" />
                </children>
                <padding>
                   <Insets top="13.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="491.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="491.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label id="lblPayment" text="Jag vill betala med: " />
                   <ToggleButton fx:id="btnInvoice" mnemonicParsing="false" onAction="#InvoiceSelection" prefHeight="25.0" prefWidth="97.0" text="Faktura">
@@ -88,7 +120,7 @@
             </HBox>
             <StackPane VBox.vgrow="ALWAYS">
                <children>
-                  <VBox fx:id="boxCredit" spacing="3.0" visible="false">
+                  <VBox fx:id="boxCredit" prefHeight="278.0" prefWidth="464.0" spacing="3.0" visible="false">
                      <children>
                         <Label id="lblPayment" alignment="CENTER" text="Namn på kortinnehavaren:" />
                         <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
@@ -119,17 +151,20 @@
                         <Label id="lblPayment" text="Verifikationskod/CVC-kod:" />
                         <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="464.0">
                            <children>
-                              <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="25.0" prefWidth="53.0" promptText="00" />
+                              <TextField fx:id="txtCvc" focusTraversable="false" prefHeight="39.0" prefWidth="61.0" promptText="000">
+                                 <HBox.margin>
+                                    <Insets right="90.0" />
+                                 </HBox.margin></TextField>
                            </children>
                         </HBox>
-                        <HBox alignment="BOTTOM_RIGHT" prefHeight="60.0" prefWidth="456.0">
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="48.0" prefWidth="464.0">
                            <children>
-                              <CheckBox fx:id="chkSaveCard" mnemonicParsing="false" prefHeight="60.0" prefWidth="462.0" text="Jag vill spara mina kortuppgifter" />
+                              <CheckBox fx:id="chkSaveCard" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="39.0" prefWidth="316.0" text="Jag vill spara mina kortuppgifter" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox fx:id="boxInvoice" alignment="TOP_CENTER" spacing="15.0" StackPane.alignment="TOP_CENTER">
+                  <VBox fx:id="boxInvoice" alignment="TOP_CENTER" prefHeight="395.0" prefWidth="464.0" spacing="15.0" StackPane.alignment="TOP_CENTER">
                      <children>
                         <Label id="lblPayment" text="Fakturan kommer vara bifogad till din address på:" VBox.vgrow="ALWAYS">
                            <padding>
@@ -146,7 +181,7 @@
             <Insets top="15.0" />
          </padding>
       </VBox>
-      <Button id="btnNext" fx:id="btnFinish" alignment="CENTER_RIGHT" disable="true" layoutX="15.0" layoutY="590.0" mnemonicParsing="false" onAction="#btnFinishAction" text="Slutför ditt köp" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button id="btnNext" fx:id="btnFinish" alignment="CENTER_RIGHT" disable="true" layoutX="15.0" layoutY="590.0" mnemonicParsing="false" onAction="#btnFinishAction" text="Gå vidare" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Button id="btnBack" fx:id="btnBack" layoutX="-26.0" layoutY="566.0" mnemonicParsing="false" onAction="#btnBackAction" text="Gå tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </fx:root>

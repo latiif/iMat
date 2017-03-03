@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -38,7 +39,7 @@ public class Main extends Application{
 		prepare();
 
 		primaryStage.setTitle("iMat");
-
+		primaryStage.getIcons().add(new Image("Controllers/Icons/imat-icon.png"));
 
 		Parent root = new ShopView();
 

@@ -8,59 +8,91 @@
 
 <fx:root prefHeight="629.0" prefWidth="707.0" stylesheets="@OrderView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" layoutY="1.0" prefHeight="74.0" prefWidth="717.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="68.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/one.png" />
-               </image>
+            <Label contentDisplay="BOTTOM" text="Ange leveransinformation">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/one.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="-10.0" right="-25.0" />
                </HBox.margin>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/line-icon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/two.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </ImageView>
+            </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/line-icon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="10.0" right="10.0" top="20.0" />
                </HBox.margin>
             </ImageView>
+            <Label contentDisplay="BOTTOM" text="Välj betalsätt">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/two.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/three.png" />
+                  <Image url="@../Icons/line-icon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="10.0" right="10.0" top="20.0" />
                </HBox.margin>
             </ImageView>
+            <Label contentDisplay="BOTTOM" text="Bekräfta beställning">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/three.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/line-icon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label contentDisplay="BOTTOM" text="Ditt köp är klart">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/four.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </HBox.margin>
+            </Label>
          </children>
          <padding>
             <Insets top="15.0" />
          </padding>
       </HBox>
-      <HBox alignment="CENTER" layoutY="80.0" prefHeight="58.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox alignment="CENTER" layoutY="80.0" prefHeight="110.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label fx:id="lblThankYou" alignment="CENTER" prefHeight="80.0" prefWidth="344.0" text="Tack för ditt köp!" textAlignment="CENTER" textOverrun="CLIP" />
+            <Label fx:id="lblThankYou" alignment="CENTER" prefHeight="80.0" prefWidth="708.0" text="Tack för ditt köp!" textAlignment="CENTER" textOverrun="CLIP" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutY="134.0" prefHeight="41.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="134.0">
+      <HBox alignment="CENTER" layoutY="147.0" prefHeight="58.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="147.0">
          <children>
             <Label id="lblSubTitle" fx:id="lblSubTitle" alignment="CENTER_RIGHT" text="Dina varor kommer att levereras:" textAlignment="CENTER">
                <padding>
@@ -79,9 +111,9 @@
       </HBox>
       <Button id="btnHistory" fx:id="btnHistory" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" onMouseClicked="#historyOnAction" text="Se historik" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Button id="btnClose" fx:id="btnClose" layoutX="43.0" layoutY="486.0" mnemonicParsing="false" text="Avsluta iMat" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <HBox alignment="CENTER" layoutX="258.0" layoutY="190.0" prefHeight="363.0" prefWidth="707.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
+      <HBox alignment="CENTER" layoutX="258.0" layoutY="200.0" prefHeight="353.0" prefWidth="707.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
          <children>
-            <AnchorPane fx:id="receiptPane" prefHeight="363.0" prefWidth="368.0" />
+            <AnchorPane fx:id="receiptPane" prefHeight="345.0" prefWidth="368.0" />
          </children>
       </HBox>
    </children>

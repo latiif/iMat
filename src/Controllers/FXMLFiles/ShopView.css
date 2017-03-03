@@ -10,12 +10,19 @@
 	-fx-font-weight : bold;
 	-fx-font-size: 16px;
 }
+#sideCategoryActive{
+	-fx-font-weight : bold;
+	-fx-font-size: 16px;
+}
 #lblMyCart{
 	-fx-font-size: 18px;
 }
 #lblFav, #lblUser, #lblHistory,#lblAccount {
 	-fx-font-weight: bold;
 	-fx-font-size: 16px;
+}
+.lblActive {
+	-fx-effect:  dropshadow( gaussian , rgb(0,0,0,0.15) ,0,0,2,2 );
 }
 .button{
   -fx-background: rgb(0,0,0);

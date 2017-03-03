@@ -51,6 +51,11 @@
 	-fx-font-size: 18px;
 	-fx-cursor: hand;
 }
+#btnConfirm {
+	-fx-base: green;
+	-fx-font-size: 22px;
+	-fx-cursor: hand;
+}
 #btnSearch {
 	-fx-base: #FFF;
 	-fx-font-size: 20px;
