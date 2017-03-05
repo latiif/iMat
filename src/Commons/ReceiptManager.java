@@ -39,7 +39,8 @@ public class ReceiptManager {
 			receipts.addAll((List<Receipt>)oos.readObject());
 
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			//ex.printStackTrace();
+			receipts.clear();
 		}
 	}
 

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -73,7 +74,7 @@ public class StartView extends AnchorPane implements Initializable {
 	}
 
 	@FXML
-	private void btnShopAction(ActionEvent actionEvent){
+	private void btnShopAction(MouseEvent mouseEvent){
 		Inventory.shopView.itemsGrid.toFront();
 		Inventory.shopView.itemsGrid.initialize(null,null);
 		Inventory.shopView.showCartList();

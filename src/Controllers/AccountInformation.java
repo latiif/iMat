@@ -191,7 +191,7 @@ public class AccountInformation extends AnchorPane implements Initializable {
 			txtStreet.textProperty().addListener(new ChangeListener<String>() {
 				@Override
 				public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-					validate(txtStreet,newValue.matches("([A-z]*[\\wåäöÅÄÖ]*]*\\s)+\\d+"));
+					validate(txtStreet,newValue.matches("(\\p{L}*\\s*)+(\\s+\\d+\\s*\\p{L}*)?"));
 				}
 			});
 
@@ -205,7 +205,7 @@ public class AccountInformation extends AnchorPane implements Initializable {
 			txtCity.textProperty().addListener(new ChangeListener<String>() {
 				@Override
 				public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-					validate(txtCity,newValue.matches("^\\p{Lu}\\p{L}*(?:[\\s-]\\p{Lu}\\p{L}*)*"));
+					validate(txtCity,newValue.matches("^\\p{L}*(?:[\\s-]\\p{L}*)*"));
 				}
 			});
 

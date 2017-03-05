@@ -87,6 +87,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 		}
 
 		imgCheckout.visibleProperty().bind(btnCheckout.visibleProperty());
+		btnRemoveAll.visibleProperty().bind(btnCheckout.visibleProperty());
 		updateCost();
 
 	}
@@ -100,11 +101,13 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 		lblCost.setText(String.format(Locale.ENGLISH,"%.2f",price) + " kr");
 
-		if (btnCheckout != null) {
+		if (btnCheckout != null && btnRemoveAll!=null) {
 
 			if (cartItems.isEmpty()) {
+				btnRemoveAll.setDisable(true);
 				btnCheckout.setDisable(true);
 			} else {
+				btnRemoveAll.setDisable(false);
 				btnCheckout.setDisable(false);
 			}
 		}

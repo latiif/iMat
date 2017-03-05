@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="707.0" stylesheets="@OrderView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="parentRoot" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="707.0" stylesheets="@OrderView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="68.0" prefWidth="707.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -35,7 +35,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icons/two-gray.png" />
+                        <Image url="@../Icons/two.png" />
                      </image>
                   </ImageView>
                </graphic>

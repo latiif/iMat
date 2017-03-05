@@ -18,7 +18,21 @@
                   <Label fx:id="lblWelcome" alignment="CENTER" layoutX="278.0" layoutY="194.0" text="Välkommen till iMat!" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0" />
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="325.0">
                            <children>
-                        <Button fx:id="btnShop" mnemonicParsing="false" onAction="#btnShopAction" prefHeight="40.0" prefWidth="220.0" text="Börja handla" />
+                              <Label id="lblFav" fx:id="lblStartShop1" alignment="CENTER" contentDisplay="TOP" graphicTextGap="10.0" onMouseClicked="#btnShopAction" prefHeight="146.0" prefWidth="113.0" style="-fx-cursor: hand;" text="Börja handla">
+                                 <font>
+                                    <Font size="14.0" fx:id="x211" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icons/shopping-cart-large.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="70.0" right="70.0" />
+                                 </padding>
+                              </Label>
                            </children>
                         </HBox>
                </children>

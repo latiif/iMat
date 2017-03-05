@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -19,7 +20,9 @@ import java.net.URL;
 import java.util.*;
 
 
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import org.controlsfx.control.NotificationPane;
 import org.controlsfx.control.textfield.TextFields;
 import se.chalmers.ait.dat215.project.*;
@@ -49,6 +52,9 @@ public class ShopView extends AnchorPane implements Initializable {
 	 CartList cartList;
 	 AccountInformation accountInformation;
 	 History history;
+
+	 @FXML
+	VBox boxCatContainer;
 
 	 @FXML
 	 AnchorPane paneSideFade,paneTopFade;
@@ -126,6 +132,24 @@ public class ShopView extends AnchorPane implements Initializable {
 
 	}
 
+
+
+	private void selectCategory(Object object){
+
+		Label label=(Label)object;
+		for(Node node : boxCatContainer.getChildren()){
+			Label temp=(Label) node;
+			temp.getStyleClass().clear();
+			temp.getStyleClass().add("label");
+			if (temp.equals(label)){
+				label.getStyleClass().add("lblActive");
+			}
+
+
+
+		}
+	}
+
 	@FXML
 	private void lblBakeryOnAction(MouseEvent event) {
 		itemsGrid.reset();
@@ -136,6 +160,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+		selectCategory(event.getSource());
 	}
 
 	@FXML
@@ -148,6 +173,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+		selectCategory(event.getSource());
 	}
 
 	@FXML
@@ -160,6 +186,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+		selectCategory(event.getSource());
 	}
 
 
@@ -173,6 +200,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+		selectCategory(event.getSource());
 	}
 
 	@FXML
@@ -185,6 +213,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+		selectCategory(event.getSource());
 	}
 
 @FXML
@@ -197,6 +226,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		updateStackPane();
 		showCashout();
 		showCartList();
+	selectCategory(event.getSource());
 	}
 
 
@@ -286,9 +316,9 @@ public class ShopView extends AnchorPane implements Initializable {
 		Fading Panes Controller
 		 */
 
-
-
 	}
+
+
 
 
 	@FXML

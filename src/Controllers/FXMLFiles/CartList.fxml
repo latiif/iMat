@@ -7,7 +7,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="250.0" style="-fx-background-color: #f7f4e8;" stylesheets="@CartList.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane layoutY="36.0" prefHeight="390.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="250.0" style="-fx-background: #f7f4e8; -fx-border-color: #f7f4e8;" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+      <ScrollPane hbarPolicy="NEVER" layoutY="36.0" prefHeight="390.0" prefViewportHeight="400.0" prefViewportWidth="270.0" prefWidth="250.0" style="-fx-background: #f7f4e8; -fx-border-color: #f7f4e8;" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
          <content>
             <VBox fx:id="vList" style="-fx-background-color: #f7f4e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </content>
