@@ -166,7 +166,7 @@
                   </VBox>
                   <VBox fx:id="boxInvoice" alignment="TOP_CENTER" prefHeight="395.0" prefWidth="464.0" spacing="15.0" StackPane.alignment="TOP_CENTER">
                      <children>
-                        <Label id="lblPayment" text="Fakturan kommer vara bifogad till din address på:" VBox.vgrow="ALWAYS">
+                        <Label id="lblPayment" text="Fakturan kommer vara bifogad till din adress på:" VBox.vgrow="ALWAYS">
                            <padding>
                               <Insets bottom="30.0" />
                            </padding>

@@ -105,12 +105,16 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 
 	private void checkAll(){
 		if (btnInvoice.isSelected() ){
+
+			Inventory.shopView.confrimView.lbl_Payment.setText("Faktura");
+
 			btnFinish.setDisable(false);
 			Inventory.shopView.notificationPane.hide();
 			return;
 		}
 
 		if (btnCard.isSelected()) {
+			Inventory.shopView.confrimView.lbl_Payment.setText("Kort som tillhör: " + txtHolder.getText());
 			if (txtHolder.getStyleClass().contains("valid") &&
 					(txtMonth.getStyleClass().contains("valid")) &&
 					(txtCvc.getStyleClass().contains("valid")) &&
@@ -399,9 +403,11 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 			}
 		}
 
+		Inventory.shopView.showCartList();
 		Inventory.shopView.hideCashout();
-		Inventory.shopView.finalView.initialize(null,null);
-		Inventory.shopView.finalView.toFront();
+
+		Inventory.shopView.confrimView.initialize(null,null);
+		Inventory.shopView.confrimView.toFront();
 		Inventory.shopView.updateStackPane();
 
 		btnInvoice.setSelected(false);

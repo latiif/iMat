@@ -45,9 +45,6 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	ImageView imgCheckout;
 
 
-	/*
-
-	* */
 
 
 	public List<CartItem> getCartItems(){

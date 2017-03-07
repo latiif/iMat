@@ -52,6 +52,7 @@ public class ShopView extends AnchorPane implements Initializable {
 	 CartList cartList;
 	 AccountInformation accountInformation;
 	 History history;
+	 ConfrimView confrimView;
 
 	 @FXML
 	VBox boxCatContainer;
@@ -276,10 +277,11 @@ public class ShopView extends AnchorPane implements Initializable {
 		paymentInformation= new PaymentInformation();
 		finalView= new FinalView();
 		history= new History();
+		confrimView= new ConfrimView();
 
 		itemsGrid.reset();
 		Collections.sort(Inventory.productList,new ItemComparatorDefault());
-		//Collections.reverse(Inventory.productList);
+
 
 		for (Product product : Inventory.productList) {
 			itemsGrid.addItem(product);
@@ -288,7 +290,7 @@ public class ShopView extends AnchorPane implements Initializable {
 		TextFields.bindAutoCompletion(searchField, Inventory.getInstance().getNames());
 
 
-		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView,accountInformation,history);
+		stackPane.getChildren().addAll(startView,itemsGrid,deliveryInformation,paymentInformation,finalView,accountInformation,history,confrimView);
 
 		startView.toFront();
 		updateStackPane();

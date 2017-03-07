@@ -201,6 +201,8 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		}
 
 
+		Inventory.shopView.confrimView.lblAddress.setText(txtName.getText()+", "+txtStreet.getText());
+
 		Inventory.shopView.finalView.lblSubTitle2.setText(
 date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 	+getTime()	);
 

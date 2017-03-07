@@ -86,16 +86,46 @@
          <padding>
             <Insets top="15.0" />
          </padding></HBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="531.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+      <VBox alignment="TOP_CENTER" fillWidth="false" layoutY="41.0" prefHeight="531.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
             <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" alignment="CENTER" prefHeight="104.0" prefWidth="613.0" stylesheets="@OrderView.css" text="Bekräfta din beställning:" textAlignment="CENTER" />
-            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="423.0" spacing="10.0" />
+            <TitledPane animated="false" collapsible="false" prefHeight="206.0" prefWidth="658.0" text="Beställningsinfo:">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="21.4" layoutY="20.4" prefHeight="55.0" prefWidth="635.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="636.0">
+                                 <children>
+                                    <Label text="Varorna levereras till adressen:" />
+                                    <HBox prefHeight="100.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="lblAddress" text="Maria Svensson, Storgatan 103" />
+                                    <Button mnemonicParsing="false" onAction="#editDelivery" text="Redigera" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="636.0">
+                                 <children>
+                                    <Label text="Du betalar med:" />
+                                    <HBox HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="lbl_Payment" text="payment " />
+                                    <Button mnemonicParsing="false" onAction="#editPayment" text="Redigera" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="423.0" spacing="10.0">
+               <children>
+                  <Button id="btnConfirm" fx:id="btnConfirm" alignment="CENTER" mnemonicParsing="false" onAction="#btnConfrimOrder" prefHeight="55.0" text="Slutför ditt köp" />
+               </children></HBox>
          </children>
          <padding>
             <Insets top="15.0" />
          </padding>
       </VBox>
-      <Button id="btnBack" fx:id="btnBack" layoutX="-36.0" layoutY="556.0" mnemonicParsing="false" onAction="#btnCancel" text="Gå tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <Button id="btnConfirm" fx:id="btnConfirm" alignment="CENTER" layoutX="5.0" layoutY="580.0" mnemonicParsing="false" onAction="#btnNextAction" prefHeight="55.0" prefWidth="202.0" text="Slutför ditt köp" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button id="btnBack" fx:id="btnBack" layoutX="-36.0" layoutY="556.0" mnemonicParsing="false" onAction="#btnBackAction" text="Gå tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </fx:root>

@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -27,6 +28,8 @@ import java.util.*;
  */
 public class ItemsGrid extends AnchorPane implements Initializable {
 
+
+	private ToggleGroup toggleGroup=new ToggleGroup();
 
 	@FXML
 	AnchorPane anchorPane,paneLoadMore;
@@ -68,6 +71,7 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 			ToggleButton toggleButton= new ToggleButton();
 			toggleButton.setText(Translator.getSwedishName(item.getCategory()));
 			toggleButton.setSelected(false);
+			toggleButton.setToggleGroup(toggleGroup);
 
 			if (categories.size()>10){
 				catHBox.setVisible(false);
