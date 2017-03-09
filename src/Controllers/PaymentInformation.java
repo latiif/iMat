@@ -114,7 +114,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 		}
 
 		if (btnCard.isSelected()) {
-			Inventory.shopView.confrimView.lbl_Payment.setText("Kort som tillh√∂r: " + txtHolder.getText());
+			Inventory.shopView.confrimView.lbl_Payment.setText("Kort som tillhˆr: " + txtHolder.getText());
 			if (txtHolder.getStyleClass().contains("valid") &&
 					(txtMonth.getStyleClass().contains("valid")) &&
 					(txtCvc.getStyleClass().contains("valid")) &&
@@ -135,7 +135,7 @@ public class PaymentInformation extends AnchorPane implements Initializable {
 
 		btnFinish.setDisable(true);
 		if (!btnCard.isSelected() && !btnInvoice.isSelected()){
-			Inventory.notificate("Var god v√§lj ett s√§tt att betala");
+			Inventory.notificate("Var god v‰lj ett s‰tt att betala");
 		}
 		else {
 			Inventory.shopView.notificationPane.hide();

@@ -8,9 +8,9 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 public class Translator {
 	public static String getSwedishName(ProductCategory category){
 		switch (category){
-			case BERRY: return "BÃ¤r";
-			case BREAD:return "BrÃ¶d";
-			case CABBAGE: return "Sallad & KÃ¥l";
+			case BERRY: return "Bär";
+			case BREAD:return "Bröd";
+			case CABBAGE: return "Sallad & Kål";
 			case CITRUS_FRUIT: return "Citrus";
 			case COLD_DRINKS:return "Kalla drycker";
 			case DAIRIES: return "Mejeri";
@@ -18,17 +18,17 @@ public class Translator {
 			case FISH:return "Fisk";
 			case FLOUR_SUGAR_SALT:return "Skafferi";
 			case FRUIT:return "Frukter";
-			case HERB:return "Ã–rter";
+			case HERB:return "Ärter";
 			case HOT_DRINKS:return "Varma drycker";
-			case MEAT:return "KÃ¶tt";
+			case MEAT:return "Kött";
 			case MELONS:return "Meloner";
-			case NUTS_AND_SEEDS: return "NÃ¶tter & FrÃ¶n";
+			case NUTS_AND_SEEDS: return "Nötter & Frön";
 			case PASTA:return "Pasta";
-			case POD: return "BaljvÃ¤xter";
+			case POD: return "Baljväxter";
 			case POTATO_RICE:return "Potatis & Ris";
 			case ROOT_VEGETABLE: return "Rotsaker";
 			case SWEET:return "Godis";
-			case VEGETABLE_FRUIT:return "GrÃ¶nsaker";
+			case VEGETABLE_FRUIT:return "Grönsaker";
 
 		}
 
@@ -38,10 +38,10 @@ public class Translator {
 
 	public static String getSwedishDayName(String day){
 		if (day.equals("monday")){
-			return "mÃ¥ndag";
+			return "mwndag";
 		}
 		if (day.equals("sunday")){
-			return "sÃ¶ndag";
+			return "söndag";
 		}
 
 		if (day.equals("tuseday")){
@@ -56,13 +56,13 @@ public class Translator {
 		}
 
 		if (day.equals("saturday")){
-			return "lÃ¶rdag";
+			return "lördag";
 		}
 
 		if (day.equals("friday")){
 			return "fredag";
 		}
 
-		return "nÃ¥gon dag";
+		return "någon dag";
 	}
 }

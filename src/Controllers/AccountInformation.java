@@ -93,7 +93,7 @@ public class AccountInformation extends AnchorPane implements Initializable {
 			paneCardInformation.setExpanded(false);
 			paneCardInformation.setCollapsible(false);
 
-			paneCardInformation.setText("Kortinformation - (inget kort Ã¤r sparat)");
+			paneCardInformation.setText("Kortinformation - (inget kort är sparat)");
 		}
 		else {
 			paneCardInformation.setCollapsible(true);

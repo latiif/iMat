@@ -57,7 +57,7 @@ public class StartView extends AnchorPane implements Initializable {
 			Inventory.shopView.lblFav.setDisable(false);
 			Inventory.shopView.lblOffers.setDisable(false);
 			paneRegistered.toFront();
-			lblWelcomeUser.setText("VÃ¤lkommen till iMat, "+IMatDataHandler.getInstance().getCustomer().getFirstName());
+			lblWelcomeUser.setText("Välkommen till iMat, "+IMatDataHandler.getInstance().getCustomer().getFirstName());
 		}
 	}
 
