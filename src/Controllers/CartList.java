@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -33,7 +34,7 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	@FXML
 	CheckBox chkSave;
 	@FXML
-	Button btnRemoveAll,btnCheckout;
+	Button btnRemoveAll,btnCheckout,btnRedo;
 
 	@FXML
 	VBox vList;
@@ -52,6 +53,10 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 	}
 
 	 List<CartItem> cartItems = new ArrayList<>();
+
+	List<CartItem> cartItemsTemp = new ArrayList<>();
+	List<Node> childrenTemp = new ArrayList<>();
+
 
 	public CartList() {
 
@@ -85,6 +90,8 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 		imgCheckout.visibleProperty().bind(btnCheckout.visibleProperty());
 		btnRemoveAll.visibleProperty().bind(btnCheckout.visibleProperty());
+
+
 		updateCost();
 
 	}
@@ -110,6 +117,9 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 		}
 
 
+		btnRedo.setVisible(canRedo);
+
+
 	}
 
 	@Override
@@ -126,6 +136,8 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 		vList.getChildren().setAll(cartItems);
 		System.out.println(vList.getChildren().size());
+
+		canRedo=false;
 
 		updateCost();
 	}
@@ -152,8 +164,19 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 
 	@FXML
 	private void handleRemoveAllAction(ActionEvent event) {
+		cartItemsTemp.clear();
+		childrenTemp.clear();
+
+
+		cartItemsTemp.addAll(cartItems);
+		childrenTemp.addAll(vList.getChildren());
+
 		cartItems.clear();
 		vList.getChildren().clear();
+		canRedo=true;
+
+
+
 		updateCost();
 	}
 
@@ -163,5 +186,28 @@ public class CartList extends AnchorPane implements Initializable, ICartList {
 		Inventory.shopView.updateStackPane();
 		Inventory.shopView.hideCashout();
 	}
+
+
+	public void hideRedo(){
+
+	}
+
+	@FXML
+	private void btnRedoAction(ActionEvent event) {
+		canRedo=false;
+
+		cartItems.clear();
+		cartItems.addAll(cartItemsTemp);
+		vList.getChildren().clear();
+		vList.getChildren().addAll(childrenTemp);
+
+
+		updateCost();
+
+
+	}
+
+
+	boolean canRedo=false;
 
 }

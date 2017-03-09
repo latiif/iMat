@@ -12,7 +12,12 @@
             <VBox fx:id="vList" style="-fx-background-color: #f7f4e8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </content>
       </ScrollPane>
-      <Button id="btnRemoveAll" fx:id="btnRemoveAll" layoutX="151.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleRemoveAllAction" style="-fx-cursor: hand;" text="Töm varukorg" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="btnRedo" mnemonicParsing="false" onAction="#btnRedoAction" text="Ångra" />
+            <Button id="btnRemoveAll" fx:id="btnRemoveAll" mnemonicParsing="false" onAction="#handleRemoveAllAction" style="-fx-cursor: hand;" text="Töm varukorg" />
+         </children>
+      </HBox>
         <Button id="btnCheckout" fx:id="btnCheckout" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="9.0" layoutY="460.0" mnemonicParsing="false" onAction="#btnCheckoutAction" style="-fx-cursor: hand;" text="Gå till Kassan" textAlignment="CENTER" textOverrun="ELLIPSIS" underline="false" visible="true" wrapText="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="65.0" />
       <HBox alignment="CENTER_LEFT" layoutX="6.0" layoutY="429.0" prefHeight="28.0" prefWidth="244.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="0.0">
          <children>

@@ -311,6 +311,7 @@ public class ShopView extends AnchorPane implements Initializable {
 
 
 
+		cartList.hideRedo();
 
 
 

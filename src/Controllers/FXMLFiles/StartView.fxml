@@ -13,7 +13,7 @@
          <children>
            <StackPane fx:id="stackPane" prefHeight="97.0" prefWidth="754.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS">
          <children>
-            <AnchorPane fx:id="paneDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" StackPane.alignment="CENTER">
+            <AnchorPane fx:id="paneDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" StackPane.alignment="CENTER">
                <children>
                   <Label fx:id="lblWelcome" alignment="CENTER" layoutX="278.0" layoutY="194.0" text="Välkommen till iMat!" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0" />
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="325.0">

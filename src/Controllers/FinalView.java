@@ -86,6 +86,8 @@ public class FinalView extends AnchorPane implements Initializable{
 
 		Inventory.shopView.removeShadow();
 
+		Inventory.shopView.cartList.hideRedo();
+
 	}
 
 	public  FinalView(){
