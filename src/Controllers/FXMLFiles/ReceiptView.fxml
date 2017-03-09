@@ -12,9 +12,7 @@
 <?scenebuilder-classpath-element ../../../src?>
 <?scenebuilder-stylesheet ReceiptView.css?>
 
-<fx:root prefHeight="435.0" prefWidth="383.0" stylesheets="@ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
-  >
+<fx:root prefHeight="435.0" prefWidth="383.0" stylesheets="@ReceiptView.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TitledPane fx:id="titledPane" animated="false" collapsible="false" ellipsisString="" text="Kvitto - " textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -25,7 +23,7 @@ AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0
                   <Font size="15.0" />
                 </font>
               </Label>
-                  <ListView fx:id="lstItems" layoutX="21.4" layoutY="20.4" prefHeight="366.0" prefWidth="612.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView fx:id="lstItems" focusTraversable="false" layoutX="21.4" layoutY="20.4" prefHeight="366.0" prefWidth="612.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
               </children>
             </AnchorPane>
          </content>

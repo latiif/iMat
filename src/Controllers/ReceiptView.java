@@ -2,6 +2,9 @@ package Controllers;
 
 import Commons.Receipt;
 import Commons.ReceiptManager;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -75,6 +78,17 @@ public class ReceiptView extends AnchorPane implements Initializable {
 
 		//lstItems.getItems().addAll(receipt.items);
 
+		lstItems.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				Platform.runLater(new Runnable() {
+					public void run() {
+						lstItems.getSelectionModel().select(-1);
+
+					}
+				});
+			}
+		});
 
 	}
 }
