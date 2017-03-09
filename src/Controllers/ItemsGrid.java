@@ -250,10 +250,15 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		List<ProductCategory> result= new ArrayList<>();
 
 
+		System.out.println(toggleButtonAll.isSelected());
 
 		for(Node node:catHBox.getChildren()){
 			ToggleButton toggleButton= (ToggleButton)node;
 
+			if (toggleButtonAll.isSelected()){
+				result.add(categories.get(toggleButton));
+			}
+			else
 			if (toggleButton.isSelected()){
 				result.add(categories.get(toggleButton));
 			}
@@ -302,8 +307,13 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		setLoadMoreVisibilty(false);
 		scrollPane.setVvalue(0);
 		visibleItems.clear();
+
+		catHBox.getChildren().add(toggleButtonAll);
+
 	}
 
+
+	private ToggleButton toggleButtonAll = new ToggleButton("Visa allt");
 
 	private void setLoadMoreVisibilty(boolean visible){
 		if (visible){
@@ -338,6 +348,14 @@ public class ItemsGrid extends AnchorPane implements Initializable {
 		});
 
 		flush();
+
+		toggleButtonAll.setToggleGroup(toggleGroup);
+		toggleButtonAll.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				updateFromCategories();
+			}
+		});
 
 	}
 
