@@ -88,8 +88,11 @@
          </padding></HBox>
       <VBox alignment="CENTER" fillWidth="false" layoutY="41.0" prefHeight="531.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
-            <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" alignment="CENTER" prefHeight="62.0" prefWidth="709.0" stylesheets="@OrderView.css" text="Ange din leveransinformation:" textAlignment="CENTER" />
-            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" alignment="CENTER" prefHeight="84.0" prefWidth="707.0" stylesheets="@OrderView.css" text="Ange din leveransinformation:" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="-30.0" />
+               </VBox.margin></Label>
+            <HBox prefHeight="46.0" prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="55.0" prefWidth="635.0" spacing="10.0">
                <children>
                   <Label id="lblDelivery" contentDisplay="CENTER" prefHeight="20.0" prefWidth="221.0" text="Varorna levereras till" />

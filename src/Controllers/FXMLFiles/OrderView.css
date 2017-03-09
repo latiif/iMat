@@ -30,6 +30,7 @@
   -fx-shadow-highlight-color : transparent;
   -fx-outer-border : transparent;
  -fx-inner-border : transparent;
+ -fx-cursor: hand;
 }
 #btnShop, #btnShop1 {
 	-fx-base: green;
