@@ -253,7 +253,7 @@ public class ItemView extends AnchorPane implements Initializable {
 
 		if (stylize(FavManager.getInstance().isFav(this.item))){
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_ENABLED))));
-			lblFav.setText("Ta bort fr?n favorit");
+			lblFav.setText("Ta bort från favorit");
 		}
 		else {
 			imgFav.setImage(new Image(String.valueOf(getClass().getResource(IconManager.FAV_DISABLED))));
