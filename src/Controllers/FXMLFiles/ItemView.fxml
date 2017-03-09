@@ -67,7 +67,7 @@
       <children>
         <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="62.0" prefWidth="226.0" text="2 st chokladssss s     ss s  ss s s " textAlignment="CENTER" textFill="BLACK" wrapText="true" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
           <font>
-            <Font size="25.0" fx:id="x1" />
+            <Font size="18" fx:id="x1" />
           </font>
         </Label>
         <Label fx:id="lblMessage1" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="6.0" layoutY="211.0" prefHeight="98.0" prefWidth="226.0" text="har lagts i varukorgen" textAlignment="CENTER" textFill="BLACK" textOverrun="WORD_ELLIPSIS" wrapText="true" />

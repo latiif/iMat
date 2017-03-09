@@ -11,8 +11,11 @@
   -fx-border-width: 1;
   -fx-border-radius: 5px;
   -fx-border-style: solid;
+}
 
-
+#lblMessage {
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
 }
 
 #ElementItemFavorited{

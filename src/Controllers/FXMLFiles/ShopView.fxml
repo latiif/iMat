@@ -29,6 +29,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                     <Label id="sideCategory" fx:id="lblMilk" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblDairyOnAction" style="-fx-cursor: hand;" text="Mejeri">
                       <graphic>
@@ -38,6 +41,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                     <Label id="sideCategory" fx:id="lblFruit" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblFruitVegOnAction" style="-fx-cursor: hand;" text="Frukt &amp; Grönt">
                       <graphic>
@@ -47,6 +53,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                     <Label id="sideCategory" fx:id="lblPantry" alignment="CENTER" contentDisplay="TOP" font="$x1" layoutX="40.0" layoutY="414.0" onMouseClicked="#lblPantryOnAction" style="-fx-cursor: hand;" text="Skafferi" AnchorPane.leftAnchor="40.0">
                       <graphic>
@@ -56,6 +65,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                     <Label id="sideCategory" fx:id="lblMeat" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblMeatOnAction" style="-fx-cursor: hand;" text="Kött &amp; Fisk">
                       <graphic>
@@ -65,6 +77,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                     <Label id="sideCategory" fx:id="lblCandy" alignment="CENTER" contentDisplay="TOP" font="$x1" onMouseClicked="#lblCandyOnAction" style="-fx-cursor: hand;" text="Godis &amp; Snacks">
                       <graphic>
@@ -74,6 +89,9 @@
                           </image>
                         </ImageView>
                       </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                     </Label>
                         <Label id="sideCategory" fx:id="lblOffers" alignment="CENTER" contentDisplay="TOP" font="$x1" style="-fx-cursor: hand;" text="Extrapriser">
                            <graphic>
@@ -83,6 +101,9 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
                         </Label>
                      </children>
                      <opaqueInsets>
