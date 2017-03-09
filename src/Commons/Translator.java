@@ -34,4 +34,35 @@ public class Translator {
 
 		return "";
 	}
+
+
+	public static String getSwedishDayName(String day){
+		if (day.equals("monday")){
+			return "måndag";
+		}
+		if (day.equals("sunday")){
+			return "söndag";
+		}
+
+		if (day.equals("tuseday")){
+			return "tisdag";
+		}
+
+		if (day.equals("thursday")){
+			return "torsdag";
+		}
+		if(day.equals("wednesday")){
+			return "onsdag";
+		}
+
+		if (day.equals("saturday")){
+			return "lördag";
+		}
+
+		if (day.equals("friday")){
+			return "fredag";
+		}
+
+		return "någon dag";
+	}
 }

@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.Inventory;
+import Commons.Translator;
 import com.latiif.getAddressInfo.GetAddress;
 import com.latiif.getAddressInfo.GetIP;
 import com.sun.org.apache.bcel.internal.generic.GETFIELD;
@@ -204,7 +205,7 @@ public class DeliveryInformation extends AnchorPane implements Initializable {
 		Inventory.shopView.confrimView.lblAddress.setText(txtName.getText()+", "+txtStreet.getText());
 
 		Inventory.shopView.finalView.lblSubTitle2.setText(
-date.getValue().getDayOfWeek().toString().toLowerCase() +" den "+date.getValue().toString()+" kl." 	+getTime()	);
+				Translator.getSwedishDayName(date.getValue().getDayOfWeek().toString().toLowerCase()) +" den "+date.getValue().toString()+" kl." 	+getTime()	);
 
 		Inventory.shopView.paymentInformation.toFront();
 		Inventory.shopView.updateStackPane();
