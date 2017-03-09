@@ -47,7 +47,7 @@ public class StartView extends AnchorPane implements Initializable {
 		}
 	}
 
-	private void check(){
+	 void check(){
 		if (!Inventory.hasCustomer()){
 			paneDefault.toFront();
 			Inventory.shopView.lblFav.setDisable(true);

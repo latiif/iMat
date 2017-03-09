@@ -39,6 +39,6 @@
             </ImageView>
          </graphic>
     </TitledPane>
-      <Button id="btnClose" fx:id="bntClose" mnemonicParsing="false" text="Stänga" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" onAction="#closeOnAction" />
+      <Button id="btnClose" fx:id="bntClose" mnemonicParsing="false" onAction="#closeOnAction" text="Stänga" visible="false" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
    </children>
 </fx:root>

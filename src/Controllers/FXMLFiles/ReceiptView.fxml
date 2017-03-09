@@ -10,31 +10,25 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 <?scenebuilder-classpath-element ../../../src?>
-<?scenebuilder-stylesheet ItemView.css?>
+<?scenebuilder-stylesheet ReceiptView.css?>
 
-<fx:root id="ElementItem" fx:id="ReceiptView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-  AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-  <children>
-  <Label id="lblReceipt" fx:id="lblReceipt" alignment="CENTER" prefHeight="16.0" prefWidth="163.0" stylesheets="@ReceiptView.css" text="KVITTO" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-  <Label id="lblTotal" fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="189.0" text="Summa: kr" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0">
-    <font>
-      <Font size="15.0" />
-    </font>
-  </Label>
-      <Label fx:id="lblName1" alignment="CENTER" ellipsisString="" layoutX="14.0" layoutY="4.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblName11" alignment="CENTER" ellipsisString="" layoutX="6.0" layoutY="263.0" prefHeight="25.0" prefWidth="226.0" style="-fx-text-transform: uppercase;" text="_________________________________" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutY="25.0" pannable="true" prefHeight="283.0" prefWidth="324.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+<fx:root prefHeight="435.0" prefWidth="383.0" stylesheets="@ReceiptView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+  >
+   <children>
+      <TitledPane fx:id="titledPane" animated="false" collapsible="false" ellipsisString="" text="Kvitto - " textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <VBox fx:id="lstItems" />
+            <AnchorPane id="ElementItem" fx:id="ReceiptView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="ReceiptView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+              <Label id="lblTotal" fx:id="lblTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="189.0" text="Summa: kr" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0">
+                <font>
+                  <Font size="15.0" />
+                </font>
+              </Label>
+                  <ListView fx:id="lstItems" layoutX="21.4" layoutY="20.4" prefHeight="366.0" prefWidth="612.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+            </AnchorPane>
          </content>
-      </ScrollPane>
-  </children>
+      </TitledPane>
+   </children>
 </fx:root>

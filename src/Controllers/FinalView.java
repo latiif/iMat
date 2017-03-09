@@ -55,6 +55,7 @@ public class FinalView extends AnchorPane implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 
 
+		Inventory.shopView.startView.check();
 		Inventory.shopView.hideCashout();
 
 		receipt = new Receipt();

@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,12 +17,21 @@ import java.util.ResourceBundle;
  */
 public class ReceiptItem extends AnchorPane implements Initializable {
 
+
+
+
 	@FXML
 	Label lblName,lblCost,lblQty;
 
 	private String name,qty,cost;
 
 	public ReceiptItem(String name,String qty, String cost){
+
+
+
+
+		Font.loadFont(getClass().getResourceAsStream("FXMLFiles/Inconsolata-Regular.ttf"), 14);
+
 		this.name=name;
 		this.cost=cost;
 		this.qty=qty;
@@ -42,6 +52,7 @@ public class ReceiptItem extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
 		lblName.setText(name);
 		lblCost.setText(cost);
 		lblQty.setText(qty);

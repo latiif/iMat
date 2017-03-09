@@ -8,6 +8,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -31,12 +33,18 @@ public class Main extends Application{
 		Inventory.getInstance();
 		ReceiptManager.readAll();
 		MostBoughtManager.readAll();
+
+
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
 		prepare();
+
+
+		Font.loadFont(getClass().getResourceAsStream("Controllers/Fonts/TypewriterCondensed/typewcond_regular.otf"), 14);
+
 
 		primaryStage.setTitle("iMat");
 		primaryStage.getIcons().add(new Image("Controllers/Icons/imat-icon.png"));
