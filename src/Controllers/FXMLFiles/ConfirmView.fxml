@@ -88,8 +88,11 @@
          </padding></HBox>
       <VBox alignment="TOP_CENTER" fillWidth="false" layoutY="41.0" prefHeight="531.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
          <children>
-            <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" alignment="CENTER" prefHeight="104.0" prefWidth="613.0" stylesheets="@OrderView.css" text="Bekräfta din beställning:" textAlignment="CENTER" />
-            <TitledPane animated="false" collapsible="false" prefHeight="206.0" prefWidth="658.0" text="Beställningsinfo:">
+            <Label id="lblDeliveryInfo" fx:id="lblDeliveryInfo" alignment="CENTER" prefHeight="140.0" prefWidth="613.0" stylesheets="@OrderView.css" text="Bekräfta din beställning:" textAlignment="CENTER">
+               <padding>
+                  <Insets top="40.0" />
+               </padding></Label>
+            <TitledPane animated="false" collapsible="false" prefHeight="198.0" prefWidth="658.0" text="Beställningsinfo:">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
